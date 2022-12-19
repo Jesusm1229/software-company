@@ -14,7 +14,12 @@ import pageMeta from "../content/meta";
 import AnimatedHeading from "../components/FramerMotion/AnimatedHeading";
 
 import { getPinnedSkills } from "../lib/dataFetch";
+
+// Page Components START----------
+import BlogsSection from "../components/BlogsSection";
 import SkillSection from "../components/SkillSection";
+// Page Components END------------
+import Contact from "../components/Contact";
 
 export default function Home({ blogs, skills }) {
   return (
@@ -87,8 +92,12 @@ export default function Home({ blogs, skills }) {
             </motion.div>
           </div>
         </motion.section>
+        <div>
+          <SkillSection skills={skills} />
+          <BlogsSection blogs={blogs} />
+          <Contact />
+        </div>
       </div>
-      <SkillSection skills={skills} />
     </>
   );
 }
