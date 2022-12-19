@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import Layout from "../layout/Layout";
 
 /* Progressbar Configurations */
 NProgress.configure({

@@ -2,7 +2,7 @@ import { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import Footer from "../components/Footer";
-import QRCodeContainer from "@components/QRCodeContainer";
+/* import QRCodeContainer from "../components/QRCodeContainer"; */
 
 export default function Layout({ children }) {
   const [showQR, setShowQR] = useState(false);
@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <Footer setShowQR={setShowQR} showQR={showQR} />
       <ScrollToTopButton />
-      <QRCodeContainer showQR={showQR} setShowQR={setShowQR} />
+      {/* <QRCodeContainer showQR={showQR} setShowQR={setShowQR} /> */}
     </>
   );
 }
