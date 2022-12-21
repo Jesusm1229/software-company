@@ -21,6 +21,8 @@ import SkillSection from "../components/SkillSection";
 // Page Components END------------
 import Contact from "../components/Contact";
 
+import generateRSS from "../lib/generateRssFeed";
+
 export default function Home({ blogs, skills }) {
   return (
     <>
@@ -115,6 +117,7 @@ export function HomeHeading({ title }) {
 
 export async function getStaticProps() {
   const skills = getPinnedSkills();
+  await generateRSS(); // calling to generate the feed
   return {
     props: { skills },
   };
