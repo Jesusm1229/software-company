@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import OgImage from "./OgImage";
 
-import useLocalStorage from "@hooks/useBookmarkBlogs";
+import useLocalStorage from "../hooks/useBookmarkBlogs";
 
 export default function Blog({ blog }) {
   const { isAlreadyBookmarked, addToBookmark, removeFromBookmark } =

@@ -102,7 +102,7 @@ export default function TopNavbar() {
             }}
             className="absolute sm:!hidden w-fit left-0 right-0 mx-auto flex justify-center  text-base font-sarina"
           >
-            Jatin Sharma
+            Jesús Medina
           </motion.p>
         </div>
       </Link>

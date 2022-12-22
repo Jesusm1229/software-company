@@ -128,7 +128,7 @@ export default function BlogLayout({ post, children }) {
           <div className="flex items-center gap-2 w-full">
             <div className="relative grid">
               <Image
-                alt="Jatin Sharma"
+                alt="Jesús Medina"
                 height={30}
                 width={30}
                 src={homeProfileImage}
@@ -138,7 +138,7 @@ export default function BlogLayout({ post, children }) {
             </div>
             <div className="flex flex-col sm:flex-row sm:justify-between w-full">
               <p className="text-sm  flex items-center gap-2 font-medium !my-0">
-                <span>Jatin Sharma</span>
+                <span>Jesús Medina</span>
                 <span>•</span>
                 <span>{getFormattedDate(post.meta.date)}</span>
               </p>

@@ -12,7 +12,7 @@ import Ripples from "react-ripples";
 
 // initial State of the form
 const initialFormState = {
-  to_name: "Jatin Sharma",
+  to_name: "Jesús Medina",
   first_name: "",
   last_name: "",
   email: "",

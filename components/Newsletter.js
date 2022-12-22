@@ -59,7 +59,7 @@ export default function Newsletter() {
     <>
       <div className="w-full p-4 font-barlow rounded-lg border-2 bg-white dark:bg-darkSecondary/20 dark:border-neutral-600 flex flex-col gap-4 mt-10 mb-5 print:hidden">
         <h2 className="text-2xl font-bold dark:text-white !my-0">
-          Jatin's Newsletter
+          Jesús's Newsletter
         </h2>
         <p className="text-gray-500 !my-0">
           Get notified in your inbox whenever I write a new blog post.

@@ -1,7 +1,7 @@
 import MDXComponents from "../components/MDXComponents";
 import MetaData from "../components/MetaData";
 import PageTop from "../components/PageTop";
-import Support from "../components/Support";
+/* import Support from "../components/Support"; */
 import MDXContent from "../lib/MDXContent";
 import { MDXRemote } from "next-mdx-remote";
 import styles from "../styles/Blog.module.css";
@@ -31,7 +31,7 @@ export default function About({ about }) {
             components={MDXComponents}
           />
         </AnimatedDiv>
-        <Support />
+        {/*  <Support /> */}
       </section>
     </>
   );

@@ -12,16 +12,17 @@ import Ripples from "react-ripples";
 import Metadata from "../components/MetaData";
 import pageMeta from "../content/meta";
 import AnimatedHeading from "../components/FramerMotion/AnimatedHeading";
-
 import { getPinnedSkills } from "../lib/dataFetch";
 
 // Page Components START----------
-import BlogsSection from "../components/BlogsSection";
+import BlogsSection from "../components/Home/BlogsSection";
 import SkillSection from "../components/SkillSection";
 // Page Components END------------
 import Contact from "../components/Contact";
 
-import generateRSS from "../lib/generateRssFeed";
+import getRSS from "../lib/generateRSS";
+import MDXContent from "../lib/MDXContent";
+import generateSitemap from "../lib/sitemap";
 
 export default function Home({ blogs, skills }) {
   return (
@@ -31,7 +32,6 @@ export default function Home({ blogs, skills }) {
         previewImage={pageMeta.home.image}
         keywords={pageMeta.home.keywords}
       />
-
       <div className="relative dark:bg-darkPrimary dark:text-gray-100 max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
         <motion.section
           initial="hidden"
@@ -76,7 +76,7 @@ export default function Home({ blogs, skills }) {
                 variants={opacityVariant}
                 className=" text-slate-500 dark:text-gray-300 font-medium text-sm md:text-base text-center"
               >
-                I am currently perusing my Bachelor Degree in Computer Science.
+                I am currently pursuing my Bachelor Degree in Computer Science.
                 I can code in Python, C, C++, etc.
               </motion.p>
             </div>
@@ -94,9 +94,10 @@ export default function Home({ blogs, skills }) {
             </motion.div>
           </div>
         </motion.section>
+
         <div>
           <SkillSection skills={skills} />
-          <BlogsSection blogs={blogs} />
+          {/* <BlogsSection blogs={blogs} /> */}
           <Contact />
         </div>
       </div>
@@ -116,9 +117,12 @@ export function HomeHeading({ title }) {
 }
 
 export async function getStaticProps() {
+  const blogs = new MDXContent("posts").getAllPosts().slice(0, 3);
   const skills = getPinnedSkills();
-  await generateRSS(); // calling to generate the feed
+  await getRSS();
+  await generateSitemap();
+
   return {
-    props: { skills },
+    props: { blogs, skills },
   };
 }

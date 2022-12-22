@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useDarkMode } from "@context/darkModeContext";
+import { useDarkMode } from "../context/darkModeContext";
 
 function OgImage({ src, alt, darkSrc }) {
   const { isDarkMode } = useDarkMode();
