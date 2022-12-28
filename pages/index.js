@@ -62,7 +62,7 @@ export default function Home({ blogs, skills }) {
                   variants={opacityVariant}
                   className="text-5xl lg:text-6xl font-bold font-sarina"
                 >
-                  Jatin Sharma
+                  Jesús Medina
                 </motion.h1>
                 <motion.p
                   variants={opacityVariant}

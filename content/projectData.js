@@ -1,15 +1,24 @@
 module.exports = [
   {
-    id: 15,
-    name: "Google Docs with Next.js",
-    coverURL: "https://imgur.com/bQkEGlb.png",
+    id: 1,
+    name: "ghost invasion game",
+    /*  coverURL: "https://imgur.com/fVbFbqw.png", */
     description:
-      "Next Google Docs is a web app which uses draft.js to create a document for you. It also uses Firebase to store all the user's data.",
-    githubURL: "https://github.com/j471n/next-google-docs",
-    previewURL: "https://google-next-docs.vercel.app/",
-    tools: ["Next.js", "Tailwind CSS", "Firebase", "Draft.js", "Next Auth"],
-    pinned: true,
+      "This the fun game build using PyGame library, in this there are ghost and you just have to kill them by just shooting.",
+    githubURL: "https://github.com/j471n/ghost-invasion-game-python",
+    previewURL: "",
+    tools: ["python", "PyGame"],
+    pinned: false,
   },
-
-  /* ..............Other Projects......... */
+  {
+    id: 2,
+    name: "IP address tracker",
+    /* coverURL: "https://imgur.com/4dZRefD.png", */
+    description:
+      "it tracks many things by your IP address such as Location, Network, Area, Coordinate, etc",
+    githubURL: "https://github.com/j471n/ip-address-tracker",
+    previewURL: "",
+    tools: ["HTML", "CSS", "JS"],
+    pinned: false,
+  },
 ];

@@ -1,11 +1,13 @@
 /* Organizations */
 const LinkedIn = {
   orgName: "LinkedIn",
-  orgLogo: "https://imgur.com/k0cPDY6.png",
+  /*  orgLogo: "https://imgur.com/k0cPDY6.png",
+   */
 };
 const Udemy = {
   orgName: "Udemy",
-  orgLogo: "https://imgur.com/rvn6djH.png",
+  /* orgLogo: "https://imgur.com/rvn6djH.png",
+   */
 };
 /* ....more objects of organization..... */
 
