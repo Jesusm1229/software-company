@@ -58,7 +58,7 @@ html {
   scroll-behavior: auto;
 }
 body::-webkit-scrollbar {
-  width: 6px;
+  width: 1px;
 }
 
 /* Adding Scroll Margin for top */
@@ -83,7 +83,7 @@ body.dark {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track {
