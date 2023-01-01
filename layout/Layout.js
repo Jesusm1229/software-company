@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     <>
       <TopNavbar />
       <main>{children}</main>
-      <Footer setShowQR={setShowQR} showQR={showQR} />
+      {/*  <Footer setShowQR={setShowQR} showQR={showQR} /> */}
       <ScrollToTopButton />
       {/* <QRCodeContainer showQR={showQR} setShowQR={setShowQR} /> */}
     </>

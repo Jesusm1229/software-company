@@ -11,7 +11,8 @@ import {
 } from "../content/FramerMotionVariants";
 import { useDarkMode } from "../context/darkModeContext";
 import { navigationRoutes } from "../utils/utils";
-import { FiMoon, FiSun } from "react-icons/fi";
+/* import Logo from "./SVG/Logo"; */
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 /* TopNavbar Component */
 export default function TopNavbar() {
@@ -72,7 +73,7 @@ export default function TopNavbar() {
 
   return (
     <div
-      className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] sm:p-4 sm:px-6 z-50 print:hidden"
+      className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] sm:px-6 z-50 print:hidden"
       ref={navRef}
     >
       {/* Mobile Navigation Hamburger and MobileMenu */}
@@ -83,16 +84,10 @@ export default function TopNavbar() {
         )}
       </AnimatePresence>
 
-      <Link href="/" passHref>
-        <div className="flex gap-2 items-center cursor-pointer z-50">
-          <motion.a
-            initial="hidden"
-            animate="visible"
-            variants={popUp}
-            className="relative hidden sm:inline-flex mr-3"
-          >
-            <h1 className="font-sarina text-xl">JS</h1>
-          </motion.a>
+      <Link href="/">
+        {/* <Logo className="w-12 h-12 relative hidden sm:inline-flex mr-3" />
+         */}
+        <div className="w-full sm:!hidden">
           <motion.p
             initial="hidden"
             animate={control}
@@ -100,15 +95,15 @@ export default function TopNavbar() {
               hidden: { opacity: 0, scale: 1, display: "none" },
               visible: { opacity: 1, scale: 1, display: "inline-flex" },
             }}
-            className="absolute sm:!hidden w-fit left-0 right-0 mx-auto flex justify-center  text-base font-sarina"
+            className="font-sarina"
           >
-            Jesús Medina
+            Jatin Sharma
           </motion.p>
         </div>
       </Link>
 
       {/* Top Nav list */}
-      <motion.nav className="hidden sm:flex z-10 md:absolute md:inset-0 md:justify-center">
+      <motion.nav className="hidden sm:flex z-10 md:inset-0 md:justify-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -133,15 +128,14 @@ export default function TopNavbar() {
         initial="hidden"
         animate="visible"
         variants={popUp}
-        className="cursor-pointer rounded-full z-30 transition active:scale-75"
+        className="cursor-pointer"
         title="Toggle Theme"
-        onClick={() => changeDarkMode(!isDarkMode)}
       >
-        {isDarkMode ? (
-          <FiMoon className="h-6 w-6 sm:h-7 sm:w-7 select-none transition active:scale-75" />
-        ) : (
-          <FiSun className="h-6 w-6 sm:h-7 sm:w-7 select-none transition active:scale-75" />
-        )}
+        <DarkModeSwitch
+          checked={isDarkMode}
+          onChange={changeDarkMode}
+          size={24}
+        />
       </motion.div>
     </div>
   );
@@ -151,17 +145,17 @@ export default function TopNavbar() {
 function NavItem({ href, text, router }) {
   const isActive = router.asPath === (href === "/home" ? "/" : href);
   return (
-    <Link href={href === "/home" ? "/" : href} passHref>
-      <motion.a
-        variants={popUp}
-        className={`${
-          isActive
-            ? "font-bold text-gray-800 dark:text-gray-100"
-            : " text-gray-600 dark:text-gray-300"
-        } sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 dark:hover:bg-neutral-700/50 rounded-md`}
-      >
-        <span className="capitalize">{text}</span>
-      </motion.a>
+    <Link
+      className={`${
+        isActive
+          ? "font-bold text-gray-800 dark:text-gray-100"
+          : " text-gray-600 dark:text-gray-300"
+      } sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 dark:hover:bg-neutral-700/50 rounded-md`}
+      href={href === "/home" ? "/" : href}
+    >
+      <motion.p className="capitalize" variants={popUp}>
+        {text}
+      </motion.p>
     </Link>
   );
 }
