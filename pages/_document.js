@@ -57,6 +57,29 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* Rather */}
+        <link
+          rel="preload"
+          href="/fonts/RATHER.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        {/* SALT */}
+        <link
+          rel="preload"
+          href="/fonts/Salt/Salt-400.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Salt/Salt-Bold-700.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
 
         {/* Tailwind CSS Typography  */}
         <link
