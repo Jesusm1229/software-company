@@ -12,7 +12,7 @@ module.exports = {
       sarina: ["Sarina", "cursive"],
       barlow: ["Barlow", "sans-serif"],
       mono: ["monospace"],
-      rather: ["Rather"],
+      montserrat: ["Monserrat-Black"],
     },
     extend: {
       colors: {

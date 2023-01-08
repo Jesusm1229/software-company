@@ -64,28 +64,28 @@ export default function Home({ blogs, skills }) {
                   <div className="flex flex-col gap-1">
                     <motion.h1
                       variants={opacityVariant}
-                      className="text-5xl lg:text-6xl font-bold font-sarina"
+                      className="text-9xl lg:text-9xl font-bold font-montserrat"
                     >
-                      Jesús Medina
+                      JESUS MEDINA
                     </motion.h1>
-                    <motion.p
+                    {/* <motion.p
                       variants={opacityVariant}
                       className="font-medium text-xs md:text-sm lg:text-lg text-gray-500"
                     >
                       React Developer, Competitive Programmer
-                    </motion.p>
+                    </motion.p> */}
                   </div>
 
-                  <motion.p
+                  {/*  <motion.p
                     variants={opacityVariant}
                     className=" text-slate-500 dark:text-gray-300 font-medium text-sm md:text-base text-center"
                   >
                     I am currently pursuing my Bachelor Degree in Computer
                     Science. I can code in Python, C, C++, etc.
-                  </motion.p>
+                  </motion.p> */}
                 </div>
 
-                <motion.div
+                {/* <motion.div
                   className="rounded-md overflow-hidden"
                   variants={popUp}
                 >
@@ -98,7 +98,7 @@ export default function Home({ blogs, skills }) {
                       <p>Resume</p>
                     </button>
                   </Ripples>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.section>
           </div>

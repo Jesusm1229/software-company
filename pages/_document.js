@@ -57,27 +57,12 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* Rather */}
+        {/* Monserrat */}
         <link
           rel="preload"
-          href="/fonts/RATHER.otf"
+          href="/fonts/Montserrat-Black.woff2"
           as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
-        {/* SALT */}
-        <link
-          rel="preload"
-          href="/fonts/Salt/Salt-400.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Salt/Salt-Bold-700.ttf"
-          as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
 

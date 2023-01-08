@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @font-face {
   font-family: "Barlow";
@@ -51,6 +52,14 @@
   font-display: swap;
   src: url(/fonts/Sarina/Sarina-400.woff2) format("woff2");
 }
+@font-face {
+  font-family: "Monserrat-Black";
+  font-style: normal;
+  font-weight: 9000;
+  font-display: swap;
+  src: url(/fonts/Montserrat-Black.woff2) format("woff2");
+}
+
 
 body,
 html {

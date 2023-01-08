@@ -64,27 +64,9 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
+    },      
     {
-      "source": "/fonts/Salt/Salt-Bold-700.ttf",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/fonts/Salt/Salt-400.ttf",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/fonts/RATHER.otf",
+      "source": "/fonts/Montserrat.woff2",
       "headers": [
         {
           "key": "Cache-Control",
