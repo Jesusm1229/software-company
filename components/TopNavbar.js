@@ -97,7 +97,7 @@ export default function TopNavbar() {
             }}
             className="font-sarina"
           >
-            Jatin Sharma
+            Jesús Medina
           </motion.p>
         </div>
       </Link>
