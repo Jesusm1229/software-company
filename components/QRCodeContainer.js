@@ -46,17 +46,17 @@ export default function QRCodeContainer({ showQR, setShowQR }) {
               type: "spring",
               bounce: 0.05,
             }}
-            className="bg-white dark:bg-darkSecondary fixed inset-0  grid place-items-center"
+            className="bg-white fixed inset-0  grid place-items-center"
             style={{ zIndex: 10000 }}
           >
             <button
-              className="outline-none absolute right-5 top-5 text-black dark:text-white"
+              className="outline-none absolute right-5 top-5 text-black "
               onClick={() => setShowQR(false)}
             >
               <CgClose className="w-8 h-8" />
             </button>
 
-            <div className="text-black dark:text-white flex flex-col gap-2">
+            <div className="text-black  flex flex-col gap-2">
               <h1 className="font-semibold text-xl">Share this page</h1>
               <QRCode
                 id="QRCode"
