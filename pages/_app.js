@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/Base.module.css";
 import { DarkModeProvider } from "../context/darkModeContext";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -45,6 +46,18 @@ function MyApp({ Component, pageProps }) {
       if (threeScript) {
         threeScript.remove();
       }
+    };
+  }, []);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src =
+      "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
     };
   }, []);
 

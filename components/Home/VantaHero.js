@@ -15,7 +15,7 @@ export default function VantaHero({ children }) {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-
+          backgroundColor: 0x0,
           maxDistance: 34.0,
         })
       );

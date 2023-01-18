@@ -26,6 +26,8 @@ import generateSitemap from "../lib/sitemap";
 
 import VantaHero from "../components/Home/VantaHero";
 
+import Circle from "../components/Circle/Circle";
+
 export default function Home({ blogs, skills }) {
   return (
     <>
@@ -34,9 +36,11 @@ export default function Home({ blogs, skills }) {
         previewImage={pageMeta.home.image}
         keywords={pageMeta.home.keywords}
       />
-      <div className="relative dark:bg-darkPrimary dark:text-gray-100">
+
+      <div className="relative dark:bg-dark Primary dark:text-gray-100">
         <VantaHero>
-          <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
+          <Circle></Circle>
+          {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"
               whileInView="visible"
@@ -45,7 +49,7 @@ export default function Home({ blogs, skills }) {
               className="grid place-content-center py-20  min-h-screen"
             >
               <div className="w-full relative mx-auto flex flex-col items-center gap-10">
-                {/*  <motion.div
+                 <motion.div
               variants={popUp}
               className="relative w-44 h-44 xs:w-52 xs:h-52 flex justify-center items-center rounded-full p-3 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:dark:border-white before:rounded-full before:animate-photo-spin"
             >
@@ -58,7 +62,7 @@ export default function Home({ blogs, skills }) {
                 quality={75}
                 priority={true}
               />
-            </motion.div> */}
+            </motion.div> 
 
                 <div className="w-full flex flex-col p-5 gap-3 select-none text-center ">
                   <div className="flex flex-col gap-1">
@@ -68,24 +72,24 @@ export default function Home({ blogs, skills }) {
                     >
                       JESUS MEDINA
                     </motion.h1>
-                    {/* <motion.p
+                     <motion.p
                       variants={opacityVariant}
                       className="font-medium text-xs md:text-sm lg:text-lg text-gray-500"
                     >
                       React Developer, Competitive Programmer
-                    </motion.p> */}
+                    </motion.p> 
                   </div>
 
-                  {/*  <motion.p
+                   <motion.p
                     variants={opacityVariant}
                     className=" text-slate-500 dark:text-gray-300 font-medium text-sm md:text-base text-center"
                   >
                     I am currently pursuing my Bachelor Degree in Computer
                     Science. I can code in Python, C, C++, etc.
-                  </motion.p> */}
+                  </motion.p> 
                 </div>
 
-                {/* <motion.div
+                 <motion.div
                   className="rounded-md overflow-hidden"
                   variants={popUp}
                 >
@@ -98,16 +102,16 @@ export default function Home({ blogs, skills }) {
                       <p>Resume</p>
                     </button>
                   </Ripples>
-                </motion.div> */}
+                </motion.div> 
               </div>
             </motion.section>
-          </div>
+          </div> */}
         </VantaHero>
-        <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
+        {/*<div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
           <SkillSection skills={skills} />
-          {/* <BlogsSection blogs={blogs} /> */}
-          <Contact />
-        </div>
+          <BlogsSection blogs={blogs} />
+          <Contact /> 
+        </div>*/}
       </div>
     </>
   );

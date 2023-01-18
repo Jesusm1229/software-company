@@ -8,10 +8,10 @@ export default function Layout({ children }) {
   const [showQR, setShowQR] = useState(false);
   return (
     <>
-      <TopNavbar />
+      {/* <TopNavbar /> */}
       <main>{children}</main>
       {/*  <Footer setShowQR={setShowQR} showQR={showQR} /> */}
-      <ScrollToTopButton />
+      {/* <ScrollToTopButton /> */}
       {/* <QRCodeContainer showQR={showQR} setShowQR={setShowQR} /> */}
     </>
   );

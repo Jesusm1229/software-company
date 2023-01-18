@@ -71,6 +71,11 @@ export default function Document() {
           rel="stylesheet"
           href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css"
         />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="https://use.typekit.net/kxo3pgz.css" />
+        <link rel="stylesheet" type="text/css" href="/styles/base.module.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="/components/Center/index.js"></script>
       </Head>
       <body>
         <Main />

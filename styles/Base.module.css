@@ -1,14 +1,16 @@
-*,
+/* *,
 *::after,
 *::before {
 	box-sizing: border-box;
 }
-
-:root {
+ */
+/* :root {
 	font-size: 16px;
 }
-
-body {
+ */
+.body {
+	box-sizing: border-box;
+	font-size: 16px;
 	margin: 0;
 	--color-text: #a5a5a5;
 	--color-bg: #191613;
@@ -119,32 +121,32 @@ body {
 	pointer-events: auto;
 }
 
-a {
+.a {
 	text-decoration: none;
 	color: var(--color-link);
 	outline: none;
 }
 
-a:hover {
+.a:hover {
 	color: var(--color-link-hover);
 	outline: none;
 }
 
 /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
-a:focus {
-	/* Provide a fallback style for browsers
+.a:focus {
+	/* Provide .a fallback style for browsers
 	 that don't support :focus-visible */
 	outline: none;
 	background: lightgrey;
 }
 
-a:focus:not(:focus-visible) {
+.a:focus:not(:focus-visible) {
 	/* Remove the focus indicator on mouse-focus for browsers
 	 that do support :focus-visible */
 	background: transparent;
 }
 
-a:focus-visible {
+.a:focus-visible {
 	/* Draw a very noticeable focus style for
 	 keyboard-focus on browsers that do support
 	 :focus-visible */
