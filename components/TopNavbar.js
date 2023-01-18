@@ -95,7 +95,7 @@ export default function TopNavbar() {
               hidden: { opacity: 0, scale: 1, display: "none" },
               visible: { opacity: 1, scale: 1, display: "inline-flex" },
             }}
-            className="font-sarina"
+            className="font-inter"
           >
             Jesús Medina
           </motion.p>
@@ -108,7 +108,7 @@ export default function TopNavbar() {
           initial="hidden"
           animate="visible"
           variants={FadeContainer}
-          className="flex items-center md:gap-2"
+          className="flex items-center md:gap-8"
         >
           {navigationRoutes.slice(0, 7).map((link, index) => {
             return (

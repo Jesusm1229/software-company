@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   FadeContainer,
   headingFromLeft,
@@ -27,8 +28,10 @@ import generateSitemap from "../lib/sitemap";
 import VantaHero from "../components/Home/VantaHero";
 
 import Circle from "../components/Circle/Circle";
+import QRCodeContainer from "../components/QRCodeContainer";
 
 export default function Home({ blogs, skills }) {
+  const [showQR, setShowQR] = useState(false);
   return (
     <>
       <Metadata
@@ -39,7 +42,7 @@ export default function Home({ blogs, skills }) {
 
       <div className="relative dark:bg-dark Primary dark:text-gray-100">
         <VantaHero>
-          <Circle></Circle>
+          <Circle showQR={showQR} setShowQR={setShowQR}></Circle>
           {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"
@@ -113,6 +116,7 @@ export default function Home({ blogs, skills }) {
           <Contact /> 
         </div>*/}
       </div>
+      <QRCodeContainer showQR={showQR} setShowQR={setShowQR} />
     </>
   );
 }

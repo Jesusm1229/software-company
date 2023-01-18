@@ -1,11 +1,18 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import "../../styles/Base.module.css";
 import { preloadFonts } from "../../utils/utils";
+import { motion } from "framer-motion";
+import {
+  FadeContainer,
+  headingFromLeft,
+  opacityVariant,
+  popUp,
+} from "../../content/FramerMotionVariants";
 /* import { TweenMax } from "gsap/gsap-core";
  */ /* import { Intro } from "./intro"; */
 
-export default function Circle() {
+export default function Circle({ setShowQR, showQR }) {
   /* const DOC = {
     circles: document.querySelector(".circles"),
     enterCtrl: document.querySelector(".enter"),
@@ -19,6 +26,7 @@ export default function Circle() {
   const app = useRef();
 
   let ctxButton;
+  let start;
 
   //Al entrar en botón
   const onEnter = ({ currentTarget }) => {
@@ -125,7 +133,73 @@ export default function Circle() {
     });
   };
 
+  function enter() {
+    start.kill();
+  }
+
   useLayoutEffect(() => {
+    start = gsap.context(() => {
+      gsap
+        .timeline()
+        .set(".circles__text", { transformOrigin: "50% 50%" })
+        .set([".circles__text", ".enter"], { opacity: 0 })
+        .to(".circles__text", {
+          duration: 3,
+          ease: "expo.inOut",
+          rotation: 90,
+          stagger: {
+            amount: 0.4,
+          },
+        })
+        .to([".circles__text"], {
+          duration: 3,
+          ease: "expo.inOut",
+          startAt: { opacity: 0, scale: 0.8 },
+          scale: 1,
+          opacity: 1,
+          stagger: {
+            amount: 0.4,
+          },
+        })
+        .to([".enter"], {
+          duration: 1.5,
+          ease: "expo.inOut",
+          startAt: { opacity: 0, scale: 0.8 },
+          scale: 1,
+          opacity: 1,
+          stagger: {
+            amount: 0.3,
+          },
+        })
+
+        // use scoped selectors
+        //gsap.to(".enter", { rotation: 360 });
+        .to(".circles__text--1", {
+          rotation: "+=360",
+          duration: 60,
+          ease: "none",
+          repeat: -1,
+        })
+        .to(".circles__text--2", {
+          rotation: "+=360",
+          duration: 40,
+          ease: "none",
+          repeat: -1,
+        })
+        .to(".circles__text--3", {
+          rotation: "+=360",
+          duration: 30,
+          ease: "none",
+          repeat: -1,
+        })
+        .to(".circles__text--4", {
+          rotation: "+=360",
+          duration: 20,
+          ease: "none",
+          repeat: -1,
+        });
+    });
+
     const ctx = gsap.context(() => {
       gsap.set(".circles__text", { transformOrigin: "50% 50%" });
       // use scoped selectors
@@ -154,7 +228,6 @@ export default function Circle() {
         ease: "none",
         repeat: -1,
       });
-
       // need to set the transform origin in the center
       /* gsap.set(DOCcircleText, { transformOrigin: "50% 50%" }); */
       // hide on start
@@ -212,7 +285,14 @@ export default function Circle() {
   }, []);
 
   return (
-    <div ref={app} className="App body loading demo-3">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={FadeContainer}
+      ref={app}
+      className="App body loading demo-3"
+    >
       <main>
         <svg
           className="circles"
@@ -306,11 +386,18 @@ export default function Circle() {
             ergonomic workplace innovations.
           </p>
         </div> */}
-        <button className="enter" onMouseEnter={onEnter} onMouseLeave={onLeave}>
-          <div className="enter__bg"></div>
-          <span className="enter__text">CONTACT ME</span>
+        <button
+          className="enter"
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
+          onClick={() => setShowQR(!showQR)}
+        >
+          <div className="enter__bg" onClick={() => setShowQR(!showQR)}></div>
+          <span className="enter__text" onClick={() => setShowQR(!showQR)}>
+            CONTACT ME
+          </span>
         </button>
       </main>
-    </div>
+    </motion.div>
   );
 }

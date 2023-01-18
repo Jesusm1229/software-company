@@ -1,4 +1,4 @@
-import { preloadFonts } from "../../utils/utils";
+/* import { preloadFonts } from "../../utils/utils";
 import { Intro } from "./intro";
 
 const intro = new Intro(document.querySelector(".circles"));
@@ -10,3 +10,4 @@ Promise.all([preloadFonts("kxo3pgz")]).then(() => {
   // start intro
   intro.start();
 });
+ */
