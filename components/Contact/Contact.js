@@ -8,9 +8,9 @@ import AnimatedText from "../FramerMotion/AnimatedText"; // ======>> not created
 
 export default function Contact() {
   return (
-    <div id="contact" className="dark:bg-darkPrimary !relative">
+    <div id="contact" className="!relative">
       {/* Get in touch top section */}
-      <section className="w-full-width text-center pt-6 dark:bg-darkPrimary dark:text-white">
+      <section className="w-full-width text-center pt-6  ">
         <AnimatedHeading
           variants={popUpFromBottomForText}
           className="font-bold text-4xl"
@@ -22,13 +22,12 @@ export default function Contact() {
           variants={popUpFromBottomForText}
           className="px-4 py-2 font-medium text-slate-400"
         >
-          Have a little something, something you wanna talk about? Please feel
-          free to get in touch anytime, whether for work or to just Hi 🙋‍♂️.
+          Feel free to get in touch anytime.
         </AnimatedText>
       </section>
 
       {/* Wrapper Container */}
-      <section className="flex flex-col lg:flex-row w-full mx-auto px-5 dark:bg-darkPrimary dark:text-white lg:pb-10">
+      <section className="flex flex-col lg:flex-row w-full mx-auto px-5 lg:pb-10">
         {/* Left Contact form section */}
         <div className="w-full mx-auto mt-10">
           <AnimatedHeading

@@ -4,6 +4,7 @@ import useWindowLocation from "../hooks/useWindowLocation";
 import { CgClose } from "react-icons/cg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useDarkMode } from "../context/darkModeContext";
+import Contact from "../components/Contact";
 
 export default function QRCodeContainer({ showQR, setShowQR }) {
   const { currentURL } = useWindowLocation();
@@ -56,7 +57,8 @@ export default function QRCodeContainer({ showQR, setShowQR }) {
               <CgClose className="w-8 h-8" />
             </button>
 
-            <div className="text-black  flex flex-col gap-2">
+            <Contact />
+            {/*  <div className="text-black  flex flex-col gap-2">
               <h1 className="font-semibold text-xl">Share this page</h1>
               <QRCode
                 id="QRCode"
@@ -78,7 +80,7 @@ export default function QRCodeContainer({ showQR, setShowQR }) {
                   Download
                 </button>
               </Ripples>
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

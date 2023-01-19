@@ -143,6 +143,7 @@ export default function Circle({ setShowQR, showQR }) {
         .timeline()
         .set(".circles__text", { transformOrigin: "50% 50%" })
         .set([".circles__text", ".enter"], { opacity: 0 })
+        .set(".enter", { pointerEvents: "none" })
         .to(".circles__text", {
           duration: 3,
           ease: "expo.inOut",
@@ -171,6 +172,7 @@ export default function Circle({ setShowQR, showQR }) {
             amount: 0.3,
           },
         })
+        .set(".enter", { pointerEvents: "auto" })
 
         // use scoped selectors
         //gsap.to(".enter", { rotation: 360 });
