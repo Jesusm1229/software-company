@@ -60,7 +60,7 @@
   src: url(/fonts/Montserrat-Black.woff2) format("woff2");
 }
 
-
+/* For the circle text */
  *,
 *::after,
 *::before {
@@ -426,7 +426,7 @@
 	}
 }
 
-
+/* Rest of code */
 body,
 html {
   overflow-x: hidden;
