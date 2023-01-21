@@ -74,8 +74,11 @@ export default function Document() {
         <link rel="shortcut icon" href="favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/kxo3pgz.css" />
         <link rel="stylesheet" type="text/css" href="/styles/base.module.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="/components/Center/index.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+        />
+        {/*  <script src="/components/Center/index.js"></script> */}
       </Head>
       <body>
         <Main />
