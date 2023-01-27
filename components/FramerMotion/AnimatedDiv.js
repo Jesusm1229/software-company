@@ -14,7 +14,7 @@ export default function AnimatedDiv({
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}
-      style={style}
+      /*    style={style} */
       transition={{ staggerChildren: 0.5 }}
     >
       {children}

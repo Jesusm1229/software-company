@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import "../../styles/Base.module.css";
 import { preloadFonts } from "../../utils/utils";
@@ -137,7 +137,7 @@ export default function Circle({ setShowQR, showQR }) {
     start.kill();
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     start = gsap.context(() => {
       gsap
         .timeline()
