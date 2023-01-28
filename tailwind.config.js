@@ -13,6 +13,8 @@ module.exports = {
       barlow: ["Barlow", "sans-serif"],
       mono: ["monospace"],
       montserrat: ["Monserrat-Black"],
+      holland: ["Holland"],
+      ordinary: ["Ordinary S Demo"],
     },
     extend: {
       colors: {

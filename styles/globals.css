@@ -59,7 +59,20 @@
   font-display: swap;
   src: url(/fonts/Montserrat-Black.woff2) format("woff2");
 }
-
+@font-face {
+	font-family: "Holland";
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url(/fonts/Holland.woff2) format("woff2");
+  }
+  @font-face {
+	font-family: "Ordinary S Demo";
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url(/fonts/OrdinarySDemoRegular.ttf) format("ttf");
+  }
 /* For the circle text */
  *,
 *::after,

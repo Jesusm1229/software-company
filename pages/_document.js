@@ -65,6 +65,22 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* Holland */}
+        <link
+          rel="preload"
+          href="/fonts/Holland.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {/* Ordinary */}
+        <link
+          rel="preload"
+          href="/fonts/OrdinarySDemoRegular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
 
         {/* Tailwind CSS Typography  */}
         <link

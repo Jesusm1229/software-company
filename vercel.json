@@ -64,7 +64,25 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },      
+    },
+    {
+      "source": "/fonts/Holland.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },  
+    {
+      "source": "/fonts/OrdinarySDemoRegular.ttf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },        
     {
       "source": "/fonts/Montserrat.woff2",
       "headers": [
