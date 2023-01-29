@@ -20,6 +20,7 @@ import { FiDownload } from "react-icons/fi";
 import Ripples from "react-ripples";
 import Image from "next/image";
 import { gsap } from "gsap/dist/gsap";
+import Exp_Study from "../components/Exp_Study";
 
 export default function About({ about }) {
   const app = useRef();
@@ -43,9 +44,9 @@ export default function About({ about }) {
         keywords={pageMeta.about.keywords}
       />
 
-      <section className="pageTop">
-        <div className="relative dark:bg-dark Primary dark:text-gray-100">
-          <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
+      <section className="pageTop py-20">
+        <div className=" dark:bg-dark Primary dark:text-gray-100">
+          <div className="relative max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"
               whileInView="visible"
@@ -132,6 +133,9 @@ export default function About({ about }) {
 
         {/*  <Support /> */}
       </section>
+      <div className="pt-20 w-full">
+        <Exp_Study />
+      </div>
     </>
   );
 }
