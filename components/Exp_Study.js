@@ -14,7 +14,7 @@ import socialMedia from "../content/socialMedia";
 export default function Exp_Study() {
   return (
     <>
-      <section className="print:hidden px-20">
+      <section className="print:hidden xs:px-20">
         {" "}
         {/* /* text-gray-600 dark:text-gray-400/50 font-inter mb-20  */}
         {/* <motion.div
