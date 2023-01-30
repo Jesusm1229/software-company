@@ -42,7 +42,7 @@ function Experience_StudySection({ utility }) {
             return (
               <li class="mb-5  ">
                 <div class="flex group items-center ">
-                  <div class="bg-sky-500 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
+                  <div class="bg-sky-200 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
                   <div class="flex-1 ml-4 z-10 font-medium">
                     <div class=" order-1 space-y-2  rounded-lg shadow-only transition-ease lg:w-12/12 px-6 py-4">
                       <h3 class="mb-3 text-white text-2xl">{item.name}</h3>
