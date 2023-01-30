@@ -24,7 +24,7 @@ import {
   BsGithub,
 } from "react-icons/bs";
 import { FaGitAlt, FaSearch } from "react-icons/fa";
-import SVG from "../components/SVG";
+/* import SVG from "../components/SVG"; */
 import { Utilities } from "../lib/types";
 
 const utilities = {
@@ -37,12 +37,22 @@ const utilities = {
       title: "Experience",
       data: [
         {
-          name: "VSCode",
+          name: "Legendary Cargo Inspectors, C.A",
+          type: "Full Time Job",
+          period: "2022",
           description: "Primary Code editor",
-          Icon: SiVisualstudiocode,
-          link: "https://code.visualstudio.com/download",
+          /*       Icon: SiVisualstudiocode,
+          link: "https://code.visualstudio.com/download", */
         },
         {
+          name: "Legendary Cargo Inspectors, C.A",
+          type: "Full Time Job",
+          period: "2022",
+          description: "Primary Code editor",
+          /*       Icon: SiVisualstudiocode,
+          link: "https://code.visualstudio.com/download", */
+        },
+        /*  {
           name: "Sublime Text",
           description: "Text editor",
           Icon: SiSublimetext,
@@ -77,7 +87,7 @@ const utilities = {
           description: "Secondary Browser",
           Icon: SiMicrosoftedge,
           link: "https://www.microsoft.com/en-us/edge",
-        },
+        }, */
       ],
     },
 
@@ -85,12 +95,18 @@ const utilities = {
       title: "Education",
       data: [
         {
-          name: "Bitwarden",
-          description: "Password Manager to manage all the login",
-          Icon: SiBitwarden,
-          link: "https://bitwarden.com/",
+          name: "Bachelor Computer Engineer",
+          type: "Universidad de Oriente",
+          period: "2022",
+          description: "Primary Code editor",
         },
         {
+          name: "Bachelor  Engineer",
+          type: "Universidad de Oriente",
+          period: "2022",
+          description: "Primary Code editor",
+        },
+        /*     {
           name: "Vercel",
           description: "Hosting for Projects",
           Icon: SiVercel,
@@ -224,7 +240,7 @@ const utilities = {
           description: "Screenshot Software",
           Icon: SVG.Flameshot,
           link: "https://flameshot.org/",
-        },
+        }, */
       ],
     },
   ],
