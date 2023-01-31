@@ -6,13 +6,13 @@ export function DarkModeProvider({ children }) {
 
   function updateTheme() {
     const currentTheme = localStorage.getItem("isDarkMode") || "false";
-    if (currentTheme === "true") {
-      document.body.classList.add("dark");
-      setDarkMode(true);
-    } else {
+    /*  if (currentTheme === "true") { */
+    document.body.classList.add("dark");
+    setDarkMode(true);
+    /*   } else {
       document.body.classList.remove("dark");
       setDarkMode(false);
-    }
+    } */
   }
   useEffect(() => {
     updateTheme();

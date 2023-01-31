@@ -123,8 +123,9 @@ export default function TopNavbar() {
         </motion.div>
       </motion.nav>
 
+      <motion.div></motion.div>
       {/* DarkMode Container */}
-      <motion.div
+      {/* <motion.div
         initial="hidden"
         animate="visible"
         variants={popUp}
@@ -136,7 +137,7 @@ export default function TopNavbar() {
           onChange={changeDarkMode}
           size={24}
         />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

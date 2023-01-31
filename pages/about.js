@@ -45,7 +45,7 @@ export default function About({ about }) {
       />
 
       <section className="pageTop py-10 md:py-20">
-        <div className=" dark:bg-dark Primary dark:text-gray-100">
+        <div className=" bg-darkPrimary text-gray-100">
           <div className="relative max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"
@@ -128,7 +128,7 @@ export default function About({ about }) {
                     </motion.h1> */}
                     <motion.p
                       variants={opacityVariant}
-                      className="font-medium text-base md:text-sm lg:text-xl text-[#383838] dark:text-white"
+                      className="font-medium text-base md:text-sm lg:text-xl text-white"
                     >
                       React Developer, Competitive Programmer
                     </motion.p>
@@ -136,7 +136,7 @@ export default function About({ about }) {
 
                   <motion.p
                     variants={opacityVariant}
-                    className=" text-[#474747] dark:text-gray-300 font-medium text-lg md:text-base text-center"
+                    className=" text-gray-300 font-medium text-lg md:text-base text-center"
                   >
                     I am currently pursuing my Bachelor Degree in Computer
                     Science. I can code in Python, C, C++, etc.

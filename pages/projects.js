@@ -32,12 +32,12 @@ export default function Projects({ projects }) {
           className="grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%]"
         >
           <AnimatePresence>
-            {projects &&
+            {/* {projects &&
               projects.map((project, index) => {
                 if (project.name === "" && project.githubURL === "")
                   return null;
                 return <Project key={index} project={project} />;
-              })}
+              })} */}
           </AnimatePresence>
         </AnimatedDiv>
       </section>
