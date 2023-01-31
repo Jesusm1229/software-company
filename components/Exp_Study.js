@@ -31,7 +31,7 @@ export default function Exp_Study() {
 function Experience_StudySection({ utility }) {
   return (
     <div className="col-span-1 py-5 container mx-auto px-5">
-      <h3 class="mb-3 font-bold text-white text-2xl">{utility.title}</h3>
+      <h3 class="mb-3 font-bold text-gray-100 text-2xl">{utility.title}</h3>
       <div class="relative">
         <div
           class="border-r-4 border-r-cyan-200 opacity-50 absolute h-full top-0"
@@ -43,18 +43,18 @@ function Experience_StudySection({ utility }) {
               <li class="mb-5  ">
                 <div class="flex group items-center ">
                   <div class="bg-sky-200 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
-                  <div class="flex-1 ml-4 z-10 font-medium">
+                  <div class="flex-1  ml-4 z-10 font-medium">
                     <div class=" order-1 space-y-2  rounded-lg shadow-only transition-ease lg:w-12/12 px-6 py-4">
-                      <h3 class="mb-3 text-white text-2xl">{item.name}</h3>
-                      <p class="pb-4 text-sm text-gray-100">
-                        {item.type} {item.period}
+                      <h3 class="mb-3 text-gray-200 font-bold text-xl">
+                        {item.name}
+                      </h3>
+                      <p className=" pb-2 text-sm text-gray-200 uppercase">
+                        {item.type}
+                        {" - "} {item.period}
                       </p>
-                      <hr />
+                      <hr className="" />
                       <p class="text-sm font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
-                        The education should be very interactual. Ut tincidunt
-                        est ac dolor aliquam sodales. Phasellus sed mauris
-                        hendrerit, laoreet sem in, lobortis mauris hendrerit
-                        ante.
+                        {item.description}
                       </p>
                     </div>
                   </div>

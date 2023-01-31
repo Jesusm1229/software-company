@@ -44,7 +44,7 @@ export default function About({ about }) {
         keywords={pageMeta.about.keywords}
       />
 
-      <section className="pageTop py-20">
+      <section className="pageTop py-10 md:py-20">
         <div className=" dark:bg-dark Primary dark:text-gray-100">
           <div className="relative max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
@@ -52,16 +52,13 @@ export default function About({ about }) {
               whileInView="visible"
               variants={FadeContainer}
               viewport={{ once: true }}
-              className="grid place-content-center min-h-screen"
+              className="grid place-content-center h-min md:min-h-screen"
             >
-              <div className="w-full relative mx-auto flex flex-col items-start gap-10">
+              <div className="w-full relative mx-auto flex flex-col items-center md:gap-10">
                 <motion.div
                   variants={popUp}
-                  className="relative w-3/5 h-screen xs:w-screen xs:h-screen flex justify-center items-center rounded-full p-3 "
+                  className="relative w-3/5 h-min xs:w-screen  flex justify-center items-center rounded-full p-3 "
                 >
-                  {/*  /* A component that I created to handle images. It is not important for this
-                  question.  */}
-
                   <div className="flex flex-col gap-10">
                     <div className="relative flex flex-row-reverse h-full ">
                       <Image
@@ -73,7 +70,7 @@ export default function About({ about }) {
                         quality={75}
                         priority={true}
                       />
-                      <svg className="-mr-28">
+                      <svg className="hidden -mr-28 lg:block">
                         <ellipse
                           opacity="0.5"
                           rx="140"
@@ -85,7 +82,7 @@ export default function About({ about }) {
                           stroke-width="3"
                         />
                       </svg>
-                      <svg className="-mr-20">
+                      <svg className=" hidden -mr-20 md:flex">
                         <ellipse
                           opacity="0.3"
                           rx="120"
@@ -118,21 +115,41 @@ export default function About({ about }) {
                         </motion.h1>
                       </div>
                     </div>
+                  </div>
+                </motion.div>
+
+                <div className="w-full flex flex-col p-5 gap-3 select-none text-center ">
+                  <div className="flex flex-col gap-1">
+                    {/* <motion.h1
+                      variants={opacityVariant}
+                      className="text-5xl lg:text-6xl font-bold font-sarina"
+                    >
+                      Jatin Sharma
+                    </motion.h1> */}
                     <motion.p
                       variants={opacityVariant}
-                      className="pt-6 font-medium text-xs md:text-sm lg:text-lg text-[#383838] dark:text-gray-200"
+                      className="font-medium text-base md:text-sm lg:text-xl text-[#383838] dark:text-white"
                     >
                       React Developer, Competitive Programmer
                     </motion.p>
                   </div>
-                </motion.div>
+
+                  <motion.p
+                    variants={opacityVariant}
+                    className=" text-[#474747] dark:text-gray-300 font-medium text-lg md:text-base text-center"
+                  >
+                    I am currently pursuing my Bachelor Degree in Computer
+                    Science. I can code in Python, C, C++, etc.
+                  </motion.p>
+                </div>
               </div>
             </motion.section>
           </div>
         </div>
-
-        {/*  <Support /> */}
       </section>
+
+      {/*  <Support /> */}
+
       <div className="pt-20 w-full">
         <Exp_Study />
       </div>

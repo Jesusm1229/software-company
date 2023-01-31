@@ -329,7 +329,7 @@
 	opacity: 0;
 }
 
-.content p {
+ .content p {
 	font-size: 2rem;
 	font-size: clamp(1.25rem,6vw,2.15rem);
 	line-height: 1.25;
@@ -337,7 +337,7 @@
 	margin: 0;
 	pointer-events: none;
 	will-change: transform;
-}
+} 
 
 .circles {
 	pointer-events: none;
@@ -642,9 +642,9 @@ code > .line::before {
 	button {
 	  @apply outline-none;
 	}
-	hr {
-	  @apply !mx-auto !w-1/2 h-0.5 !bg-gray-700 dark:!bg-gray-300 border-0 !rounded-full;
-	}
+	 hr {
+	  @apply !mr-auto !w-1/2 h-px !bg-gray-700 dark:!bg-gray-300 border-0 !rounded-full;
+	} 
   
 	table {
 	  @apply !border-collapse text-left;

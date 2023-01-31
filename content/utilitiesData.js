@@ -40,7 +40,7 @@ const utilities = {
           name: "Legendary Cargo Inspectors, C.A",
           type: "Full Time Job",
           period: "2022",
-          description: "Primary Code editor",
+          description: "Lorem ipsum",
           /*       Icon: SiVisualstudiocode,
           link: "https://code.visualstudio.com/download", */
         },
@@ -48,7 +48,7 @@ const utilities = {
           name: "Legendary Cargo Inspectors, C.A",
           type: "Full Time Job",
           period: "2022",
-          description: "Primary Code editor",
+          description: "Lorem ipsum",
           /*       Icon: SiVisualstudiocode,
           link: "https://code.visualstudio.com/download", */
         },
@@ -96,15 +96,15 @@ const utilities = {
       data: [
         {
           name: "Bachelor Computer Engineer",
-          type: "Universidad de Oriente",
+          type: "UNIVERSIDAD DE ORIENTE",
           period: "2022",
-          description: "Primary Code editor",
+          description: "Lorem ipsum",
         },
         {
           name: "Bachelor  Engineer",
           type: "Universidad de Oriente",
           period: "2022",
-          description: "Primary Code editor",
+          description: "Lorem ipsum",
         },
         /*     {
           name: "Vercel",
