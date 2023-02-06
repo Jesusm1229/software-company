@@ -17,29 +17,33 @@ export default function Projects({ projects }) {
         previewImage={pageMeta.projects.image}
         keywords={pageMeta.projects.keywords}
       />
-      <section className="pageTop">
-        <PageTop pageTitle="Projects">
+      <section
+        className="velo-slides"
+        data-velo-slider="on"
+        data-velo-theme="light"
+      >
+        {/* <PageTop pageTitle="Projects">
           I've been making various types of projects some of them were basics
           and some of them were complicated. So far I've made{" "}
           <span className="font-bold text-gray-600 dark:text-gray-200">
             {projects.length}
           </span>{" "}
           projects.
-        </PageTop>
+        </PageTop> */}
 
-        <AnimatedDiv
+        {/* <AnimatedDiv
           variants={FadeContainer}
           className="grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%]"
         >
           <AnimatePresence>
-            {/* {projects &&
+            {projects &&
               projects.map((project, index) => {
                 if (project.name === "" && project.githubURL === "")
                   return null;
                 return <Project key={index} project={project} />;
-              })} */}
+              })}
           </AnimatePresence>
-        </AnimatedDiv>
+        </AnimatedDiv> */}
       </section>
     </>
   );

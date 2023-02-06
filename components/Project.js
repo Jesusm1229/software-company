@@ -34,29 +34,25 @@ export default function Project({ project }) {
         </div>
 
         <div className="mt-auto p-2 w-fit flex items-center gap-4">
-          <Link href={project.githubURL} passHref>
-            <a
-              title="Source Code on GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.githubURL}
-              className="text-gray-500 hover:text-black dark:hover:text-white"
-            >
-              <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-            </a>
+          <Link
+            href={project.githubURL}
+            title="Source Code on GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-black dark:hover:text-white"
+          >
+            <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
           </Link>
 
           {project.previewURL && (
-            <Link href={project.previewURL} passHref>
-              <a
-                title="Live Preview"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={project.previewURL}
-                className="text-gray-500 hover:text-black dark:hover:text-white"
-              >
-                <MdOutlineLink className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-              </a>
+            <Link
+              href={project.previewURL}
+              title="Live Preview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-black dark:hover:text-white"
+            >
+              <MdOutlineLink className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
             </Link>
           )}
         </div>
