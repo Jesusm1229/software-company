@@ -571,6 +571,21 @@ code > .line::before {
   grid-template-rows: 1fr;
 }
 
+/*Velo-Slide for project section*/
+.oh{
+    display: block;
+   
+    padding: 0.02em 0;
+  }
+    
+  .oh span{
+    display: inline-block;
+    /* transform:translate3d(0,140%,0); */
+    opacity: 1;    
+  }
+  
+ 
+
 /* Layers Components or the custom class extends with tailwind */
 @layer components {
 	.bottom_nav_icon {
@@ -634,6 +649,7 @@ code > .line::before {
 	  @apply !w-full dark:text-neutral-400 my-5 font-medium;
 	}
   }
+
   
   @layer base {
 	body {

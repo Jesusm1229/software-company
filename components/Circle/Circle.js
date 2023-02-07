@@ -295,7 +295,7 @@ export default function Circle({ setShowQR, showQR }) {
       ref={app}
       className="App body loading demo-3"
     >
-      <main>
+      <div className="main">
         <svg
           className="circles"
           width="100%"
@@ -399,7 +399,7 @@ export default function Circle({ setShowQR, showQR }) {
             CONTACT ME
           </span>
         </button>
-      </main>
+      </div>
     </motion.div>
   );
 }

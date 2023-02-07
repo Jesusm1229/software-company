@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import Layout from "../layout/Layout";
+// import function to register Swiper custom elements
 
 /* Progressbar Configurations */
 NProgress.configure({
@@ -54,6 +55,18 @@ function MyApp({ Component, pageProps }) {
 
     script.src =
       "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src =
+      "https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js";
 
     document.body.appendChild(script);
     return () => {
