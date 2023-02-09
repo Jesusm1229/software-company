@@ -24,7 +24,6 @@ export default function Circle({ setShowQR, showQR }) {
    */
   //app para gsap
   const app = useRef();
-
   let ctxButton;
   let start;
 

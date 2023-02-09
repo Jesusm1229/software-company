@@ -2,10 +2,38 @@ import { BsGithub } from "react-icons/bs";
 import { MdOutlineLink } from "react-icons/md";
 import Link from "next/link";
 import OgImage from "../components/OgImage"; // =========> not created yet
+import {
+  fromLeftVariant,
+  opacityVariant,
+} from "../content/FramerMotionVariants"; // ===> not created yet
+import AnimatedHeading from "./FramerMotion/AnimatedHeading";
+import AnimatedText from "./FramerMotion/AnimatedText";
 
 export default function Project({ project }) {
   return (
-    /*   <div className="card">
+    <div className="max-w-xl w-full h-screen justify-center  flex flex-col gap-3 py-5 select-none mb-10">
+      <div class="w-full h-screen">
+        <img
+          src="https://images.unsplash.com/photo-1459478309853-2c33a60058e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          class="object-cover w-full h-full"
+          alt="colorful leafs"
+        />
+      </div>
+      <AnimatedHeading
+        variants={fromLeftVariant}
+        className={`text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200 `}
+      >
+        {project.name}
+      </AnimatedHeading>
+      <AnimatedText
+        variants={opacityVariant}
+        className="font-medium text-lg text-gray-400 tracking-wider"
+      >
+        {project.description}
+      </AnimatedText>
+    </div>
+
+    /*<div className="card">
       <OgImage
         src={project.coverURL}
         alt={project.name}
@@ -57,7 +85,7 @@ export default function Project({ project }) {
           )}
         </div>
       </div>
-    </div> */
+    </div>*/
 
     /*  <div className="velo-slide">
       <section class="velo-slide">
@@ -103,59 +131,5 @@ export default function Project({ project }) {
         </header>
       </section>
     </div> */
-
-    <div className="card">
-      {/*  <OgImage
-        src={project.coverURL}
-        alt={project.name}
-        darkSrc={project.darkCoverURL}
-      /> */}
-
-      <div className="flex flex-col justify-start gap-3">
-        <h1 className="font-bold capitalize text-neutral-900 dark:text-neutral-200">
-          {project.name}
-        </h1>
-        <p className="text-sm text-gray-400 dark:text-neutral-400 truncate-2">
-          {project.description}
-        </p>
-
-        <div className="flex items-center gap-1 flex-wrap">
-          {project.tools.map((tool, index) => {
-            return (
-              <span
-                key={`${tool}-${index}`}
-                className="bg-gray-100 dark:bg-darkPrimary text-gray-500 rounded px-2 py-1 text-xs"
-              >
-                {tool}
-              </span>
-            );
-          })}
-        </div>
-
-        <div className="mt-auto p-2 w-fit flex items-center gap-4">
-          <Link
-            href={project.githubURL}
-            title="Source Code on GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-black dark:hover:text-white"
-          >
-            <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-          </Link>
-
-          {project.previewURL && (
-            <Link
-              href={project.previewURL}
-              title="Live Preview"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black dark:hover:text-white"
-            >
-              <MdOutlineLink className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
   );
 }

@@ -12,7 +12,6 @@ import {
   popUp,
 } from "../content/FramerMotionVariants";
 import pageMeta from "../content/meta";
-import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper";
@@ -21,12 +20,58 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+} from "framer-motion";
 
 import styles from "../styles/Project.module.css";
 
 import { Mousewheel, Pagination } from "swiper";
+import ViewMoreButton from "../components/Buttons/ViewMoreButton";
+
+function useParallax(value, distance) {
+  return useTransform(useMotionValue(value), [0, 1], [-distance, distance]);
+}
+
+function Image({ id }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
+
+  return (
+    <section
+      className={`snap-center h-screen flex justify-center items-center relative bg-[color:var(--background)] color-[color:var(--accent)] ${styles.section}`}
+    >
+      <div
+        className={`relative m-5 overflow-hidden w-80 h-96 max-h-[90vh] bg-slate-300 `}
+        ref={ref}
+      >
+        <img
+          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+          src={`/${id}.jpg`}
+          alt="A London skyscraper"
+        />
+      </div>
+      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
+    </section>
+  );
+}
 
 export default function Projects({ projects }) {
+  const divRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    container: divRef,
+  });
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <>
       <Metadata
@@ -35,16 +80,26 @@ export default function Projects({ projects }) {
         previewImage={pageMeta.projects.image}
         keywords={pageMeta.projects.keywords}
       />
+
+      <div
+        className={`snap-mandatory snap-y h-screen overflow-scroll m-0 p-0 bg-[color:var(--background)] color-[color:var(--accent)] ${styles.body}`}
+        ref={divRef}
+      >
+        {[1, 2, 3, 4, 5].map((image) => (
+          <Image id={image} />
+        ))}
+      </div>
+      <motion.div
+        className={`bg-[color:var(--accent)] ${styles.progress}`}
+        style={{ scaleX }}
+      />
+
       {/* max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto */}
 
-      <div className="relative dark:bg-darkPrimary dark:text-gray-100 ">
+      {/*    <div className="relative dark:bg-darkPrimary dark:text-gray-100 ">
         <section className={styles.velo_slides}>
-          <section class={styles.velo_slide}>
-            <div class={styles._bg}>
-              <span class="border">
-                <span></span>
-              </span>
-            </div>
+          <section className="h-screen z-4">
+            <div class={styles._bg}></div>
             <header class={styles._header}>
               <h3 class={styles._title}>
                 <span class="oh">
@@ -52,13 +107,7 @@ export default function Projects({ projects }) {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vestibulum maximus libero nisi, eu mollis massa elementum
                     vel. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Vestibulum lobortis, libero sit amet cursus porttitor,
-                    ex odio ullamcorper nunc, sit amet ornare lectus leo in
-                    elit. Aenean urna mauris, ornare iaculis lacus nec, faucibus
-                    lacinia eros. Phasellus rutrum tortor elit, lobortis
-                    sagittis metus tempus sit amet. Fusce sed faucibus tortor.
-                    Curabitur vel lectus viverra, consequat dui lobortis, congue
-                    tellus.{" "}
+                    elit. .{" "}
                     <span className="font-bold text-gray-600 dark:text-gray-200 ">
                       {projects.length}+
                     </span>{" "}
@@ -67,6 +116,7 @@ export default function Projects({ projects }) {
                 </span>
               </h3>
 
+              <ViewMoreButton />
               <span class="velo-slide__btn">
                 <a class="btn-draw btn--white" href="#">
                   <span class="btn-draw__text">
@@ -75,28 +125,30 @@ export default function Projects({ projects }) {
                 </a>
               </span>
             </header>
-            Section 1
           </section>
           <section class="w-full h-screen bg-blue-200">Section 2</section>
           <section class="w-full h-screen bg-green-200">Section 3</section>
           <section class="w-full h-screen bg-indigo-200">Section 4</section>
           <section class="w-full h-screen bg-yellow-200">Section 5</section>
         </section>
-      </div>
+      </div> */}
 
-      {/*       <section className="pageTop">
-         <PageTop pageTitle="Projects">
+      {/*   <section className=" bg-gradient-to-r from-cyan-500 to-blue-500 pageTop relative min-h-full w-full">
+        <PageTop pageTitle="Projects" className="">
           I've been making various types of projects some of them were basics
           and some of them were complicated. So far I've made{" "}
           <span className="font-bold text-gray-600 dark:text-gray-200">
             {projects.length}
           </span>{" "}
           projects.
-        </PageTop> 
+        </PageTop>
+         <ViewMoreButton />
+      </section>
 
+      <section className=" relative min-h-full w-full">
         <AnimatedDiv
           variants={FadeContainer}
-          className="grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%]"
+          className="grid grid-cols-1 h-screen gap-4 mx-auto md:ml-[20%] xl:ml-[24%]"
         >
           <AnimatePresence>
             {projects &&
@@ -107,6 +159,22 @@ export default function Projects({ projects }) {
               })}
           </AnimatePresence>
         </AnimatedDiv>
+      </section> */}
+
+      {/*       <section className="">
+        <section class="w-full h-screen bg-blue-200">Section 1</section>
+        <section class="w-full h-screen bg-blue-200">Section 2</section>
+        <motion.div
+          initial={{ zIndex: 1 }}
+          whileHover={{ zIndex: 100 }}
+          whileTap={{ zIndex: 100, scale: 5.2, opacity: 0.5 }}
+          style={{ width: "100vw", height: "100vh", background: "purple" }}
+        >
+          3
+        </motion.div>
+        <section class="w-full h-screen bg-green-200">Section 3</section>
+        <section class="w-full h-screen bg-indigo-200">Section 4</section>
+        <section class="w-full h-screen bg-yellow-200">Section 5</section>
       </section> */}
     </>
   );

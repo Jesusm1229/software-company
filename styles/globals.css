@@ -82,6 +82,22 @@
 
  :root {
 	font-size: 16px;
+
+	--black: #000000;
+    --ash-black: #222;
+    --white: #fafafa;
+    --sky: #00ccff;
+    --green: #22dddd;
+    --blue: #1300ff;
+    --dusk: #6600ff;
+    --purple: #9900ff;
+    --pink: #ff0066;
+    --red: #fe0222;
+    --orange: #fd7702;
+    --yellow: #ffbb00;
+
+	--background: var(--pink);
+    --accent: var(--white);
 }
 
  .body {	
@@ -110,6 +126,21 @@
 	font-family: tenon, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--black: #000000;
+	--ash-black: #222;
+	--white: #fafafa;
+	--sky: #00ccff;
+	--green: #22dddd;
+	--blue: #1300ff;
+	--dusk: #6600ff;
+	--purple: #9900ff;
+	--pink: #ff0066;
+	--red: #fe0222;
+	--orange: #fd7702;
+	--yellow: #ffbb00;
+  
+	--background: var(--ash-black);
+	--accent: var(--white);
 }
 
 .demo-2 {
@@ -444,6 +475,7 @@ body,
 html {
   overflow-x: hidden;
   scroll-behavior: auto;
+  scroll-snap-type: y mandatory;
 }
 body::-webkit-scrollbar {
   width: 1px;
@@ -571,18 +603,7 @@ code > .line::before {
   grid-template-rows: 1fr;
 }
 
-/*Velo-Slide for project section*/
-.oh{
-    display: block;
-   
-    padding: 0.02em 0;
-  }
-    
-  .oh span{
-    display: inline-block;
-    /* transform:translate3d(0,140%,0); */
-    opacity: 1;    
-  }
+
   
  
 
@@ -645,6 +666,9 @@ code > .line::before {
 	.card {
 	  @apply bg-white dark:bg-darkSecondary p-5 sm:p-10 flex flex-col sm:flex-row gap-8 items-center max-w-2xl shadow-md rounded-lg mt-[30%] sm:mt-8 transition-all;
 	}
+	.newCard{
+		@apply bg-white dark:bg-darkSecondary mt-[44px] md:mt-[60px] max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl relative mx-auto p-4 mb-10 text-neutral-900 dark:text-neutral-200;
+	}
 	.blog-container {
 	  @apply !w-full dark:text-neutral-400 my-5 font-medium;
 	}
@@ -700,11 +724,28 @@ code > .line::before {
   }
   
   @layer utilities {
+
+	.snap {
+		scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
+	  }
+	  .snap-y {
+		--scroll-snap-direction: y;
+	  }
+	  .snap-mandatory {
+		--scroll-snap-constraint: mandatory;
+	  }
+	  .snap-start {
+		scroll-snap-align: start;
+	  }
+
+
 	/* Hiding the arrows in the input number */
 	input[type="number"]::-webkit-inner-spin-button,
 	input[type="number"]::-webkit-outer-spin-button {
 	  -webkit-appearance: none;
 	  margin: 0;
 	}
+
+	
   }
   
