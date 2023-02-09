@@ -117,7 +117,7 @@
    */
     /* margin: 0;
     padding: 0; */
-    background-color: var(--background);
+   /*  background-color: var(--background); */
     color: var(--accent);
 
    /*  font-family: sofia-pro, sans-serif;
@@ -191,14 +191,14 @@
   }
   
   .h2 {
-    margin: 0;
-    color: var(--accent);
+  /*   margin: 0;
+    color: var(--accent); */
     left: calc(50% + 130px);
-    font-size: 56px;
+    /* font-size: 56px;
     font-weight: 700;
     letter-spacing: -3px;
     line-height: 1.2;
-    position: absolute;
+    position: absolute; */
   }
   
   .section {  

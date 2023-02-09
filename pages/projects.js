@@ -34,21 +34,43 @@ import { Mousewheel, Pagination } from "swiper";
 import ViewMoreButton from "../components/Buttons/ViewMoreButton";
 
 function useParallax(value, distance) {
-  return useTransform(useMotionValue(value), [0, 1], [-distance, distance]);
+  const x = useMotionValue(value);
+  return useTransform(x.get(), [0, 1], [-distance, distance]);
 }
 
-function Image({ id }) {
+const hue = (h) => `hsl(${h}, 100%, 50%)`;
+
+function Image({ id, hueA, hueB }) {
+  const background = `${hueA}`;
+  const previus = `${hueB}`;
+
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 100);
 
   return (
-    <section
-      className={`snap-center h-screen flex justify-center items-center relative bg-[color:var(--background)] color-[color:var(--accent)] ${styles.section}`}
+    <motion.div
+      className={`snap-center h-screen flex justify-center items-center relative  color-[color:var(--accent)] ${styles.section}`}
+      ref={ref}
+      /* animate={{ backgroundColor: background }} */
+      initial={{ backgroundColor: previus }}
+      whileInView={{ backgroundColor: background }}
+      /* viewport={{ once: true }} */
+      /*  viewport={{ root: ref }} */
+      exit={{
+        opacity: 0,
+        backgroundColor: "rgba(0,0,0,0)",
+        transition: { backgroundColor: { delay: 0 }, opacity: { delay: 0.1 } },
+      }}
+      transition={{
+        duration: 2,
+        delay: 0.5,
+        /*  repeat: Infinity,
+        repeatType: "reverse", */
+      }}
     >
       <div
         className={`relative m-5 overflow-hidden w-80 h-96 max-h-[90vh] bg-slate-300 `}
-        ref={ref}
       >
         <img
           className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
@@ -56,8 +78,11 @@ function Image({ id }) {
           alt="A London skyscraper"
         />
       </div>
-      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
-    </section>
+      <motion.h1
+        style={{ y }}
+        className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]"
+      >{`#00${id}`}</motion.h1>
+    </motion.div>
   );
 }
 
@@ -72,6 +97,14 @@ export default function Projects({ projects }) {
     restDelta: 0.001,
   });
 
+  const items = [
+    [1, "#0af", "rgba(0,0,0,0)"],
+    [2, "#fa0", "#0af"],
+    [3, "#ef2121", "#fa0"],
+    [4, "#85df5e", "#0ef2121"],
+    [5, "#0af", "#fa0"],
+  ];
+
   return (
     <>
       <Metadata
@@ -81,18 +114,19 @@ export default function Projects({ projects }) {
         keywords={pageMeta.projects.keywords}
       />
 
-      <div
-        className={`snap-mandatory snap-y h-screen overflow-scroll m-0 p-0 bg-[color:var(--background)] color-[color:var(--accent)] ${styles.body}`}
+      {/* bg-[color:var(--background)] ${styles.body}*/}
+      <motion.div
+        className={`snap-mandatory snap-y h-screen min-h-screen overflow-scroll m-0 p-0  text-[color:var(--accent)] `}
         ref={divRef}
       >
-        {[1, 2, 3, 4, 5].map((image) => (
-          <Image id={image} />
+        {items.map(([image, hueA, hueB]) => (
+          <Image id={image} hueA={hueA} hueB={hueB} />
         ))}
-      </div>
-      <motion.div
-        className={`bg-[color:var(--accent)] ${styles.progress}`}
-        style={{ scaleX }}
-      />
+        <motion.div
+          className={`bg-[color:var(--accent)] ${styles.progress}`}
+          style={{ scaleX }}
+        />
+      </motion.div>
 
       {/* max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto */}
 

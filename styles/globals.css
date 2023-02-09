@@ -121,11 +121,13 @@
 	--color-button: #d6ae7c;
 	--color-text-button: #1d1812;
 	--dim-button: 90px;
-	color: var(--color-text);
+	 color: var(--color-text);
 	background-color: var(--color-bg);
-	font-family: tenon, sans-serif;
+	/*font-family: tenon, sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale; */
+
+
 	--black: #000000;
 	--ash-black: #222;
 	--white: #fafafa;
