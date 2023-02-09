@@ -727,19 +727,7 @@ code > .line::before {
   
   @layer utilities {
 
-	.snap {
-		scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
-	  }
-	  .snap-y {
-		--scroll-snap-direction: y;
-	  }
-	  .snap-mandatory {
-		--scroll-snap-constraint: mandatory;
-	  }
-	  .snap-start {
-		scroll-snap-align: start;
-	  }
-
+	
 
 	/* Hiding the arrows in the input number */
 	input[type="number"]::-webkit-inner-spin-button,

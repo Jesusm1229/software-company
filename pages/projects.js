@@ -49,40 +49,43 @@ function Image({ id, hueA, hueB }) {
   const y = useParallax(scrollYProgress, 100);
 
   return (
-    <motion.div
-      className={`snap-center h-screen flex justify-center items-center relative  color-[color:var(--accent)] ${styles.section}`}
-      ref={ref}
-      /* animate={{ backgroundColor: background }} */
-      initial={{ backgroundColor: previus }}
-      whileInView={{ backgroundColor: background }}
-      /* viewport={{ once: true }} */
-      /*  viewport={{ root: ref }} */
-      exit={{
-        opacity: 0,
-        backgroundColor: "rgba(0,0,0,0)",
-        transition: { backgroundColor: { delay: 0 }, opacity: { delay: 0.1 } },
-      }}
-      transition={{
-        duration: 2,
-        delay: 0.5,
-        /*  repeat: Infinity,
+    <>
+      <motion.div
+        className={`snap-end w-screen h-screen shrink-0 flex justify-center items-center relative color-[color:var(--accent)] ${styles.section}`}
+        ref={ref}
+        /* animate={{ backgroundColor: background }} */
+        initial={{ backgroundColor: previus }}
+        whileInView={{ backgroundColor: background }}
+        /* viewport={{ once: true }} */
+        /*  viewport={{ root: ref }} */
+        exit={{
+          opacity: 0,
+          backgroundColor: "rgba(0,0,0,0)",
+          transition: {
+            backgroundColor: { delay: 0 },
+            opacity: { delay: 0.1 },
+          },
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.4,
+          /*  repeat: Infinity,
         repeatType: "reverse", */
-      }}
-    >
-      <div
-        className={`relative m-5 overflow-hidden w-80 h-96 max-h-[90vh] bg-slate-300 `}
+        }}
       >
-        <img
-          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
-          src={`/${id}.jpg`}
-          alt="A London skyscraper"
-        />
-      </div>
-      <motion.h1
-        style={{ y }}
-        className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]"
-      >{`#00${id}`}</motion.h1>
-    </motion.div>
+        <div className={`relative m-5  w-80 h-96 max-h-[90vh] bg-slate-300 `}>
+          <img
+            className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+            src={`/${id}.jpg`}
+            alt="A London skyscraper"
+          />
+        </div>
+        <motion.h1
+          style={{ y }}
+          className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]"
+        >{`#00${id}`}</motion.h1>
+      </motion.div>
+    </>
   );
 }
 
@@ -93,6 +96,7 @@ export default function Projects({ projects }) {
   });
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
+    /* It's a shorthand for `data-animate` and it's used to animate the element. */
     damping: 30,
     restDelta: 0.001,
   });
@@ -116,7 +120,7 @@ export default function Projects({ projects }) {
 
       {/* bg-[color:var(--background)] ${styles.body}*/}
       <motion.div
-        className={`snap-mandatory snap-y h-screen min-h-screen overflow-scroll m-0 p-0  text-[color:var(--accent)] `}
+        className={`snap-mandatory snap-y w-screen h-screen min-h-screen overflow-y-scroll overflow-x-hidden text-[color:var(--accent)] `}
         ref={divRef}
       >
         {items.map(([image, hueA, hueB]) => (
