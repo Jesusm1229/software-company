@@ -61,7 +61,7 @@ function Image({ id, hueA, hueB }) {
         ref={ref}
         style={{
           backgroundColor: isInView ? background : "rgba(0,0,0,0)",
-          transition: "all 1s cubic-bezier(1,.04,.58,.84) 1s",
+          transition: "all 1.5s cubic-bezier(.58,.04,.42,1.04) 1.3s",
         }}
         /* animate={{ backgroundColor: background }} */
         /* whileInView={{ backgroundColor: background }}
