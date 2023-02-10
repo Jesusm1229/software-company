@@ -57,31 +57,31 @@ function Image({ id, hueA, hueB }) {
   return (
     <>
       <motion.div
-        className={`snap-start  h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
+        className={`snap-center  h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
         ref={ref}
         style={{
           backgroundColor: isInView ? background : "rgba(0,0,0,0)",
-          transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+          transition: "all 1s cubic-bezier(1,.04,.58,.84) 1s",
         }}
         /* animate={{ backgroundColor: background }} */
         /* whileInView={{ backgroundColor: background }}
         initial={{ backgroundColor: previus }} */
         /* viewport={{ once: true }} */
         /* viewport={{ root: ref }} */
-        exit={{
+        /*   exit={{
           opacity: 0,
           backgroundColor: "#dadada",
           transition: {
             backgroundColor: { delay: 0 },
             opacity: { delay: 0.1 },
           },
-        }}
-        transition={{
+        }} */
+        /* transition={{
           duration: 0.7,
-          delay: 2,
-          /*  repeat: Infinity,
-        repeatType: "reverse", */
-        }}
+          delay: 1.5,
+          repeat: Infinity,
+        repeatType: "reverse", 
+        }} */
       >
         <div className={`relative m-5  w-80 h-96 max-h-[90vh] bg-slate-300 `}>
           <img
@@ -90,10 +90,8 @@ function Image({ id, hueA, hueB }) {
             alt="A London skyscraper"
           />
         </div>
-        <motion.h1
-          style={{ y }}
-          className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]"
-        >{`#00${id}`}</motion.h1>
+        {/* style={{ y }} */}
+        <motion.h1 className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]">{`#00${id}`}</motion.h1>
       </motion.div>
     </>
   );
