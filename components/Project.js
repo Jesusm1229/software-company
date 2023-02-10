@@ -79,7 +79,7 @@ export default function Project({ project }) {
         ref={ref}
         style={{
           backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
-          transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.8s",
+          transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s",
         }}
         /* animate={{ backgroundColor: background }} */
         /* whileInView={{ backgroundColor: background }}
