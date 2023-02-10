@@ -46,12 +46,12 @@ export default function Project({ project }) {
     tl.current = gsap
       .timeline({ paused: true })
       .from(".photo", { scale: 2 })
-      .to(
-        ".mask",
-        { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
-        0
-      )
-      .to(".mask", { scale: 0.95, duration: 0.15 });
+      .to(".mask", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 0.7,
+        ease: "expo",
+      })
+      .to(".mask", { scale: 0.95, duration: 0.5 });
   }, []);
 
   //Al entrar en botón
