@@ -122,6 +122,17 @@ export default function Projects({ projects }) {
         className={`snap-mandatory snap-y  h-screen min-h-screen overflow-y-scroll relative overflow-x-hidden text-[color:var(--accent)] `}
         ref={divRef}
       >
+        <section className="snap-center pageTop relative min-h-full w-full">
+          <PageTop pageTitle="Projects" className="">
+            I've been making various types of projects some of them were basics
+            and some of them were complicated. So far I've made{" "}
+            <span className="font-bold text-gray-600 dark:text-gray-200">
+              {projects.length}
+            </span>{" "}
+            projects.
+          </PageTop>
+          {/* <ViewMoreButton /> */}
+        </section>
         {projects &&
           projects
             .slice(0)
