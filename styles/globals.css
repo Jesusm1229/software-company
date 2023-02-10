@@ -477,14 +477,15 @@ body,
 html {
   overflow-x: hidden;
   scroll-behavior: auto;
-  scroll-snap-type: y mandatory;
+ 
 }
 body::-webkit-scrollbar {
   width: 1px;
 }
 
 /* Adding Scroll Margin for top */
-* {
+/*Give problems with project section*/
+/* * {
   scroll-margin-top: 80px;
 }
 @media screen and (max-width: 640px) {
@@ -494,8 +495,8 @@ body::-webkit-scrollbar {
   body::-webkit-scrollbar {
     width: 2px;
   }
-}
-
+} */
+/*-------------------------------------*/
 pre::-webkit-scrollbar {
   display: none;
 }

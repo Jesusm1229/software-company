@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Project from "../components/Project"; // ====> not created yet
 import Metadata from "../components/MetaData";
@@ -26,6 +26,7 @@ import {
   useSpring,
   useTransform,
   useMotionValue,
+  useInView,
 } from "framer-motion";
 
 import styles from "../styles/Project.module.css";
@@ -47,20 +48,29 @@ function Image({ id, hueA, hueB }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 100);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
 
   return (
     <>
       <motion.div
-        className={`snap-end w-screen h-screen shrink-0 flex justify-center items-center relative color-[color:var(--accent)] ${styles.section}`}
+        className={`snap-start  h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
         ref={ref}
+        style={{
+          backgroundColor: isInView ? background : "rgba(0,0,0,0)",
+          transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+        }}
         /* animate={{ backgroundColor: background }} */
-        initial={{ backgroundColor: previus }}
-        whileInView={{ backgroundColor: background }}
+        /* whileInView={{ backgroundColor: background }}
+        initial={{ backgroundColor: previus }} */
         /* viewport={{ once: true }} */
-        /*  viewport={{ root: ref }} */
+        /* viewport={{ root: ref }} */
         exit={{
           opacity: 0,
-          backgroundColor: "rgba(0,0,0,0)",
+          backgroundColor: "#dadada",
           transition: {
             backgroundColor: { delay: 0 },
             opacity: { delay: 0.1 },
@@ -68,7 +78,7 @@ function Image({ id, hueA, hueB }) {
         }}
         transition={{
           duration: 0.7,
-          delay: 0.4,
+          delay: 2,
           /*  repeat: Infinity,
         repeatType: "reverse", */
         }}
@@ -103,10 +113,10 @@ export default function Projects({ projects }) {
 
   const items = [
     [1, "#0af", "rgba(0,0,0,0)"],
-    [2, "#fa0", "#0af"],
-    [3, "#ef2121", "#fa0"],
-    [4, "#85df5e", "#0ef2121"],
-    [5, "#0af", "#fa0"],
+    [2, "#fa0", "rgba(0,0,0,0)"],
+    [3, "#85df5e", "rgba(0,0,0,0)"],
+    [4, "#fa0", "rgba(0,0,0,0)"],
+    [5, "#0af", "rgba(0,0,0,0)"],
   ];
 
   return (
@@ -120,7 +130,7 @@ export default function Projects({ projects }) {
 
       {/* bg-[color:var(--background)] ${styles.body}*/}
       <motion.div
-        className={`snap-mandatory snap-y w-screen h-screen min-h-screen overflow-y-scroll overflow-x-hidden text-[color:var(--accent)] `}
+        className={`snap-mandatory snap-y  h-screen min-h-screen overflow-y-scroll relative overflow-x-hidden text-[color:var(--accent)] `}
         ref={divRef}
       >
         {items.map(([image, hueA, hueB]) => (
