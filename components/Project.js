@@ -108,7 +108,7 @@ export default function Project({ project }) {
           <img
             className="photo absolute right-0 bottom-0 top-0 left-0 w-full h-full"
             src={project.coverURL}
-            alt="A London skyscraper"
+            alt={project.name}
           />
         </div>
         {/*  <ViewMoreButton /> */}

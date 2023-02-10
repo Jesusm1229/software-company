@@ -12,7 +12,6 @@ import {
   popUp,
 } from "../content/FramerMotionVariants";
 import pageMeta from "../content/meta";
-
 import {
   motion,
   useScroll,

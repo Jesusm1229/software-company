@@ -44,7 +44,7 @@ export default function About({ about }) {
         keywords={pageMeta.about.keywords}
       />
 
-      <section className="pageTop py-10 md:py-20">
+      <section className="pageTop py-10 md:py-2">
         <div className=" bg-darkPrimary text-gray-100">
           <div className="relative max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
