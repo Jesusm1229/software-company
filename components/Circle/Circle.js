@@ -24,13 +24,11 @@ export default function Circle({ setShowQR, showQR }) {
    */
   //app para gsap
   const app = useRef();
-  let ctxButton;
-  let start;
+  const ctxButton = useRef(null);
+  const start = useRef(null);
 
   //Al entrar en botón
   const onEnter = ({ currentTarget }) => {
-    ctxButton.kill();
-
     gsap.to(".enter__bg", {
       backgroundColor: "#dad4d1",
       scale: 1.2,
@@ -87,13 +85,11 @@ export default function Circle({ setShowQR, showQR }) {
       opacity: 0.5,
     });
 
-    ctxButton = gsap.context(() => {
-      gsap.to(".enter__bg", {
-        scale: 1.05,
-        repeat: -1,
-        yoyo: true,
-      });
-    }, app);
+    gsap.to(".enter__bg", {
+      scale: 1.05,
+      repeat: -1,
+      yoyo: true,
+    });
 
     //Circle-Text
     gsap.to(".circles__text", {
@@ -132,12 +128,12 @@ export default function Circle({ setShowQR, showQR }) {
     });
   };
 
-  function enter() {
+  /* function enter() {
     start.kill();
-  }
+  } */
 
   useEffect(() => {
-    start = gsap.context(() => {
+    start.current = gsap.context(() => {
       gsap
         .timeline()
         .set(".circles__text", { transformOrigin: "50% 50%" })
@@ -245,7 +241,7 @@ export default function Circle({ setShowQR, showQR }) {
       //gsap.to(circle.current, { rotation: 360 });
     }, app);
 
-    ctxButton = gsap.context(() => {
+    ctxButton.current = gsap.context(() => {
       gsap.to(".enter__bg", {
         scale: 1.05,
         repeat: -1,
@@ -255,7 +251,6 @@ export default function Circle({ setShowQR, showQR }) {
 
     return () => {
       ctx.revert();
-      ctxButton.revert();
     };
   });
 
