@@ -22,6 +22,18 @@ module.exports = {
         protocol: "https",
         hostname: "i.imgur.com",
       },
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
+      },
     ],
   },
   images: {
@@ -35,6 +47,7 @@ module.exports = {
       "activity-graph.herokuapp.com",
       "i.scdn.co",
       "images.unsplash.com",
+      "source.unsplash.com",
     ],
   },
 };

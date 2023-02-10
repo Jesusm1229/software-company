@@ -13,13 +13,6 @@ import {
 } from "../content/FramerMotionVariants";
 import pageMeta from "../content/meta";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import {
   motion,
   useScroll,
@@ -31,7 +24,6 @@ import {
 
 import styles from "../styles/Project.module.css";
 
-import { Mousewheel, Pagination } from "swiper";
 import ViewMoreButton from "../components/Buttons/ViewMoreButton";
 
 function useParallax(value, distance) {
@@ -131,9 +123,18 @@ export default function Projects({ projects }) {
         className={`snap-mandatory snap-y  h-screen min-h-screen overflow-y-scroll relative overflow-x-hidden text-[color:var(--accent)] `}
         ref={divRef}
       >
-        {items.map(([image, hueA, hueB]) => (
+        {projects &&
+          projects
+            .slice(0)
+            .reverse()
+            .map((project, index) => {
+              if (project.name === "" && project.githubURL === "") return null;
+              return <Project key={index} project={project} />;
+            })}
+
+        {/* {items.map(([image, hueA, hueB]) => (
           <Image id={image} hueA={hueA} hueB={hueB} />
-        ))}
+        ))} */}
         <motion.div
           className={`bg-[color:var(--accent)] ${styles.progress}`}
           style={{ scaleX }}
