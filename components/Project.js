@@ -75,7 +75,7 @@ export default function Project({ project }) {
   return (
     <>
       <motion.div
-        className={`snap-center  h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
+        className={`snap-center w-auto h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
         ref={ref}
         style={{
           backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
@@ -103,15 +103,15 @@ export default function Project({ project }) {
       >
         {/* MASK */}
         <div
-          className={`mask relative m-5 overflow-hidden w-96 h-96 max-h-[90vh] bg-slate-300 ${styles.mask}`}
+          className={`mask relative m-5 overflow-hidden w-[80vw] h-[80vh] max-h-[90vh] bg-slate-300 ${styles.mask}`}
         >
           <img
-            className="photo absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+            className="photo absolute right-0 bottom-0 top-0 left-0 w-full h-full"
             src={project.coverURL}
             alt="A London skyscraper"
           />
         </div>
-        <ViewMoreButton />
+        {/*  <ViewMoreButton /> */}
 
         {/* style={{ y }} */}
         <motion.h1
