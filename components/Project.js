@@ -45,13 +45,14 @@ export default function Project({ project }) {
   useEffect(() => {
     tl.current = gsap
       .timeline({ paused: true })
-      .from(".photo", { scale: 2 })
+      .from(".photo", { scale: 1.5 })
       .to(".mask", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 0.7,
+        duration: 0.3,
         ease: "expo",
       })
-      .to(".mask", { scale: 0.95, duration: 0.5 });
+      .to(".photo", { scale: 1, duration: 0.5 })
+      .to(".mask", { scale: 0.95, duration: 0.4, delay: 0.4, ease: "expo" });
   }, []);
 
   //Al entrar en botón
@@ -81,6 +82,22 @@ export default function Project({ project }) {
           backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
           transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s",
         }}
+        /*  style={{
+          backgroundColor: "rgba(0,0,0,0)",
+           transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s", 
+        }}
+        initial={{ backgroundColor: "rgba(0,0,0,0)" }}
+        animate={{
+          backgroundColor: isInView
+            ? ["rgba(0,0,0,0)", "#faf", "rgba(0,0,0,0)", project.background]
+            : "rgba(0,0,0,0)",
+        }}
+        transition={{
+          delay: 2,
+          duration: 6,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }} */
         /* animate={{ backgroundColor: background }} */
         /* whileInView={{ backgroundColor: background }}
       initial={{ backgroundColor: previus }} */
@@ -101,9 +118,11 @@ export default function Project({ project }) {
       repeatType: "reverse", 
       }} */
       >
-        {/* MASK */}
+        {/* MASK 
+        m-5 overflow-hidden w-[80vw] h-[80vh]
+        */}
         <div
-          className={`mask relative m-5 overflow-hidden w-[80vw] h-[80vh] max-h-[90vh] bg-slate-300 ${styles.mask}`}
+          className={`mask relative overflow-hidden w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask}`}
         >
           <img
             className="photo absolute right-0 bottom-0 top-0 left-0 w-full h-full"

@@ -74,9 +74,11 @@ function Image({ id, hueA, hueB }) {
         repeatType: "reverse", 
         }} */
       >
-        <div className={`relative m-5  w-80 h-96 max-h-[90vh] bg-slate-300 `}>
+        <div
+          className={`relative object-none overflow-hidden w-80 h-96 max-h-[90vh] bg-slate-300 `}
+        >
           <img
-            className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"
+            className="absolute object-none overflow-hidden top-0 left-0 right-0 bottom-0 w-full h-full"
             src={`/${id}.jpg`}
             alt="A London skyscraper"
           />
