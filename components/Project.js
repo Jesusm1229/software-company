@@ -16,6 +16,8 @@ import {
   useTransform,
   useMotionValue,
   useInView,
+  AnimatePresence,
+  useAnimationControls,
 } from "framer-motion";
 
 import styles from "../styles/Project.module.css";
@@ -35,6 +37,7 @@ export default function Project({ project }) {
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 100);
   const isInView = useInView(ref);
+  const [isHovering, setisHovering] = useState(false);
 
   const tl = useRef(null);
 
@@ -52,7 +55,7 @@ export default function Project({ project }) {
         ease: "expo",
       })
       .to(".photo", { scale: 1, duration: 0.5 })
-      .to(".mask", { scale: 0.95, duration: 0.4, delay: 0.4, ease: "expo" });
+      .to(".mask", { scale: 0.95, duration: 0.4, delay: 0.05, ease: "expo" });
   }, []);
 
   //Al entrar en botón
@@ -72,6 +75,53 @@ export default function Project({ project }) {
       opacity: 0.5,
     }); */
   };
+  const variants = {
+    initial: { opacity: 0.2 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+      },
+    },
+  };
+
+  const animation = useAnimationControls();
+  const animationImg = useAnimationControls();
+
+  async function sequence() {
+    await animation.start({
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      transition: { duration: 0.4, ease: "anticipate" },
+    });
+    await animationImg.start({
+      scale: 1,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    });
+    animation.start({
+      scale: 0.95,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    });
+    /* await animation.start({ rotate: 0 });
+    animation.start({ scale: 1 }); */
+  }
+
+  async function sequenceReverse() {
+    await animation.start({
+      scale: 1,
+      transition: { duration: 0.3, ease: "easeIn" },
+    });
+    await animationImg.start({
+      scale: 1.5,
+      transition: { duration: 0.2, ease: "easeIn" },
+    });
+    animation.start({
+      clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)",
+      transition: { duration: 0.4, ease: "easeIn" },
+    });
+
+    /* await animation.start({ rotate: 0 });
+    animation.start({ scale: 1 }); */
+  }
 
   return (
     <>
@@ -79,9 +129,20 @@ export default function Project({ project }) {
         className={`snap-center w-auto h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
         ref={ref}
         style={{
+          /*   rgb(117 190 218 / 0.5) */
           backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
           transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s",
+          mixBlendMode: "",
         }}
+        /**{
+            clipPath: isHovering
+              ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+              : "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)",
+          }}
+          transition={{
+            duration: 0.3,
+            type: "spring",
+          }</> */
         /*  style={{
           backgroundColor: "rgba(0,0,0,0)",
            transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s", 
@@ -120,24 +181,77 @@ export default function Project({ project }) {
       >
         {/* MASK 
         m-5 overflow-hidden w-[80vw] h-[80vh]
-        */}
-        <div
-          className={`mask relative overflow-hidden w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask}`}
+        ${styles.mask}*/}
+
+        <motion.div
+          className={`mask relative  w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask} `}
+          initial={{
+            backgroundColor: "rgba(0,0,0,0)",
+            clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)",
+          }}
+          animate={animation}
         >
-          <img
-            className="photo absolute right-0 bottom-0 top-0 left-0 w-full h-full"
+          <motion.img
+            className="photo  right-0 bottom-0 top-0 left-0 w-full  brightness-95 contrast-125"
             src={project.coverURL}
             alt={project.name}
+            initial={{ scale: 1.5 }}
+            animate={animationImg}
           />
+        </motion.div>
+
+        <div className=" absolute inset-y-0 left-0 max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10">
+          <AnimatedHeading
+            className={`text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200`}
+          >
+            {project.name}
+          </AnimatedHeading>
+          <AnimatedText className="font-medium text-lg text-gray-100 tracking-wider">
+            {project.description}
+          </AnimatedText>
+          <div className="flex items-center gap-1 flex-wrap">
+            {project.tools.map((tool, index) => {
+              return (
+                <span
+                  key={`${tool}-${index}`}
+                  className="dark:bg-gray-100 bg-darkPrimary text-gray-500 rounded px-2 py-1 text-xs"
+                >
+                  {tool}
+                </span>
+              );
+            })}
+          </div>
+
+          <div className=" p-2 w-fit h-fit flex items-center gap-4">
+            <div onMouseEnter={sequence} onMouseLeave={sequenceReverse}>
+              <ViewMoreButton />
+            </div>
+            <Link
+              href={project.githubURL}
+              title="Source Code on GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-black dark:hover:text-white"
+            >
+              <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+            </Link>
+
+            {project.previewURL && (
+              <Link
+                href={project.previewURL}
+                title="Live Preview"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-black dark:hover:text-white"
+              >
+                <MdOutlineLink className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+              </Link>
+            )}
+          </div>
         </div>
-        {/*  <ViewMoreButton /> */}
 
         {/* style={{ y }} */}
-        <motion.h1
-          className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]"
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-        >{`#00${project.id}`}</motion.h1>
+        <motion.h1 className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(70%+8rem)]">{`#00${project.id}`}</motion.h1>
       </motion.div>
     </>
 

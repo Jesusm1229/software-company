@@ -41,8 +41,8 @@ export const opacityVariant = {
   visible: { opacity: 1, transition: { delay: 0.2 } },
 };
 
-export const fromLeftVariant = {
-  hidden: { x: -100, opacity: 0 },
+export const fromRightVariant = {
+  hidden: { x: 100, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,

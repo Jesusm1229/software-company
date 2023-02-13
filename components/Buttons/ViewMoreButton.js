@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
-import "./style.module.css";
+import styles from "./style.module.css";
 import { gsap } from "gsap/dist/gsap";
 
 export default function ViewMoreButton({ link }) {
@@ -104,7 +104,13 @@ export default function ViewMoreButton({ link }) {
     //Circle-Text
   };
   return (
-    <a
+    <button
+      class={` ${styles.button__text_thick} ${styles.button} ${styles.button__ujarak} ${styles.button__border_thin}`}
+    >
+      View Work
+    </button>
+
+    /*  <a
       href="#"
       className="button border border-gray-400 outline-none active:scale-95 transition-transform flex items-center gap-2 px-5 py-2 text-white font-bold text-center no-underline uppercase relative  h-12 w-48"
       onMouseEnter={onEnter}
@@ -119,6 +125,6 @@ export default function ViewMoreButton({ link }) {
       <i>r</i>
       <i>k</i>
       <b class="backgroundHover"></b>
-    </a>
+    </a> */
   );
 }

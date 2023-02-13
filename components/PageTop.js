@@ -1,5 +1,5 @@
 import {
-  fromLeftVariant,
+  fromRightVariant,
   opacityVariant,
 } from "../content/FramerMotionVariants"; // ===> not created yet
 import AnimatedHeading from "./FramerMotion/AnimatedHeading";
@@ -9,7 +9,7 @@ export default function PageTop({ pageTitle, headingClass, children }) {
   return (
     <div className=" max-w-xl w-full h-screen justify-center  flex flex-col gap-3 py-5 select-none mb-10">
       <AnimatedHeading
-        variants={fromLeftVariant}
+        variants={fromRightVariant}
         className={`text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200 ${headingClass}`}
       >
         {pageTitle}

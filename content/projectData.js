@@ -3,7 +3,7 @@ module.exports = [
     id: 1,
     name: "IP address tracker",
     coverURL: "https://source.unsplash.com/VsBl5PwVZpY/2000x1200",
-    background: "#0af",
+    background: "rgb(0,170,255,0.8)",
     description:
       "it tracks many things by your IP address such as Location, Network, Area, Coordinate, etc",
     githubURL: "https://github.com/j471n/ip-address-tracker",

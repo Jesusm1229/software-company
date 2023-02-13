@@ -102,13 +102,13 @@ export default function Projects({ projects }) {
     restDelta: 0.001,
   });
 
-  const items = [
+  /* const items = [
     [1, "#0af", "rgba(0,0,0,0)"],
     [2, "#fa0", "rgba(0,0,0,0)"],
     [3, "#85df5e", "rgba(0,0,0,0)"],
     [4, "#fa0", "rgba(0,0,0,0)"],
     [5, "#0af", "rgba(0,0,0,0)"],
-  ];
+  ]; */
 
   return (
     <>
@@ -133,7 +133,6 @@ export default function Projects({ projects }) {
             </span>{" "}
             projects.
           </PageTop>
-          {/* <ViewMoreButton /> */}
         </section>
         {projects &&
           projects
