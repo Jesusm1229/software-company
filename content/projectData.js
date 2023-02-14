@@ -15,7 +15,7 @@ module.exports = [
     id: 2,
     name: "ghost invasion game",
     coverURL: "https://imgur.com/fVbFbqw.png",
-    background: "#0af",
+    background: "#2A9D8F",
     description:
       "This the fun game build using PyGame library, in this there are ghost and you just have to kill them by just shooting.",
     githubURL: "https://github.com/j471n/ghost-invasion-game-python",
@@ -27,7 +27,7 @@ module.exports = [
     id: 3,
     name: "IP address tracker",
     coverURL: "https://imgur.com/4dZRefD.png",
-    background: "#fa0",
+    background: "#a7a6a6",
     description:
       "it tracks many things by your IP address such as Location, Network, Area, Coordinate, etc",
     githubURL: "https://github.com/j471n/ip-address-tracker",

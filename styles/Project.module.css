@@ -222,5 +222,5 @@
     height:550px;
     background:salmon;  
     overflow:hidden; */
-    clip-path:polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%);
+    clip-path:polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%);;
   }

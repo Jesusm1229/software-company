@@ -99,7 +99,7 @@ export default function Project({ project }) {
     });
     animation.start({
       scale: 0.95,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: { duration: 0.3, delay: 0.3, ease: "easeInOut" },
     });
     /* await animation.start({ rotate: 0 });
     animation.start({ scale: 1 }); */
@@ -114,9 +114,9 @@ export default function Project({ project }) {
       scale: 1.5,
       transition: { duration: 0.2, ease: "easeIn" },
     });
-    animation.start({
-      clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)",
-      transition: { duration: 0.4, ease: "easeIn" },
+    await animation.start({
+      clipPath: "polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%)",
+      transition: { duration: 0.4, ease: "backInOut" },
     });
 
     /* await animation.start({ rotate: 0 });
@@ -183,23 +183,89 @@ export default function Project({ project }) {
         m-5 overflow-hidden w-[80vw] h-[80vh]
         ${styles.mask}*/}
 
+        {/** DIV que contiene al div Sólo se ve en la transición */}
         <motion.div
-          className={`mask relative  w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask} `}
-          initial={{
-            backgroundColor: "rgba(0,0,0,0)",
-            clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)",
+          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900  `}
+          style={{
+            /*   rgb(117 190 218 / 0.5) */
+            backgroundColor: isInView ? "#e9c46a" : "rgba(0,0,0,0)",
           }}
-          animate={animation}
         >
-          <motion.img
-            className="photo  right-0 bottom-0 top-0 left-0 w-full  brightness-95 contrast-125"
-            src={project.coverURL}
-            alt={project.name}
-            initial={{ scale: 1.5 }}
-            animate={animationImg}
-          />
-        </motion.div>
+          {/* w-5/6 h-5/6 */}
+          {/**Segundo DIV Este es el que se muestra  */}
+          <AnimatePresence>
+            {isInView && (
+              <motion.div
+                className={`mask absolute inset-0 m-auto w-full h-full max-h-[90vh]  `}
+                initial="hidden"
+                whileInView="visible"
+                exit="hidden"
+                style={{
+                  backgroundColor: "#264653",
+                }}
+                /*   initial={{
+                  style={
 
+                  }
+                backgroundColor: "rgba(0,0,0,0)",
+                /* clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)", 
+              }} */
+                variants={{
+                  hidden: {
+                    scale: 0.7,
+                  },
+                  visible: {
+                    scale: 1,
+
+                    transition: { ease: [0.22, 0.84, 0.13, 1.07], delay: 1.4 },
+                  },
+                }}
+              >
+                <AnimatePresence>
+                  {isInView && (
+                    <motion.div
+                      className={`mask relative  w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask} `}
+                      initial="hidden"
+                      whileInView="visible"
+                      exit="hidden"
+                      /*   initial={{
+                backgroundColor: "rgba(0,0,0,0)",
+                /* clipPath: "polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)", 
+              }} */
+                      variants={{
+                        hidden: {
+                          opacity: 1,
+                          scaleY: 0.8,
+                          transition: { delay: 0 },
+                        },
+                        visible: {
+                          opacity: 1,
+                          scaleY: 1,
+                          transition: {
+                            ease: [0.22, 0.84, 0.13, 1.07],
+                            delay: 2.1,
+                          },
+                        },
+                      }}
+                      animate={animation}
+                      style={{
+                        clipPath: "polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%)",
+                      }}
+                    >
+                      <motion.img
+                        className="photo  right-0 bottom-0 top-0 left-0 w-full  brightness-95 contrast-125"
+                        src={project.coverURL}
+                        alt={project.name}
+                        initial={{ scale: 1.5 }}
+                        animate={animationImg}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
         <div className=" absolute inset-y-0 left-0 max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10">
           <AnimatedHeading
             className={`text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200`}
