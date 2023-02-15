@@ -4,7 +4,7 @@ import * as THREE from "three";
 import styles from "../../styles/Home.module.css";
 
 export default function VantaHero({ children }) {
-  const [vantaEffect, setVantaEffect] = useState(0);
+  const [vantaEffect, setVantaEffect] = useState(null);
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -24,6 +24,7 @@ export default function VantaHero({ children }) {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
+
   return (
     <div className={styles.container_vanta}>
       <div className={styles.main_vanta} ref={vantaRef}>
