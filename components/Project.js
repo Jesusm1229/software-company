@@ -19,6 +19,7 @@ import {
   AnimatePresence,
   useAnimationControls,
 } from "framer-motion";
+import { fromBottomVariant } from "../content/FramerMotionVariants";
 
 import styles from "../styles/Project.module.css";
 import ViewMoreButton from "./Buttons/ViewMoreButton";
@@ -131,7 +132,7 @@ export default function Project({ project }) {
         style={{
           /*   rgb(117 190 218 / 0.5) */
           backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
-          transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 0.6s",
+          transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 1.6s",
           mixBlendMode: "",
         }}
         /**{
@@ -185,10 +186,10 @@ export default function Project({ project }) {
 
         {/** DIV que contiene al div Sólo se ve en la transición */}
         <motion.div
-          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900  `}
+          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900 shadow-inner rounded-2xl `}
           style={{
             /*   rgb(117 190 218 / 0.5) */
-            backgroundColor: isInView ? "#e9c46a" : "rgba(0,0,0,0)",
+            backgroundColor: isInView ? project.container : "rgba(0,0,0,0)",
           }}
         >
           {/* w-5/6 h-5/6 */}
@@ -196,12 +197,12 @@ export default function Project({ project }) {
           <AnimatePresence>
             {isInView && (
               <motion.div
-                className={`mask absolute inset-0 m-auto w-full h-full max-h-[90vh]  `}
+                className={`${styles.mask} rounded-2xl absolute inset-0 m-auto w-full h-full shadow-2xl max-h-[90vh]  `}
                 initial="hidden"
                 whileInView="visible"
                 exit="hidden"
                 style={{
-                  backgroundColor: "#264653",
+                  backgroundColor: project.cover,
                 }}
                 /*   initial={{
                   style={
@@ -216,15 +217,14 @@ export default function Project({ project }) {
                   },
                   visible: {
                     scale: 1,
-
-                    transition: { ease: [0.22, 0.84, 0.13, 1.07], delay: 1.4 },
+                    transition: { ease: [0.22, 0.84, 0.13, 1.07], delay: 1.1 },
                   },
                 }}
               >
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask relative  w-full h-full max-h-[90vh] bg-slate-300 ${styles.mask} `}
+                      className={`mask relative rounded-2xl w-full h-full shadow-2xl max-h-[90vh] bg-slate-300 ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
@@ -240,6 +240,7 @@ export default function Project({ project }) {
                         },
                         visible: {
                           opacity: 1,
+
                           scaleY: 1,
                           transition: {
                             ease: [0.22, 0.84, 0.13, 1.07],
@@ -253,7 +254,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  right-0 bottom-0 top-0 left-0 w-full  brightness-95 contrast-125"
+                        className="photo  right-0 bottom-0 rounded-2xl top-0 left-0 w-full  brightness-95 shadow-2xl contrast-125"
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
@@ -267,14 +268,32 @@ export default function Project({ project }) {
           </AnimatePresence>
         </motion.div>
         <div className=" absolute inset-y-0 left-0 max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10">
-          <AnimatedHeading
-            className={`text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200`}
+          <span
+            style={{
+              overflow: "hidden",
+              display: "inline-block",
+            }}
           >
-            {project.name}
-          </AnimatedHeading>
-          <AnimatedText className="font-medium text-lg text-gray-100 tracking-wider">
-            {project.description}
-          </AnimatedText>
+            <AnimatedHeading
+              variants={fromBottomVariant}
+              className={`${styles.head} text-4xl py-2 md:text-5xl font-bold text-neutral-900 dark:text-neutral-200`}
+              style={{ display: "inline-block", overflow: "hidden" }}
+            >
+              {project.name}
+            </AnimatedHeading>
+          </span>
+          <span>
+            <AnimatedText
+              className="font-medium text-lg text-gray-100 tracking-wider"
+              variants={fromBottomVariant}
+              style={{
+                overflow: "hidden",
+                display: "inline-block",
+              }}
+            >
+              {project.description}
+            </AnimatedText>
+          </span>
           <div className="flex items-center gap-1 flex-wrap">
             {project.tools.map((tool, index) => {
               return (
@@ -290,7 +309,7 @@ export default function Project({ project }) {
 
           <div className=" p-2 w-fit h-fit flex items-center gap-4">
             <div onMouseEnter={sequence} onMouseLeave={sequenceReverse}>
-              <ViewMoreButton />
+              <ViewMoreButton colorCode={project.buttonColor} />
             </div>
             <Link
               href={project.githubURL}

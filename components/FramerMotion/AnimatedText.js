@@ -10,7 +10,7 @@ export default function AnimatedText({
     <motion.p
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: !infinity }}
+      viewport={{ once: infinity }}
       variants={variants}
       className={className}
     >

@@ -10,7 +10,7 @@ export default function AnimatedHeading({
     <motion.h1
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: !infinity }}
+      viewport={{ once: infinity }}
       variants={variants}
       className={className}
     >

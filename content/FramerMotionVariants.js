@@ -53,3 +53,17 @@ export const fromRightVariant = {
     },
   },
 };
+
+export const fromBottomVariant = {
+  hidden: { y: "100%", opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.5,
+      delay: 1.3,
+    },
+  },
+};
