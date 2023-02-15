@@ -61,8 +61,8 @@ export const fromRightVariantSpan = {
     opacity: 1,
     transition: {
       duration: 0.1,
-      type: "spring",
-      stiffness: 100,
+      type: "tween",
+      ease: "easeInOut",
       delay: 2,
     },
   },

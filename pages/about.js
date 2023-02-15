@@ -13,6 +13,7 @@ import {
   FadeContainer,
   headingFromLeft,
   opacityVariant,
+  fromRightVariant,
   popUp,
 } from "../content/FramerMotionVariants";
 import { homeProfileImage } from "../utils/utils"; // not created yet
@@ -35,6 +36,22 @@ export default function About({ about }) {
     return () => {};
   }, []);
 
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 1,
+        staggerChildren: 0.1,
+      },
+    },
+    hidden: { opacity: 0 },
+  };
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
   return (
     <>
       <MetaData
@@ -56,21 +73,31 @@ export default function About({ about }) {
             >
               <div className="w-full relative mx-auto flex flex-col items-center md:gap-10">
                 <motion.div
-                  variants={popUp}
+                  /*  variants={popUp} */
                   className="relative w-3/5 h-min xs:w-screen  flex justify-center items-center rounded-full p-3 "
                 >
                   <div className="flex flex-col gap-10">
-                    <div className="relative flex flex-row-reverse h-full ">
-                      <Image
-                        src={homeProfileImage}
-                        className=" rounded-full shadow filter saturate-0"
-                        width={333}
-                        height={333}
-                        alt="cover Profile Image"
-                        quality={75}
-                        priority={true}
-                      />
-                      <svg className="hidden -mr-28 lg:block">
+                    <motion.div
+                      className="relative flex flex-row-reverse h-full "
+                      initial="hidden"
+                      animate="visible"
+                      variants={list}
+                    >
+                      <motion.div variants={item}>
+                        <Image
+                          src={homeProfileImage}
+                          className="rounded-full shadow filter saturate-0 w-full"
+                          width={333}
+                          height={333}
+                          alt="cover Profile Image"
+                          quality={75}
+                          priority={true}
+                        />
+                      </motion.div>
+                      <motion.svg
+                        className="hidden -mr-28 lg:block"
+                        variants={item}
+                      >
                         <ellipse
                           opacity="0.5"
                           rx="140"
@@ -81,8 +108,11 @@ export default function About({ about }) {
                           /* stroke="blue" */
                           stroke-width="3"
                         />
-                      </svg>
-                      <svg className=" hidden -mr-20 md:flex">
+                      </motion.svg>
+                      <motion.svg
+                        className=" hidden -mr-20 md:flex"
+                        variants={item}
+                      >
                         <ellipse
                           opacity="0.3"
                           rx="120"
@@ -93,8 +123,11 @@ export default function About({ about }) {
                           /*  stroke="green" */
                           stroke-width="3"
                         />
-                      </svg>
-                      <svg className="-mr-28">
+                      </motion.svg>
+                      <motion.svg
+                        className="hidden -mr-28 lg:block"
+                        variants={item}
+                      >
                         <ellipse
                           opacity="0.3"
                           rx="100"
@@ -105,16 +138,16 @@ export default function About({ about }) {
                           /* stroke="red" */
                           stroke-width="3"
                         />
-                      </svg>
+                      </motion.svg>
                       <div className="asbsolute flex flex-col gap-1 bottom-0 left-0 h-16 w-16 -mt-50">
                         <motion.h1
-                          variants={opacityVariant}
+                          variants={fromRightVariant}
                           className="w-full absolute text-5xl lg:text-9xl font-holland bottom-0 left-0 h-32"
                         >
                           Jesús Medina
                         </motion.h1>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
 
@@ -128,7 +161,7 @@ export default function About({ about }) {
                     </motion.h1> */}
                     <motion.p
                       variants={opacityVariant}
-                      className="font-medium text-base md:text-sm lg:text-xl text-white"
+                      className="font-medium text-base md:text-sm lg:text-2xl text-white"
                     >
                       React Developer, Competitive Programmer
                     </motion.p>
@@ -136,7 +169,7 @@ export default function About({ about }) {
 
                   <motion.p
                     variants={opacityVariant}
-                    className=" text-gray-300 font-medium text-lg md:text-base text-center"
+                    className=" text-gray-300 font-medium text-sm md:text-base lg:text-xl text-center"
                   >
                     I am currently pursuing my Bachelor Degree in Computer
                     Science. I can code in Python, C, C++, etc.
@@ -150,7 +183,7 @@ export default function About({ about }) {
 
       {/*  <Support /> */}
 
-      <div className="pt-20 w-full">
+      <div className="pt-5 lg:pt-20 w-full">
         <Exp_Study />
       </div>
     </>

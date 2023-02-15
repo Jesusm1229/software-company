@@ -31,7 +31,9 @@ export default function Exp_Study() {
 function Experience_StudySection({ utility }) {
   return (
     <div className="col-span-1 py-5 container mx-auto px-5">
-      <h3 class="mb-3 font-bold text-gray-100 text-2xl">{utility.title}</h3>
+      <h3 class="mb-3 font-bold text-gray-100 text-xl md:text-sm lg:text-2xl">
+        {utility.title}
+      </h3>
       <div class="relative">
         <div
           class="border-r-4 border-r-cyan-200 opacity-50 absolute h-full top-0"
@@ -44,16 +46,16 @@ function Experience_StudySection({ utility }) {
                 <div class="flex group items-center ">
                   <div class="bg-sky-200 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
                   <div class="flex-1  ml-4 z-10 font-medium">
-                    <div class=" order-1 space-y-2  rounded-lg shadow-only transition-ease lg:w-12/12 px-6 py-4">
-                      <h3 class="mb-3 text-gray-200 font-bold text-xl">
+                    <div class=" order-1 space-y-2  rounded-lg shadow-only transition-ease px-2 lg:w-12/12 lg:px-6 py-4">
+                      <h3 class="mb-1 md:mb-3 text-gray-200 font-bold text-base md:text-sm lg:text-2xl">
                         {item.name}
                       </h3>
-                      <p className=" pb-2 text-sm text-gray-200 uppercase">
+                      <p className="pb-1 md:pb-2 text-sm text-gray-200 uppercase">
                         {item.type}
                         {" - "} {item.period}
                       </p>
                       <hr className="" />
-                      <p class="text-sm font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
+                      <p class="text-sm md:text-sm lg:text-xl font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
                         {item.description}
                       </p>
                     </div>
