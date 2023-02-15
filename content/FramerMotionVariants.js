@@ -54,6 +54,20 @@ export const fromRightVariant = {
   },
 };
 
+export const fromRightVariantSpan = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      stiffness: 100,
+      delay: 2,
+    },
+  },
+};
+
 export const fromBottomVariant = {
   hidden: { y: "100%", opacity: 0 },
   visible: {

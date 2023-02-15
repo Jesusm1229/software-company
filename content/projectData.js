@@ -16,7 +16,7 @@ module.exports = [
   },
   {
     id: 2,
-    name: "ghost invasion game",
+    name: "Ghost invasion Game",
     coverURL: "https://imgur.com/fVbFbqw.png",
     background: "#457b9d",
     container: "#8D99AE",

@@ -19,7 +19,10 @@ import {
   AnimatePresence,
   useAnimationControls,
 } from "framer-motion";
-import { fromBottomVariant } from "../content/FramerMotionVariants";
+import {
+  fromBottomVariant,
+  fromRightVariantSpan,
+} from "../content/FramerMotionVariants";
 
 import styles from "../styles/Project.module.css";
 import ViewMoreButton from "./Buttons/ViewMoreButton";
@@ -276,7 +279,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} text-4xl py-2 md:text-5xl font-bold text-neutral-900 dark:text-neutral-200`}
+              className={` text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-zinc-100`}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -284,7 +287,7 @@ export default function Project({ project }) {
           </span>
           <span>
             <AnimatedText
-              className="font-medium text-lg text-gray-100 tracking-wider"
+              className="font-medium text-lg text-slate-100 tracking-wider"
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",
@@ -297,20 +300,34 @@ export default function Project({ project }) {
           <div className="flex items-center gap-1 flex-wrap">
             {project.tools.map((tool, index) => {
               return (
-                <span
+                <motion.span
                   key={`${tool}-${index}`}
-                  className="dark:bg-gray-100 bg-darkPrimary text-gray-500 rounded px-2 py-1 text-xs"
+                  className="dark:bg-gray-100 bg-darkPrimary text-gray-800 rounded px-2 py-1 text-xs"
+                  variants={fromRightVariantSpan}
+                  initial="hidden"
+                  whileInView={"visible"}
                 >
                   {tool}
-                </span>
+                </motion.span>
               );
             })}
           </div>
 
           <div className=" p-2 w-fit h-fit flex items-center gap-4">
-            <div onMouseEnter={sequence} onMouseLeave={sequenceReverse}>
+            <motion.div
+              onMouseEnter={sequence}
+              onMouseLeave={sequenceReverse}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                type: "tween",
+                ease: "easeInOut",
+                duration: 0.5,
+                delay: 2.3,
+              }}
+            >
               <ViewMoreButton colorCode={project.buttonColor} />
-            </div>
+            </motion.div>
             <Link
               href={project.githubURL}
               title="Source Code on GitHub"
@@ -318,7 +335,18 @@ export default function Project({ project }) {
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-black dark:hover:text-white"
             >
-              <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  type: "tween",
+                  ease: "easeInOut",
+                  duration: 0.5,
+                  delay: 2.6,
+                }}
+              >
+                <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+              </motion.div>
             </Link>
 
             {project.previewURL && (
@@ -336,7 +364,35 @@ export default function Project({ project }) {
         </div>
 
         {/* style={{ y }} */}
-        <motion.h1 className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(70%+8rem)]">{`#00${project.id}`}</motion.h1>
+        <span
+          style={{
+            overflow: "hidden",
+            display: "inline-block",
+          }}
+        >
+          <AnimatedText
+            className={`${styles.head} absolute text-5xl lg:text-6xl font-inter font-bold h-32 tracking-tighter left-[calc(75%+8rem)] top-[calc(30%)]`}
+            variants={{
+              hidden: { y: "100%", opacity: 0 },
+              visible: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  type: "tween",
+                  ease: "easeInOut",
+                  duration: 0.5,
+                  delay: 0.4,
+                },
+              },
+            }}
+            style={{
+              overflow: "hidden",
+              display: "inline-block",
+            }}
+          >
+            {`#00${project.id}`}
+          </AnimatedText>
+        </span>
       </motion.div>
     </>
 
