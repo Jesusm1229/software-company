@@ -19,8 +19,8 @@ export default function Exp_Study() {
       <section className="print:hidden xs:px-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/*   Loading columns */}
-          {utilities.data.map((utility, index) => (
-            <Experience_StudySection key={index} utility={utility} />
+          {utilities.data.map((utility) => (
+            <Experience_StudySection utility={utility} />
           ))}
         </div>
       </section>
