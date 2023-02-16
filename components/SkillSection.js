@@ -1,4 +1,4 @@
-import { FadeContainer, popUp } from "../content/FramerMotionVariants";
+/* import { FadeContainer, popUp } from "../content/FramerMotionVariants";
 import { HomeHeading } from "../pages"; // ----> not created yet
 import { motion } from "framer-motion";
 import {
@@ -55,10 +55,10 @@ export default function SkillSection({ skills }) {
       </motion.div>
     </section>
   );
-}
+} */
 
 /* To choose the Icon according to the Name */
-function chooseIcon(title) {
+/* function chooseIcon(title) {
   let Icon;
   switch (title) {
     case "python":
@@ -99,3 +99,4 @@ function chooseIcon(title) {
   }
   return Icon;
 }
+ */

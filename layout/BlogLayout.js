@@ -1,4 +1,4 @@
-import { homeProfileImage } from "../utils/utils";
+/* import { homeProfileImage } from "../utils/utils";
 import Image from "next/image";
 import styles from "../styles/Blog.module.css";
 import ShareOnSocialMedia from "../components/ShareOnSocialMedia";
@@ -46,8 +46,11 @@ export default function BlogLayout({ post, children }) {
 
   return (
     <section className="mt-[44px] md:mt-[60px]  relative !overflow-hidden">
-      {/* TOC */}
-
+       */ {
+  /* TOC */
+}
+{
+  /* 
       {post.tableOfContents.length > 0 && (
         <>
           <div
@@ -108,10 +111,14 @@ export default function BlogLayout({ post, children }) {
             Table of Contents
           </button>
         </>
-      )}
+      )} */
+}
 
-      {/* Blog Content */}
-      <section
+{
+  /* Blog Content */
+}
+{
+  /*       <section
         className="p-5 sm:pt-10 relative font-barlow prose dark:prose-invert md:ml-[35%] lg:ml-[30%] print:!mx-auto"
         style={{
           maxWidth: "800px",
@@ -212,4 +219,5 @@ export default function BlogLayout({ post, children }) {
       </section>
     </section>
   );
+} */
 }

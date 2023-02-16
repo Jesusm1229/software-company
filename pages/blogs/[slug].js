@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+/* import { useEffect } from "react";
 import BlogLayout from "../layout/BlogLayout"; // ========> not created yet
 import Metadata from "../components/MetaData";
 import MDXComponents from "../components/MDXComponents"; // =====> will create in the end of the section
@@ -28,10 +28,10 @@ export default function Post({ post, error }) {
       </BlogLayout>
     </>
   );
-}
+} */
 
 /* Generating the page for every slug */
-export async function getStaticProps({ params }) {
+/* export async function getStaticProps({ params }) {
   const { slug } = params;
   const { post } = await new MDXContent("posts").getPostFromSlug(slug);
 
@@ -54,10 +54,10 @@ export async function getStaticProps({ params }) {
       },
     };
   }
-}
+} */
 
 /* Generating all possible paths for the slug */
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
   const paths = new MDXContent("posts")
     .getSlugs()
     .map((slug) => ({ params: { slug } }));
@@ -67,3 +67,4 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+ */

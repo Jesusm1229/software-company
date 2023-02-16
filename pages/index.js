@@ -16,8 +16,8 @@ import AnimatedHeading from "../components/FramerMotion/AnimatedHeading";
 import { getPinnedSkills } from "../lib/dataFetch";
 
 // Page Components START----------
-import BlogsSection from "../components/Home/BlogsSection";
-import SkillSection from "../components/SkillSection";
+/* import BlogsSection from "../components/Home/BlogsSection";
+import SkillSection from "../components/SkillSection"; */
 // Page Components END------------
 import Contact from "../components/Contact";
 
