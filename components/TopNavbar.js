@@ -28,7 +28,7 @@ export default function TopNavbar() {
 
   // Adding Shadow, backdrop to the navbar as user scroll the screen
   const addShadowToNavbar = useCallback(() => {
-    if (window.pageYOffset > 10) {
+    /* if (window.pageYOffset > 10) {
       navRef.current.classList.add(
         ...[
           "shadow",
@@ -49,7 +49,7 @@ export default function TopNavbar() {
         ]
       );
       control.start("hidden");
-    }
+    } */
   }, [control]);
 
   useEffect(() => {
@@ -218,7 +218,7 @@ const MobileMenu = ({ links, handleClick }) => {
       animate="visible"
       exit="hidden"
     >
-      <motion.nav className="mt-28 mx-8 flex flex-col">
+      <motion.nav className="mt-28 mx-8 flex flex-col gap-6">
         {links.map((link, index) => {
           const navlink =
             link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase()}`;
@@ -226,7 +226,7 @@ const MobileMenu = ({ links, handleClick }) => {
             <Link href={navlink} key={`mobileNav-${index}`} passHref>
               <motion.a
                 href={navlink}
-                className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 font-semibold flex w-auto py-4 capitalize text-base cursor-pointer"
+                className="link link-underline link-underline-black border-b  text-gray-900 dark:text-gray-100 font-semibold flex w-auto py-4 uppercase text-4xl sm:text-9xl cursor-pointer"
                 variants={mobileNavItemSideways}
                 onClick={handleClick}
               >
