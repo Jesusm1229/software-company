@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+/* import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   FadeContainer,
@@ -86,9 +86,10 @@ export default function Blogs({ blogs }) {
               <RiCloseCircleLine className="w-4 h-4 mr-3" />
             </button>
           </div>
-        </AnimatedDiv>
+        </AnimatedDiv> */
 
-        <section className="relative py-5  flex flex-col gap-2 min-h-[50vh]">
+{
+  /*         <section className="relative py-5  flex flex-col gap-2 min-h-[50vh]">
           <AnimatePresence>
             {filteredBlogs.length != 0 ? (
               <>
@@ -143,11 +144,13 @@ export default function Blogs({ blogs }) {
       </section>
     </>
   );
+} */
 }
 
-export async function getStaticProps() {
-  const blogs = new MDXContent("posts").getAllPosts(); // getting all posts (only front matter) inside "posts" directory
-  return {
+/* export async function getStaticProps() {
+  const blogs = new MDXContent("posts").getAllPosts(); */ // getting all posts (only front matter) inside "posts" directory
+/*  return {
     props: { blogs },
   };
 }
+ */

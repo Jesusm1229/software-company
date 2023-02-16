@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+/* import { AnimatePresence } from "framer-motion";
 import { FadeContainer } from "../content/FramerMotionVariants";
 import Blog from "../components/Blog";
 import Metadata from "../components/MetaData";
@@ -46,3 +46,4 @@ export default function Blogs() {
     </>
   );
 }
+ */

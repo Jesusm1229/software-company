@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import OgImage from "./OgImage";
@@ -58,3 +58,4 @@ export default function Blog({ blog }) {
     </article>
   );
 }
+ */
