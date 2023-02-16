@@ -25,7 +25,7 @@ import {
 } from "react-icons/bs";
 import { FaGitAlt, FaSearch } from "react-icons/fa";
 /* import SVG from "../components/SVG"; */
-import { Utilities } from "../lib/types";
+/* import { Utilities } from "../lib/types"; */
 
 const utilities = {
   title: "Utilities",

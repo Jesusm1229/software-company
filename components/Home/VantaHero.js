@@ -26,8 +26,11 @@ export default function VantaHero({ children }) {
   }, [vantaEffect]);
 
   return (
-    <div className={styles.container_vanta}>
-      <div className={styles.main_vanta} ref={vantaRef}>
+    <div className="min-h-screen w-screen ">
+      <div
+        className="flex justify-center items-center h-screen bg-black px-0 py-40"
+        ref={vantaRef}
+      >
         {children}
       </div>
     </div>

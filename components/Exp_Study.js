@@ -11,7 +11,6 @@ import useSWR from "swr"; // not installed yet
 import fetcher from "../lib/fetcher";
 import socialMedia from "../content/socialMedia";
 import utilities from "../content/utilitiesData";
-import { updateConditionalTypeNode } from "typescript";
 
 export default function Exp_Study() {
   return (

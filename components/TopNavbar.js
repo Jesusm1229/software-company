@@ -73,7 +73,7 @@ export default function TopNavbar() {
 
   return (
     <div
-      className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] sm:px-6 z-50 print:hidden"
+      className="fixed w-full dark:text-white top-0 flex items-center justify-between px-4 py-[10px] px-6 z-50 print:hidden"
       ref={navRef}
     >
       {/* Mobile Navigation Hamburger and MobileMenu */}
@@ -103,7 +103,7 @@ export default function TopNavbar() {
       </Link>
 
       {/* Top Nav list */}
-      <motion.nav className="hidden sm:flex z-10 md:inset-0 md:justify-center">
+      {/*  <motion.nav className="hidden sm:flex z-10 md:inset-0 md:justify-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -121,7 +121,7 @@ export default function TopNavbar() {
             );
           })}
         </motion.div>
-      </motion.nav>
+      </motion.nav> */}
 
       <motion.div></motion.div>
       {/* DarkMode Container */}
@@ -151,7 +151,7 @@ function NavItem({ href, text, router }) {
         isActive
           ? "font-bold text-gray-800 dark:text-gray-100"
           : " text-gray-600 dark:text-gray-300"
-      } sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 dark:hover:bg-neutral-700/50 rounded-md`}
+      } sm:inline-block transition-all text-lg hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 dark:hover:bg-neutral-700/50 rounded-md`}
       href={href === "/home" ? "/" : href}
     >
       <motion.p className="capitalize" variants={popUp}>
@@ -169,12 +169,12 @@ function HamBurger({ open, handleClick }) {
       initial="hidden"
       animate="visible"
       variants={popUp}
-      className="sm:hidden"
+      /* className="sm:hidden" */
     >
       {!open ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 cursor-pointer select-none transform duration-300 rounded-md active:scale-50"
+          className="h-12 w-12 sm:h-16 sm:w-16 cursor-pointer select-none transform duration-300 rounded-md active:scale-50"
           onClick={handleClick}
           fill="none"
           viewBox="0 0 24 24"
@@ -190,7 +190,7 @@ function HamBurger({ open, handleClick }) {
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 cursor-pointer select-none transform duration-300  rounded-md active:scale-50"
+          className="h-12 w-12 sm:h-16 sm:w-16 cursor-pointer select-none transform duration-300  rounded-md active:scale-50"
           onClick={handleClick}
           fill="none"
           viewBox="0 0 24 24"
@@ -212,7 +212,7 @@ function HamBurger({ open, handleClick }) {
 const MobileMenu = ({ links, handleClick }) => {
   return (
     <motion.div
-      className="absolute font-normal bg-white dark:bg-darkPrimary w-screen h-screen top-0 left-0 z-10 sm:hidden"
+      className="absolute font-normal bg-white dark:bg-darkPrimary w-screen h-screen top-0 left-0 z-10 " /* sm:hidden */
       variants={hamFastFadeContainer}
       initial="hidden"
       animate="visible"

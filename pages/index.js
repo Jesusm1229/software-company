@@ -41,9 +41,9 @@ export default function Home({ blogs, skills }) {
       />
 
       <div className="relative dark:bg-dark Primary dark:text-gray-100">
-        {/*  <VantaHero> */}
-        <Circle showQR={showQR} setShowQR={setShowQR}></Circle>
-        {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
+        <VantaHero>
+          <Circle showQR={showQR} setShowQR={setShowQR}></Circle>
+          {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"
               whileInView="visible"
@@ -109,7 +109,7 @@ export default function Home({ blogs, skills }) {
               </div>
             </motion.section>
           </div> */}
-        {/* </VantaHero> */}
+        </VantaHero>
         {/*<div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
           <SkillSection skills={skills} />
           <BlogsSection blogs={blogs} />
