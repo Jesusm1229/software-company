@@ -18,8 +18,8 @@ export default function Exp_Study() {
       <section className="print:hidden xs:px-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/*   Loading columns */}
-          {utilities.data.map((utility) => (
-            <Experience_StudySection utility={utility} />
+          {utilities.data.map((utility, index) => (
+            <Experience_StudySection key={index} utility={utility} />
           ))}
         </div>
       </section>
@@ -41,7 +41,7 @@ function Experience_StudySection({ utility }) {
         <ul class="list-none m-0 p-0">
           {utility.data.map((item) => {
             return (
-              <li class="mb-5  ">
+              <li key={item.name} class="mb-5  ">
                 <div class="flex group items-center ">
                   <div class="bg-sky-200 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
                   <div class="flex-1  ml-4 z-10 font-medium">
