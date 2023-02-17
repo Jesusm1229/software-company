@@ -151,7 +151,7 @@ export default function About({ about }) {
                   </div>
                 </motion.div>
 
-                <div className="w-full flex flex-col p-5 gap-3 select-none text-center ">
+                <div className="w-full flex flex-col p-5 gap-3 select-none items-center text-center justify-center">
                   <div className="flex flex-col gap-1">
                     {/* <motion.h1
                       variants={opacityVariant}
@@ -169,7 +169,7 @@ export default function About({ about }) {
 
                   <motion.p
                     variants={opacityVariant}
-                    className=" text-gray-300 font-medium text-sm md:text-base lg:text-xl text-center"
+                    className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-center"
                   >
                     I build dedicated solutions that serves you in the best way.
                     My knowledge extends from the design of the models involving
