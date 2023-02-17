@@ -40,9 +40,9 @@ export default function Home({ blogs, skills }) {
         keywords={pageMeta.home.keywords}
       />
 
-      <div className="relative dark:bg-dark Primary dark:text-gray-100">
+      <div className="relative w-screen h-screen dark:bg-dark Primary dark:text-gray-100">
         <VantaHero>
-          <Circle showQR={showQR} setShowQR={setShowQR}></Circle>
+          <Circle showQR={showQR} setShowQR={setShowQR} />
           {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"

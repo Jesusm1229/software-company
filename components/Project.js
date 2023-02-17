@@ -257,7 +257,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  right-0 bottom-0 rounded-2xl top-0 left-0 w-full  brightness-95 shadow-2xl contrast-125"
+                        className="photo  right-0 bottom-0 rounded-2xl top-0 left-0 h-full lg:w-full  brightness-95 shadow-2xl contrast-125"
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}

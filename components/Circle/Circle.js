@@ -9,6 +9,7 @@ import {
   opacityVariant,
   popUp,
 } from "../../content/FramerMotionVariants";
+import PageTop from "../PageTop";
 /* import { TweenMax } from "gsap/gsap-core";
  */ /* import { Intro } from "./intro"; */
 
@@ -289,7 +290,14 @@ export default function Circle({ setShowQR, showQR }) {
       ref={app}
       className="App body loading demo-3"
     >
-      <div className="main">
+      <motion.div className=" absolute inset-0 m-auto max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10 ">
+        <span className="text-white">
+          JESUS MEDINA
+          <span className="text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-zinc-100"></span>
+          projects.
+        </span>
+      </motion.div>
+      <div className="relative w-full h-full inset-0 items-center justify-items-center">
         <svg
           className="circles"
           width="100%"
@@ -382,17 +390,29 @@ export default function Circle({ setShowQR, showQR }) {
             ergonomic workplace innovations.
           </p>
         </div> */}
-        <button
-          className="enter"
+
+        <motion.div
+          className="absolute"
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
           onClick={() => setShowQR(!showQR)}
         >
-          <div className="enter__bg" onClick={() => setShowQR(!showQR)}></div>
-          <span className="enter__text" onClick={() => setShowQR(!showQR)}>
-            CONTACT ME
-          </span>
-        </button>
+          <button
+            className="enter block absolute font-medium cursor-pointer p-0 m-auto   w-[var(--dim-button)] h-[var(--dim-button)]  font-medium cursor-pointer text-[color:var(--color-text-button)] border-0;
+          "
+          >
+            <div
+              className="enter__bg absolute w-full h-full rounded-[50%] left-0 top-0; "
+              onClick={() => setShowQR(!showQR)}
+            ></div>
+            <span
+              className="enter__text relative"
+              onClick={() => setShowQR(!showQR)}
+            >
+              CONTACT ME
+            </span>
+          </button>
+        </motion.div>
       </div>
     </motion.div>
   );
