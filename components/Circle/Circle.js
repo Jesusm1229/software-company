@@ -542,7 +542,11 @@ export default function Circle({ setShowQR, showQR }) {
               scale: [1, 1.1, 1],
               transition: { ease: "linear", duration: 2, repeat: Infinity },
             }} */
-            whileHover={{ scale: [null, 1.3], duration: 0.3 }}
+            whileHover={{
+              scale: [null, 1.3],
+              duration: 0.3,
+              transition: { type: "spring" },
+            }}
             initial="hidden"
             whileInView="visible"
             variants={{
@@ -559,7 +563,7 @@ export default function Circle({ setShowQR, showQR }) {
                       mass: 5,
                       damping: 4, */
                   },
-                  delay: 0.3,
+                  delay: 0.4,
                 },
               },
             }}
