@@ -3,6 +3,8 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   FadeContainer,
   headingFromLeft,
+  fromBottomVariant,
+  fromTopVariant,
   opacityVariant,
   popUp,
 } from "../content/FramerMotionVariants";
@@ -42,7 +44,9 @@ export default function Home({ blogs, skills }) {
 
       <div className="relative w-screen h-screen dark:bg-dark Primary dark:text-gray-100">
         <VantaHero>
-          <Circle showQR={showQR} setShowQR={setShowQR} />
+          <div className="flex justify-center items-center h-full w-full bg-none relative">
+            <Circle showQR={showQR} setShowQR={setShowQR} />
+          </div>
           {/*  <div className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
               initial="hidden"

@@ -2,18 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import "../../styles/Base.module.css";
 import { preloadFonts } from "../../utils/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   FadeContainer,
   headingFromLeft,
+  fromBottomVariantHome,
+  fromTopVariant,
   opacityVariant,
   popUp,
+  svgContainer,
+  svgItem,
 } from "../../content/FramerMotionVariants";
+import AnimatedHeading from "../FramerMotion/AnimatedHeading";
 import PageTop from "../PageTop";
 /* import { TweenMax } from "gsap/gsap-core";
  */ /* import { Intro } from "./intro"; */
 
 export default function Circle({ setShowQR, showQR }) {
+  const [isVisible, setVisible] = useState(false);
   /* const DOC = {
     circles: document.querySelector(".circles"),
     enterCtrl: document.querySelector(".enter"),
@@ -23,11 +29,13 @@ export default function Circle({ setShowQR, showQR }) {
   //Text
   /* const DOCcircleText = [...document.querySelectorAll(".circles__text")];
    */
+
   //app para gsap
-  const app = useRef();
+  const app = useRef(null);
   const ctxButton = useRef(null);
   const start = useRef(null);
 
+  const isInView = useInView(app);
   //Al entrar en botón
   const onEnter = ({ currentTarget }) => {
     gsap.to(".enter__bg", {
@@ -133,7 +141,8 @@ export default function Circle({ setShowQR, showQR }) {
     start.kill();
   } */
 
-  useEffect(() => {
+  //Animación de inicio
+  /*  useEffect(() => {
     start.current = gsap.context(() => {
       gsap
         .timeline()
@@ -170,8 +179,7 @@ export default function Circle({ setShowQR, showQR }) {
         })
         .set(".enter", { pointerEvents: "auto" })
 
-        // use scoped selectors
-        //gsap.to(".enter", { rotation: 360 });
+        
         .to(".circles__text--1", {
           rotation: "+=360",
           duration: 60,
@@ -200,8 +208,7 @@ export default function Circle({ setShowQR, showQR }) {
 
     const ctx = gsap.context(() => {
       gsap.set(".circles__text", { transformOrigin: "50% 50%" });
-      // use scoped selectors
-      //gsap.to(".enter", { rotation: 360 });
+      
       gsap.to(".circles__text--1", {
         rotation: "+=360",
         duration: 60,
@@ -226,20 +233,7 @@ export default function Circle({ setShowQR, showQR }) {
         ease: "none",
         repeat: -1,
       });
-      // need to set the transform origin in the center
-      /* gsap.set(DOCcircleText, { transformOrigin: "50% 50%" }); */
-      // hide on start
-      /*  console.log([DOCcircleText]); */
-      /*  gsap.set([DOCcircleText], {
-        opacity: 0,
-      }); */
-      /*  gsap.to(DOC.enterBackground, {
-        duration: 1.3,
-        ease: "expo",
-        scale: 1.4,
-      }); */
-      // or refs
-      //gsap.to(circle.current, { rotation: 360 });
+      
     }, app);
 
     ctxButton.current = gsap.context(() => {
@@ -254,7 +248,8 @@ export default function Circle({ setShowQR, showQR }) {
       ctx.revert();
     };
   });
-
+ */
+  //Obteniendo fonts extra
   useEffect(() => {
     const script = document.createElement("script");
 
@@ -267,6 +262,7 @@ export default function Circle({ setShowQR, showQR }) {
     };
   }, []);
 
+  //Trayendo script index
   useEffect(() => {
     const script = document.createElement("script");
 
@@ -282,88 +278,228 @@ export default function Circle({ setShowQR, showQR }) {
   }, []);
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={FadeContainer}
-      ref={app}
-      className="App body loading demo-3"
-    >
-      <motion.div className=" absolute inset-0 m-auto max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10 ">
-        <span className="text-white">
-          JESUS MEDINA
-          <span className="text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-zinc-100"></span>
-          projects.
-        </span>
-      </motion.div>
-      <div className="relative w-full h-full inset-0 items-center justify-items-center">
-        <svg
-          className="circles"
-          width="100%"
-          height="100%"
-          viewBox="0 0 1400 1400"
-        >
-          <def>
-            <path
-              id="circle-1"
-              d="M250,700.5A450.5,450.5 0 1 11151,700.5A450.5,450.5 0 1 1250,700.5"
-            />
-            <path
-              id="circle-2"
-              d="M382,700.5A318.5,318.5 0 1 11019,700.5A318.5,318.5 0 1 1382,700.5"
-            />
-            <path
-              id="circle-3"
-              d="M487,700.5A213.5,213.5 0 1 1914,700.5A213.5,213.5 0 1 1487,700.5"
-            />
-            <path
-              id="circle-4"
-              d="M567.5,700.5A133,133 0 1 1833.5,700.5A133,133 0 1 1567.5,700.5"
-            />
-          </def>
-          <text className="circles__text circles__text--1">
-            <textPath
-              className="circles__text-path"
-              xlinkHref="#circle-1"
-              aria-label=""
-              textLength="2830"
+    <>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            className=" absolute text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
+            exit={{ opacity: 0, scale: 0 }}
+          >
+            <span
+              style={{
+                overflow: "hidden",
+                display: "inline-block",
+              }}
             >
-              Let life begin I've cleansed all my sins&nbsp;
-            </textPath>
-          </text>
-          <text className="circles__text circles__text--2">
-            <textPath
-              className="circles__text-path"
-              xlinkHref="#circle-2"
-              aria-label=""
-              textLength="2001"
+              <AnimatedHeading
+                variants={fromBottomVariantHome}
+                className={`text-7xl text-center lg:text-9xl font-bold text-neutral-900 dark:text-neutral-200 py-6 `}
+                style={{ display: "inline-block", overflow: "hidden" }}
+              >
+                JESUS MEDINA
+              </AnimatedHeading>
+            </span>
+            <span
+              style={{
+                overflow: "hidden",
+                display: "inline-block",
+              }}
             >
-              Burn all the money absolve all the lies&nbsp;
-            </textPath>
-          </text>
-          <text className="circles__text circles__text--3">
-            <textPath
-              className="circles__text-path"
-              xlinkHref="#circle-3"
-              aria-label=""
-              textLength="1341"
+              <AnimatedHeading
+                variants={fromTopVariant}
+                className={`text-6xl text-center lg:text-9xl font-bold text-neutral-900 dark:text-neutral-200 py-6 `}
+                style={{ display: "inline-block", overflow: "hidden" }}
+              >
+                SOFTWARE DEVELOPER
+              </AnimatedHeading>
+            </span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={FadeContainer}
+        ref={app}
+        className="App body loading demo-3"
+      >
+        <div className="relative w-full h-full inset-0 items-center justify-items-center">
+          <motion.svg
+            className="circles pointer-events-none fixed w-[var(--dim)] h-[var(--dim)] top-[calc(50%_-_var(--dim)_/_2_)] left-[calc(50%_-_var(--dim)_/_2_)]"
+            width="100%"
+            height="100%"
+            viewBox="0 0 1400 1400"
+          >
+            <def>
+              <path
+                id="circle-1"
+                d="M250,700.5A450.5,450.5 0 1 11151,700.5A450.5,450.5 0 1 1250,700.5"
+              />
+              <path
+                id="circle-2"
+                d="M382,700.5A318.5,318.5 0 1 11019,700.5A318.5,318.5 0 1 1382,700.5"
+              />
+              <path
+                id="circle-3"
+                d="M487,700.5A213.5,213.5 0 1 1914,700.5A213.5,213.5 0 1 1487,700.5"
+              />
+              <path
+                id="circle-4"
+                d="M567.5,700.5A133,133 0 1 1833.5,700.5A133,133 0 1 1567.5,700.5"
+              />
+            </def>
+            <motion.text
+              className="uppercase origin-[700px_700px] will-change-[transform,opacity] text-[25vmin] text-[clamp(170px,25vmin,180px)] font-[number:var(--font-weight-circle-1)] fill-[var(--color-text-circle-1)] circles__text--1"
+              style={{
+                origin: "50%",
+              }}
+              animate={{
+                rotate: 360,
+                transition: { ease: "linear", duration: 60, repeat: Infinity },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              custom={isVisible}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: (isVisible) => ({
+                  opacity: isVisible ? 0.5 : 1,
+                  scale: isVisible ? 0.5 : 1,
+                  transition: {
+                    scale: {
+                      type: "tween",
+                      ease: "easeInOut",
+                      /* stiffness: 100,
+                      mass: 5,
+                      damping: 4, */
+                    },
+                  },
+                }),
+              }}
             >
-              We are caged in simulations&nbsp;
-            </textPath>
-          </text>
-          <text className="circles__text circles__text--4">
-            <textPath
-              className="circles__text-path"
-              xlinkHref="#circle-4"
-              aria-label=""
-              textLength="836"
+              <textPath
+                className="circles__text-path"
+                xlinkHref="#circle-1"
+                aria-label=""
+                textLength="2830"
+              >
+                Something incredible is waiting •&nbsp;
+              </textPath>
+            </motion.text>
+            <motion.text
+              className="circles__text circles__text--2"
+              style={{ origin: "50%" }}
+              animate={{
+                rotate: 360,
+                transition: { ease: "linear", duration: 40, repeat: Infinity },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              custom={isVisible}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: (isVisible) => ({
+                  opacity: isVisible ? 0.5 : 1,
+                  scale: isVisible ? 0.5 : 1,
+                  transition: {
+                    scale: {
+                      type: "tween",
+                      ease: "easeInOut",
+                      /* stiffness: 100,
+                      mass: 5,
+                      damping: 4, */
+                    },
+                    delay: 0.1,
+                  },
+                }),
+              }}
             >
-              But something has changed in us&nbsp;
-            </textPath>
-          </text>
-        </svg>
-        {/*   <div className="frame">
+              <textPath
+                className="circles__text-path"
+                xlinkHref="#circle-2"
+                aria-label=""
+                textLength="2001"
+              >
+                Engineering • Solutions • Creative Design •&nbsp;
+              </textPath>
+            </motion.text>
+            <motion.text
+              className="circles__text circles__text--3"
+              style={{ origin: "50%" }}
+              animate={{
+                rotate: 360,
+                transition: { ease: "linear", duration: 30, repeat: Infinity },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              custom={isVisible}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: (isVisible) => ({
+                  opacity: isVisible ? 0.5 : 1,
+                  scale: isVisible ? 0.5 : 1,
+                  transition: {
+                    scale: {
+                      type: "tween",
+                      ease: "easeInOut",
+                      /* stiffness: 100,
+                      mass: 5,
+                      damping: 4, */
+                    },
+                    delay: 0.2,
+                  },
+                }),
+              }}
+            >
+              <textPath
+                className="circles__text-path"
+                xlinkHref="#circle-3"
+                aria-label=""
+                textLength="1341"
+              >
+                Digital ○ Web ○ App ○&nbsp;
+              </textPath>
+            </motion.text>
+            <motion.text
+              className="circles__text circles__text--4"
+              style={{ origin: "50%" }}
+              animate={{
+                rotate: 360,
+                transition: { ease: "linear", duration: 20, repeat: Infinity },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              custom={isVisible}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: (isVisible) => ({
+                  opacity: isVisible ? 0.5 : 1,
+                  scale: isVisible ? 0.5 : 1,
+                  transition: {
+                    scale: {
+                      type: "tween",
+                      ease: "easeInOut",
+                      /* stiffness: 100,
+                      mass: 5,
+                      damping: 4, */
+                    },
+                    delay: 0.3,
+                  },
+                }),
+              }}
+            >
+              <textPath
+                className="circles__text-path"
+                xlinkHref="#circle-4"
+                aria-label=""
+                textLength="836"
+              >
+                Inmersive experiences -&nbsp;
+              </textPath>
+            </motion.text>
+          </motion.svg>
+          {/*   <div className="frame">
           <h1 className="frame__title">Circular Text Effect</h1>
           <nav className="frame__links">
             <a href="http://tympanus.net/Tutorials/InfiniteCircularGallery/">
@@ -391,29 +527,61 @@ export default function Circle({ setShowQR, showQR }) {
           </p>
         </div> */}
 
-        <motion.div
-          className="absolute"
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-          onClick={() => setShowQR(!showQR)}
-        >
-          <button
-            className="enter block absolute font-medium cursor-pointer p-0 m-auto   w-[var(--dim-button)] h-[var(--dim-button)]  font-medium cursor-pointer text-[color:var(--color-text-button)] border-0;
-          "
+          <motion.div
+            className="absolute"
+            onMouseEnter={() => {
+              /* onEnter; */
+              setVisible(true);
+            }}
+            onMouseLeave={() => {
+              /* onLeave; */
+              setVisible(false);
+            }}
+            onClick={() => setShowQR(!showQR)}
+            /*  animate={{
+              scale: [1, 1.1, 1],
+              transition: { ease: "linear", duration: 2, repeat: Infinity },
+            }} */
+            whileHover={{ scale: [null, 1.3], duration: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: { opacity: 0, scale: 0 },
+              visible: {
+                opacity: 1,
+                scale: [1, 1.1, 1],
+                transition: {
+                  scale: {
+                    ease: "linear",
+                    duration: 2,
+                    repeat: Infinity,
+                    /* stiffness: 100,
+                      mass: 5,
+                      damping: 4, */
+                  },
+                  delay: 0.4,
+                },
+              },
+            }}
           >
-            <div
-              className="enter__bg absolute w-full h-full rounded-[50%] left-0 top-0; "
-              onClick={() => setShowQR(!showQR)}
-            ></div>
-            <span
-              className="enter__text relative"
-              onClick={() => setShowQR(!showQR)}
+            <button
+              className="enter block absolute font-medium cursor-pointer p-0 m-auto   w-[var(--dim-button)] h-[var(--dim-button)]  font-medium cursor-pointer text-[color:var(--color-text-button)] border-0;
+          "
             >
-              CONTACT ME
-            </span>
-          </button>
-        </motion.div>
-      </div>
-    </motion.div>
+              <div
+                className="enter__bg absolute w-full h-full rounded-[50%] left-0 top-0; "
+                onClick={() => setShowQR(!showQR)}
+              ></div>
+              <span
+                className="enter__text relative"
+                onClick={() => setShowQR(!showQR)}
+              >
+                CONTACT ME
+              </span>
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
+    </>
   );
 }

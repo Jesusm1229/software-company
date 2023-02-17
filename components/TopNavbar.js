@@ -226,7 +226,7 @@ const MobileMenu = ({ links, handleClick }) => {
             <Link href={navlink} key={`mobileNav-${index}`} passHref>
               <motion.a
                 href={navlink}
-                className="link link-underline link-underline-black border-b  text-gray-900 dark:text-gray-100 font-semibold flex w-auto py-4 uppercase text-4xl sm:text-9xl cursor-pointer"
+                className="link link-underline link-underline-black border-b  text-gray-900 dark:text-gray-100 font-semibold flex w-auto py-4 uppercase text-4xl lg:text-9xl cursor-pointer"
                 variants={mobileNavItemSideways}
                 onClick={handleClick}
               >

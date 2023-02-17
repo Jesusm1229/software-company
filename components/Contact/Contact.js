@@ -22,7 +22,8 @@ export default function Contact() {
           variants={popUpFromBottomForText}
           className="px-4 py-2 font-medium text-slate-600"
         >
-          Feel free to get in touch anytime.
+          Feel free to send me a message anytime, from a business need to a
+          simple greeting.
         </AnimatedText>
       </section>
 
@@ -30,12 +31,12 @@ export default function Contact() {
       <section className="flex flex-col lg:flex-row w-full mx-auto px-5 lg:pb-10">
         {/* Left Contact form section */}
         <div className="w-full mx-auto mt-10">
-          <AnimatedHeading
+          {/* <AnimatedHeading
             variants={popUpFromBottomForText}
             className="text-2xl font-bold w-full text-center my-2"
           >
             Connect with me
-          </AnimatedHeading>
+          </AnimatedHeading> */}
 
           <ContactForm />
         </div>

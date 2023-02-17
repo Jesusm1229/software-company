@@ -239,13 +239,13 @@
 }
 
 .circles {
-	pointer-events: none;
-	position: fixed;
+	/* pointer-events: none;
+	position: fixed; */
 	 --dim: 186vmin;
-	width: var(--dim);
+	/* width: var(--dim);
 	height: var(--dim);
 	top: calc(50% - var(--dim) / 2 );
-	left: calc(50% - var(--dim) / 2 );
+	left: calc(50% - var(--dim) / 2 ); */
 }
 
 .demo-3 .circles {
@@ -259,11 +259,11 @@
 }
 
 .circles__text--1 {
-	font-size: 25vmin;
-	font-size: clamp(170px,25vmin,180px);
+	/* font-size: 25vmin;
+	font-size: clamp(170px,25vmin,180px); */
 	font-family: var(--font-circle-1);
-	font-weight: var(--font-weight-circle-1);
-	fill: var(--color-text-circle-1);
+/* 	font-weight: var(--font-weight-circle-1);
+	fill: var(--color-text-circle-1); */
 }
 
 .circles__text--2 {

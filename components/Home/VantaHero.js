@@ -26,11 +26,8 @@ export default function VantaHero({ children }) {
   }, [vantaEffect]);
 
   return (
-    <div className="relative h-full w-full ">
-      <div
-        className="flex justify-center items-center h-full w-full bg-black relative"
-        ref={vantaRef}
-      >
+    <div className="absolute h-full w-full ">
+      <div className=" h-screen w-screen bg-black absolute" ref={vantaRef}>
         {children}
       </div>
     </div>
