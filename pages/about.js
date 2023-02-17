@@ -163,7 +163,7 @@ export default function About({ about }) {
                       variants={opacityVariant}
                       className="font-medium text-base md:text-sm lg:text-2xl text-white"
                     >
-                      React Developer, Competitive Programmer
+                      Computer Engineer & Enthusiastic Developer
                     </motion.p>
                   </div>
 
@@ -171,8 +171,10 @@ export default function About({ about }) {
                     variants={opacityVariant}
                     className=" text-gray-300 font-medium text-sm md:text-base lg:text-xl text-center"
                   >
-                    I am currently pursuing my Bachelor Degree in Computer
-                    Science. I can code in Python, C, C++, etc.
+                    I build dedicated solutions that serves you in the best way.
+                    My knowledge extends from the design of the models involving
+                    the system to the final layer of interface that meets the
+                    user.
                   </motion.p>
                 </div>
               </div>
