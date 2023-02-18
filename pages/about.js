@@ -61,7 +61,7 @@ export default function About({ about }) {
         keywords={pageMeta.about.keywords}
       />
 
-      <section className="pageTop py-10 md:py-2">
+      <section className="pageTop pt-10 pb-2 md:py-2">
         <div className=" bg-darkPrimary text-gray-100">
           <div className="relative max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl mx-auto">
             <motion.section
@@ -74,7 +74,7 @@ export default function About({ about }) {
               <div className="w-full relative mx-auto flex flex-col items-center md:gap-10">
                 <motion.div
                   /*  variants={popUp} */
-                  className="relative w-3/5 h-min xs:w-screen  flex justify-center items-center rounded-full p-3 "
+                  className="relative w-4/5 h-min xs:w-screen  flex justify-center items-center rounded-full p-3 "
                 >
                   <div className="flex flex-col gap-10">
                     <motion.div
@@ -157,11 +157,11 @@ export default function About({ about }) {
                       variants={opacityVariant}
                       className="text-5xl lg:text-6xl font-bold font-sarina"
                     >
-                      Jatin Sharma
+                     Jesus Medina
                     </motion.h1> */}
                     <motion.p
                       variants={opacityVariant}
-                      className="font-medium text-base md:text-sm lg:text-2xl text-white"
+                      className="font-semibold text-xl md:text-sm lg:text-3xl text-white"
                     >
                       Computer Engineer & Enthusiastic Developer
                     </motion.p>

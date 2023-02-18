@@ -2,9 +2,8 @@ export default {
   home: {
     title: "",
     description:
-      "Hey, I am Jatin Sharma. A Front-end Developer/React Developer from India who loves to design and code. I use React.js or Next.js to build the web application interfaces and the functionalities. At the moment, I am pursuing my Bachelor's degree in Computer Science.",
-    /* image: "https://imgur.com/KeJgIVl.png",
-     */ keywords: "portfolio jatin, portfolio j471n, jatin blogs",
+      "I build dedicated solutions that serves you in the best way. My knowledge extends from the design of the models involving the system to the final layer of interface that meets the user.",
+    keywords: "portfolio jesus medina, portfolio jesusm29, software developer",
   },
 
   stats: {
@@ -26,12 +25,12 @@ export default {
     description:
       "I've been writing online since 2021, mostly about web development and tech careers. In total, I've written more than 50 articles till now.",
     /* image: "https://imgur.com/nbNLLZk.png",
-     */ keywords: "j471n blog, blog, webdev, react",
+     */ keywords: ", blog, webdev, react",
   },
 
   bookmark: {
     title: "Bookmarks -",
-    description: "Bookmarked Blogs of Jatin Sharma's blogs by you",
+    description: "Bookmarked Blogs of Jesus Medina's blogs by you",
     /*  image: "https://imgur.com/5XkrVPq.png",
      */ keywords: "bookmark, blogs, ",
   },
@@ -52,7 +51,7 @@ export default {
   about: {
     title: "About -",
     description:
-      "Hey, I am Jatin Sharma. A Front-end Developer/React Developer from India who loves to design and code. I use React.js or Next.js to build the web application interfaces and the functionalities. At the moment, I am pursuing my Bachelor's degree in Computer Science.",
+      "I build dedicated solutions that serves you in the best way. My knowledge extends from the design of the models involving the system to the final layer of interface that meets the user",
     /* image: "https://imgur.com/b0HRaPv.png",
      */ keywords: "about",
   },

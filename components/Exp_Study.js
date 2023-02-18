@@ -46,7 +46,7 @@ function Experience_StudySection({ utility }) {
                   <div class="bg-sky-200 opacity-90 z-10 rounded-full border-4 border-slate-900  h-5 w-5" />
                   <div class="flex-1  ml-4 z-10 font-medium">
                     <div class=" order-1 space-y-2  rounded-lg shadow-only transition-ease px-2 lg:w-12/12 lg:px-6 py-4">
-                      <h3 class="mb-1 md:mb-3 text-gray-200 font-bold text-base md:text-sm lg:text-2xl">
+                      <h3 class="mb-1 md:mb-3 text-gray-200 font-bold text-base md:text-sm lg:text-xl">
                         {item.name}
                       </h3>
                       <p className="pb-1 md:pb-2 text-sm text-gray-200 uppercase">
@@ -54,7 +54,7 @@ function Experience_StudySection({ utility }) {
                         {" - "} {item.period}
                       </p>
                       <hr className="" />
-                      <p class="text-sm md:text-sm lg:text-xl font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
+                      <p class="text-sm md:text-sm lg:text-lg font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
                         {item.description}
                       </p>
                     </div>

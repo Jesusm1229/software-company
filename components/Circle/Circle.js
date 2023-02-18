@@ -37,7 +37,7 @@ export default function Circle({ setShowQR, showQR }) {
 
   const isInView = useInView(app);
   //Al entrar en botón
-  const onEnter = ({ currentTarget }) => {
+  /* const onEnter = ({ currentTarget }) => {
     gsap.to(".enter__bg", {
       backgroundColor: "#dad4d1",
       scale: 1.2,
@@ -81,10 +81,10 @@ export default function Circle({ setShowQR, showQR }) {
       ease: "back",
       repeat: -1,
     });
-  };
+  }; */
 
   //Exiting button
-  const onLeave = ({ currentTarget }) => {
+  /* const onLeave = ({ currentTarget }) => {
     //Button
     gsap.to(".enter__bg", {
       backgroundColor: "#dad4d1",
@@ -135,7 +135,7 @@ export default function Circle({ setShowQR, showQR }) {
       ease: "back",
       repeat: -1,
     });
-  };
+  }; */
 
   /* function enter() {
     start.kill();
@@ -282,7 +282,7 @@ export default function Circle({ setShowQR, showQR }) {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className=" absolute text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
+            className=" absolute fixed text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
             exit={{ opacity: 0, scale: 0 }}
           >
             <span

@@ -8,41 +8,41 @@ export default [
   {
     title: "Twitter",
     Icon: AiOutlineTwitter,
-    url: "https://twitter.com/intent/follow?screen_name=j471n_",
+    url: "link follow twitter",
   },
   {
     title: "LinkedIn",
     Icon: BsLinkedin,
-    url: "https://www.linkedin.com/in/j471n/",
+    url: "link ",
   },
   {
     title: "Github",
     Icon: BsGithub,
-    url: "https://github.com/j471n",
+    url: "link",
   },
   {
     title: "Instagram",
     Icon: AiOutlineInstagram,
-    url: "https://www.instagram.com/j471n_",
+    url: "link",
   },
   {
     title: "Dev.to",
     Icon: FaDev,
-    url: "https://dev.to/j471n",
+    url: "",
   },
   {
     title: "Codepen",
     Icon: SiCodepen,
-    url: "https://codepen.io/j471n",
+    url: "",
   },
   {
     title: "Facebook",
     Icon: BsFacebook,
-    url: "https://www.facebook.com/ja7in/",
+    url: "",
   },
   {
     title: "Mail",
     Icon: HiMail,
-    url: "mailto:jatinsharma8669@gmail.com",
+    url: "mailto:jesusmedina1229@gmail.com",
   },
 ];
