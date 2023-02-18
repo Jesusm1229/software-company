@@ -69,7 +69,7 @@ export default function About({ about }) {
               whileInView="visible"
               variants={FadeContainer}
               viewport={{ once: true }}
-              className="grid place-content-center h-min md:min-h-screen"
+              className="grid place-content-center h-min lg:min-h-screen"
             >
               <div className="w-full relative mx-auto flex flex-col items-center md:gap-10">
                 <motion.div
@@ -142,7 +142,7 @@ export default function About({ about }) {
                       <div className="asbsolute flex flex-col gap-1 bottom-0 left-0 h-16 w-16 -mt-50">
                         <motion.h1
                           variants={fromRightVariant}
-                          className="w-full absolute text-5xl lg:text-9xl font-holland bottom-0 left-0 h-32"
+                          className="w-full absolute text-7xl lg:text-9xl font-holland bottom-0 left-0 h-32"
                         >
                           Jesús Medina
                         </motion.h1>
