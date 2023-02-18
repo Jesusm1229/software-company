@@ -171,7 +171,7 @@ export default function About({ about }) {
                     variants={opacityVariant}
                     className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-center"
                   >
-                    I build dedicated solutions that serves you in the best way.
+                    I build dedicated solutions that serve you in the best way.
                     My knowledge extends from the design of the models involving
                     the system to the final layer of interface that meets the
                     user.

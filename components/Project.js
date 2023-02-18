@@ -130,7 +130,7 @@ export default function Project({ project }) {
   return (
     <>
       <motion.div
-        className={`snap-center w-auto h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
+        className={`snap-center w-auto h-screen shrink  flex justify-center items-center my-1 p-5 relative color-[color:var(--accent)]`}
         ref={ref}
         style={{
           /*   rgb(117 190 218 / 0.5) */
