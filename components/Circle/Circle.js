@@ -322,9 +322,9 @@ export default function Circle({ setShowQR, showQR }) {
         viewport={{ once: true }}
         variants={FadeContainer}
         ref={app}
-        className="App body loading demo-3"
+        className="App body loading demo-3 fixed"
       >
-        <div className="relative w-full h-full inset-0 items-center justify-items-center">
+        <div className="relative fixed w-full h-full inset-0 items-center justify-items-center">
           <motion.svg
             className="circles pointer-events-none fixed w-[var(--dim)] h-[var(--dim)] top-[calc(50%_-_var(--dim)_/_2_)] left-[calc(50%_-_var(--dim)_/_2_)]"
             width="100%"
