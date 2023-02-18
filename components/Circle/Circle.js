@@ -15,6 +15,7 @@ import {
 } from "../../content/FramerMotionVariants";
 import AnimatedHeading from "../FramerMotion/AnimatedHeading";
 import PageTop from "../PageTop";
+import { isMobile } from "react-device-detect";
 /* import { TweenMax } from "gsap/gsap-core";
  */ /* import { Intro } from "./intro"; */
 
@@ -249,7 +250,13 @@ export default function Circle({ setShowQR, showQR }) {
     };
   });
  */
-  //Obteniendo fonts extra
+
+  //If mobile the visible state will be true by default
+  useEffect(() => {
+    if (isMobile) setVisible(true);
+  }, []);
+
+  //Adding extra fonts
   useEffect(() => {
     const script = document.createElement("script");
 
@@ -262,7 +269,7 @@ export default function Circle({ setShowQR, showQR }) {
     };
   }, []);
 
-  //Trayendo script index
+  //script index
   useEffect(() => {
     const script = document.createElement("script");
 
