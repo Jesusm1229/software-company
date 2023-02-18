@@ -528,7 +528,7 @@ export default function Circle({ setShowQR, showQR }) {
         </div> */}
 
           <motion.div
-            className="absolute"
+            className="absolute fixed"
             onMouseEnter={() => {
               /* onEnter; */
               setVisible(true);
