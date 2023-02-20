@@ -329,7 +329,7 @@ export default function Project({ project }) {
                 duration: 0.5,
                 delay: 2.3,
               }}
-              animate={isMobile ? setTimeout(sequence, 3600) : null}
+              animate={isMobile ? setTimeout(sequence, 3600) : ""}
             >
               {project.previewURL && (
                 <Link
