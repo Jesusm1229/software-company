@@ -28,6 +28,7 @@ import {
 import styles from "../styles/Project.module.css";
 import ViewMoreButton from "./Buttons/ViewMoreButton";
 import { gsap } from "gsap/dist/gsap";
+import { isMobile } from "react-device-detect";
 
 function useParallax(value, distance) {
   const x = useMotionValue(value);
@@ -120,6 +121,14 @@ export default function Project({ project }) {
     /* await animation.start({ rotate: 0 });
     animation.start({ scale: 1 }); */
   }
+
+  //If mobile expand the img
+  useEffect(() => {
+    if (isMobile) {
+      /* sequence(); */
+      console.log(isMobile);
+    }
+  }, []);
 
   return (
     <>
@@ -320,6 +329,7 @@ export default function Project({ project }) {
                 duration: 0.5,
                 delay: 2.3,
               }}
+              animate={isMobile ? setTimeout(sequence, 3600) : null}
             >
               {project.previewURL && (
                 <Link

@@ -289,7 +289,7 @@ export default function Circle({ setShowQR, showQR }) {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className=" absolute fixed text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
+            className=" absolute  text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
             exit={{ opacity: 0, scale: 0 }}
           >
             <span
