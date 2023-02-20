@@ -51,7 +51,7 @@ function Experience_StudySection({ utility }) {
                       </h3>
                       <p className="pb-1 md:pb-2 text-sm text-gray-200 uppercase">
                         {item.type}
-                        {" - "} {item.period}
+                        {" | "} {item.period}
                       </p>
                       <hr className="" />
                       <p class="text-sm md:text-sm lg:text-lg font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">

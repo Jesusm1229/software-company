@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineLink } from "react-icons/md";
 import Link from "next/link";
@@ -49,7 +50,7 @@ export default function Project({ project }) {
     console.log("Element is in view: ", isInView);
   }, [isInView]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     tl.current = gsap
       .timeline({ paused: true })
       .from(".photo", { scale: 1.5 })
@@ -60,25 +61,18 @@ export default function Project({ project }) {
       })
       .to(".photo", { scale: 1, duration: 0.5 })
       .to(".mask", { scale: 0.95, duration: 0.4, delay: 0.05, ease: "expo" });
-  }, []);
+  }, []); */
 
   //Al entrar en botón
-  const onEnter = ({ currentTarget }) => {
+  /*  const onEnter = ({ currentTarget }) => {
     tl.current.play();
-  };
+  }; */
 
   //Exiting button
-  const onLeave = ({ currentTarget }) => {
+  /* const onLeave = ({ currentTarget }) => {
     tl.current.reverse();
-    //Button
-    /* gsap.to(".enter__bg", {
-      backgroundColor: "#dad4d1",
-      scale: 1,
-      ease: "elastic.out(1, 0.4)",
-      duration: 2,
-      opacity: 0.5,
-    }); */
-  };
+   
+  }; */
   const variants = {
     initial: { opacity: 0.2 },
     animate: {
@@ -227,7 +221,7 @@ export default function Project({ project }) {
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask relative rounded-2xl w-full h-full shadow-2xl max-h-[90vh] bg-slate-300 ${styles.mask} `}
+                      className={`mask content-center relative rounded-2xl w-full h-full shadow-2xl max-h-[90vh] bg-slate-300 ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
@@ -257,11 +251,12 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo inset-0 rounded-2xl h-full object-none object-center lg:w-full  brightness-95 shadow-2xl contrast-125"
+                        className="photo  rounded-2xl object-none object-center lg:object-cover lg:object-center h-full lg:w-full brightness-95 shadow-2xl "
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
                         animate={animationImg}
+                        quality={100}
                       />
                     </motion.div>
                   )}
@@ -270,7 +265,7 @@ export default function Project({ project }) {
             )}
           </AnimatePresence>
         </motion.div>
-        <div className=" absolute inset-y-0 left-0 max-w-xl w-full h-screen justify-center flex flex-col gap-3 p-10  mb-10">
+        <div className=" absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
           <span
             style={{
               overflow: "hidden",
@@ -333,7 +328,7 @@ export default function Project({ project }) {
               title="Source Code on GitHub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black dark:hover:text-white"
+              className="text-gray-300 hover:text-black dark:hover:text-white"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -371,7 +366,7 @@ export default function Project({ project }) {
           }}
         >
           <AnimatedText
-            className={`${styles.head} absolute text-5xl lg:text-6xl font-inter font-bold h-32 tracking-tighter left-[calc(75%+8rem)] top-[calc(30%)]`}
+            className={`${styles.head} invisible md:visible absolute text-5xl lg:text-6xl font-inter font-bold h-32 tracking-tighter md:left-[calc(60%+8rem)] lg:left-[calc(65%+8rem)] xl:left-[calc(75%+8rem)] top-[calc(30%)]`}
             variants={{
               hidden: { y: "100%", opacity: 0 },
               visible: {

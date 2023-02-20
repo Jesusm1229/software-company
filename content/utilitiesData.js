@@ -29,9 +29,8 @@ import { FaGitAlt, FaSearch } from "react-icons/fa";
 
 const utilities = {
   title: "Utilities",
-  description:
-    "In case you are wondering What tech I use, Here's the list of what tech I'm currently using for coding on the daily basis. This list is always changing.",
-  lastUpdate: "June 30, 2022",
+  description: "",
+  lastUpdate: "",
   data: [
     {
       title: "Experience",
@@ -39,55 +38,12 @@ const utilities = {
         {
           name: "Legendary Cargo Inspectors, C.A",
           type: "Full Time Job",
-          period: "2022",
-          description: "Lorem ipsum",
+          period: "2022 - Present",
+          description:
+            "As the IT Support I monitor and maintain the company computer systems, install and configure hardware and software solving technical issues as they arise.",
           /*       Icon: SiVisualstudiocode,
           link: "https://code.visualstudio.com/download", */
         },
-        {
-          name: "Legendary Cargo Inspectors, C.A",
-          type: "Full Time Job",
-          period: "2022",
-          description: "Lorem ipsum",
-          /*       Icon: SiVisualstudiocode,
-          link: "https://code.visualstudio.com/download", */
-        },
-        /*  {
-          name: "Sublime Text",
-          description: "Text editor",
-          Icon: SiSublimetext,
-          link: "https://www.techspot.com/downloads/5546-sublime-text.html",
-        },
-        {
-          name: "Andromeda",
-          description: "VS Code theme",
-          Icon: BsFillPaletteFill,
-          link: "https://marketplace.visualstudio.com/items?itemName=EliverLara.andromeda",
-        },
-        {
-          name: "Oh-my-zsh",
-          description: "Terminal Theme",
-          Icon: BsFillTerminalFill,
-          link: "https://ohmyz.sh/",
-        },
-        {
-          name: "Windows 11",
-          description: "Operating System",
-          Icon: BsWindows,
-          link: "https://www.microsoft.com/software-download/windows11",
-        },
-        {
-          name: "Chrome",
-          description: "Primary Browser",
-          Icon: SiGooglechrome,
-          link: "https://www.google.com/chrome",
-        },
-        {
-          name: "Microsoft Edge",
-          description: "Secondary Browser",
-          Icon: SiMicrosoftedge,
-          link: "https://www.microsoft.com/en-us/edge",
-        }, */
       ],
     },
 
@@ -95,17 +51,13 @@ const utilities = {
       title: "Education",
       data: [
         {
-          name: "Bachelor Computer Engineer",
+          name: "Computer Engineer Bachelor's Degree",
           type: "UNIVERSIDAD DE ORIENTE",
-          period: "2022",
-          description: "Lorem ipsum",
+          period: "2023",
+          description:
+            "I learned to be well-versed in design analytics, algorithms, and analysis tools to understand complex computer networks used in an organization. I was taught to have strong critical thinking skills to solve complicated problems in a timely manner.",
         },
-        {
-          name: "Bachelor  Engineer",
-          type: "Universidad de Oriente",
-          period: "2022",
-          description: "Lorem ipsum",
-        },
+
         /*     {
           name: "Vercel",
           description: "Hosting for Projects",

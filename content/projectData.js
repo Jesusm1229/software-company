@@ -2,7 +2,7 @@ module.exports = [
   {
     id: 1,
     name: "IP address tracker",
-    coverURL: "https://source.unsplash.com/VsBl5PwVZpY/2000x1200",
+    coverURL: "http://source.unsplash.com/iKXcYpxXDq4/4000x2250",
     background: "#2A9D8F",
     container: "#181A1B",
     cover: "#264653",

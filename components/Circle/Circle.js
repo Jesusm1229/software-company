@@ -303,7 +303,7 @@ export default function Circle({ setShowQR, showQR }) {
                 className={`text-7xl text-center lg:text-9xl font-bold text-neutral-900 dark:text-neutral-200 py-6 `}
                 style={{ display: "inline-block", overflow: "hidden" }}
               >
-                JESUS MEDINA
+                JESÚS MEDINA
               </AnimatedHeading>
             </span>
             <span

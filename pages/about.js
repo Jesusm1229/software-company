@@ -87,10 +87,10 @@ export default function About({ about }) {
                         <Image
                           src={homeProfileImage}
                           className="rounded-full shadow filter saturate-0 w-full"
-                          width={333}
-                          height={333}
+                          width={444}
+                          height={444}
                           alt="cover Profile Image"
-                          quality={75}
+                          quality={100}
                           priority={true}
                         />
                       </motion.div>
@@ -163,18 +163,32 @@ export default function About({ about }) {
                       variants={opacityVariant}
                       className="font-semibold text-xl md:text-sm lg:text-3xl text-white"
                     >
-                      Computer Engineer & Enthusiastic Developer
+                      Computer Engineer. Passionate Developer.
                     </motion.p>
                   </div>
-
                   <motion.p
                     variants={opacityVariant}
                     className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-center"
                   >
-                    I build dedicated solutions that serve you in the best way.
-                    My knowledge extends from the design of the models involving
-                    the system to the final layer of interface that meets the
-                    user.
+                    Building digital solutions that serve you in the best way.
+                  </motion.p>
+                  <motion.p
+                    variants={opacityVariant}
+                    className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-justify"
+                  >
+                    Beginning with the conceptualization of the models involving
+                    the system and culminating in the final layer of the
+                    interface that meets the user, I'll help you transform your
+                    idea to a real business.
+                  </motion.p>
+                  <motion.p
+                    variants={opacityVariant}
+                    className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-justify"
+                  >
+                    I devise and adhere to the most effective course of action
+                    by leveraging the tools and technology that ensure a
+                    top-notch product in terms of performance, scalability, and
+                    robust infrastructure.{" "}
                   </motion.p>
                 </div>
               </div>
