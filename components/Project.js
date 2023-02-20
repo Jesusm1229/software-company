@@ -282,7 +282,7 @@ export default function Project({ project }) {
           </span>
           <span>
             <AnimatedText
-              className="font-medium text-lg text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md"
+              className={`${styles.demotext} font-medium text-lg text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md`}
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",
