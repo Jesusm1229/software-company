@@ -221,7 +221,7 @@ export default function Project({ project }) {
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask content-center relative rounded-2xl w-full h-full shadow-2xl max-h-[90vh] bg-slate-300 ${styles.mask} `}
+                      className={`mask content-center relative rounded-2xl w-full h-full  max-h-[90vh] bg-slate-600 ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
@@ -251,7 +251,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  rounded-2xl object-none object-center lg:object-cover lg:object-center h-full lg:w-full brightness-95 shadow-2xl "
+                        className="photo  rounded-2xl object-none object-center lg:object-cover lg:object-center h-full lg:w-full  "
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
@@ -265,7 +265,7 @@ export default function Project({ project }) {
             )}
           </AnimatePresence>
         </motion.div>
-        <div className=" absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
+        <div className=" absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
           <span
             style={{
               overflow: "hidden",
@@ -274,7 +274,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={` text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-zinc-100`}
+              className={`${styles.demotext} text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-neutral-50 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -282,7 +282,7 @@ export default function Project({ project }) {
           </span>
           <span>
             <AnimatedText
-              className="font-medium text-lg text-slate-100 tracking-wider"
+              className="font-medium text-lg text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md"
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",
@@ -321,7 +321,17 @@ export default function Project({ project }) {
                 delay: 2.3,
               }}
             >
-              <ViewMoreButton colorCode={project.buttonColor} />
+              {project.previewURL && (
+                <Link
+                  href={project.previewURL}
+                  title="Live Preview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=""
+                >
+                  <ViewMoreButton colorCode={project.buttonColor} />
+                </Link>
+              )}
             </motion.div>
             <Link
               href={project.githubURL}

@@ -34,6 +34,10 @@ module.exports = {
         protocol: "https",
         hostname: "source.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
     ],
   },
   images: {
@@ -43,6 +47,7 @@ module.exports = {
       "res.cloudinary.com",
       "imgur.com",
       "i.imgur.com",
+      "images.pexels.com",
       "cutt.ly",
       "activity-graph.herokuapp.com",
       "i.scdn.co",
