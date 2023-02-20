@@ -17,18 +17,17 @@ module.exports = [
   },
   {
     id: 2,
-    name: "Ghost invasion Game",
-    coverURL:
-      "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg",
+    name: "ShareMe - Social Network ",
+    coverURL: "http://source.unsplash.com/SYTO3xs06fU/6000x4000",
     background: "#001d3d",
     container: "#669bbc",
-    cover: " #01497c",
+    cover: "#01497c",
     buttonColor: "before:bg-fuchsia-800 hover:border-green-800",
     description:
-      "This the fun game build using PyGame library, in this there are ghost and you just have to kill them by just shooting.",
-    githubURL: "https://github.com/j471n/ghost-invasion-game-python",
-    previewURL: "",
-    tools: ["python", "PyGame"],
+      "This project offers an intuitive web page where users can share their photographic content to the world.",
+    githubURL: "https://github.com/Jesusm1229/shareme_frontend",
+    previewURL: "https://sharemejm.netlify.app/",
+    tools: ["React", "Sanity"],
     pinned: false,
   },
   {

@@ -353,18 +353,6 @@ export default function Project({ project }) {
                 <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
               </motion.div>
             </Link>
-
-            {project.previewURL && (
-              <Link
-                href={project.previewURL}
-                title="Live Preview"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-black dark:hover:text-white"
-              >
-                <MdOutlineLink className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-              </Link>
-            )}
           </div>
         </div>
 
