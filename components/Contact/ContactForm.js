@@ -36,10 +36,10 @@ export default function Form() {
 
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
-        process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
+        "service_t37zq83",
+        "template_d85xss8",
         emailInfo,
-        process.env.NEXT_PUBLIC_YOUR_USER_ID
+        "BNSh2rdJs2u2nVr4C"
       )
       .then((res) => {
         setEmailInfo(initialFormState);

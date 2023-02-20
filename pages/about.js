@@ -87,8 +87,8 @@ export default function About({ about }) {
                         <Image
                           src={homeProfileImage}
                           className="rounded-full shadow filter saturate-0 w-full"
-                          width={444}
-                          height={444}
+                          width={333}
+                          height={333}
                           alt="cover Profile Image"
                           quality={100}
                           priority={true}

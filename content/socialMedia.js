@@ -13,7 +13,7 @@ export default [
   {
     title: "LinkedIn",
     Icon: BsLinkedin,
-    url: "link ",
+    url: "https://www.linkedin.com/in/jesus-medina-3a977415a/ ",
   },
   {
     title: "Github",
