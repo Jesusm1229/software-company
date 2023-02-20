@@ -127,7 +127,7 @@ export default function Projects({ projects }) {
         <section className="snap-center pageTop relative min-h-full w-full">
           <PageTop pageTitle="Projects" className="">
             Let me introduce you to some of the projects I have completed so
-            far. They combine simple and complex concepts. By now, you'll see{" "}
+            far. They combine simple and complex concepts. For now, you'll see{" "}
             <span className="font-bold text-gray-600 dark:text-gray-200">
               {projects.length}
             </span>{" "}
