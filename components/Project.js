@@ -326,7 +326,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} text-4xl py-2 md:text-8xl  font-barlow-500 font-bold text-neutral-900 dark:text-slate-100 `}
+              className={`${styles.head} tracking-tighter text-4xl py-2 md:text-8xl  font-barlow-500 font-bold text-neutral-900 dark:text-slate-100 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
