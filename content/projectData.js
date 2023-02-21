@@ -2,10 +2,10 @@ module.exports = [
   {
     id: 1,
     name: "Enterprise employee tracker",
-    coverURL: "http://source.unsplash.com/wpU4veNGnHg/5472x3648",
-    background: "#e9d8a6",
-    container: "#dc2f02",
-    cover: "#ae2012",
+    coverURL: "http://source.unsplash.com/IFM29XVI2EI/2400x1600",
+    background: "#053c5e",
+    container: "#fff8f0",
+    cover: "#a31621",
     buttonColor: "before:bg-rose-600 hover:border-green-800",
     description:
       "With defined work zones, you can track employee locations and get a monthly, weeekly and daily performance index based on their past time within that zone.",
@@ -18,7 +18,7 @@ module.exports = [
   {
     id: 2,
     name: "ShareMe - Social Network ",
-    coverURL: "http://source.unsplash.com/SYTO3xs06fU/6000x4000",
+    coverURL: "http://source.unsplash.com/SYTO3xs06fU/2400x1600",
     background: "#06bcc1",
     container: "#669bbc",
     cover: "#01497c",
@@ -33,7 +33,7 @@ module.exports = [
   {
     id: 3,
     name: "PWA WeatherApp",
-    coverURL: "http://source.unsplash.com/ugnrXk1129g/4288x2848",
+    coverURL: "http://source.unsplash.com/ugnrXk1129g/2400x1594",
     background: "#3c6e71",
     container: "#f7fff7",
     cover: "#353535",
@@ -46,7 +46,7 @@ module.exports = [
   {
     id: 4,
     name: "Twitter hate speech tracker",
-    coverURL: "http://source.unsplash.com/5otlbgWJlLs/7184x4792",
+    coverURL: "http://source.unsplash.com/5otlbgWJlLs/2400x1600",
     background: "#ef476f",
     container: "#ffccd5",
     cover: "#540d6e",
@@ -60,7 +60,7 @@ module.exports = [
   {
     id: 5,
     name: "Ecommerce 'El Vecino Tarazona'",
-    coverURL: "http://source.unsplash.com/D4ZtZX1UeAI/3130x2374",
+    coverURL: "http://source.unsplash.com/D4ZtZX1UeAI/2400x1820",
     background: "#2ec4b6",
     container: "#eacdc2",
     cover: "#ffa69e",
@@ -74,7 +74,7 @@ module.exports = [
   {
     id: 6,
     name: "Employment platform",
-    coverURL: "http://source.unsplash.com/rxpThOwuVgE/4767x2681",
+    coverURL: "http://source.unsplash.com/rxpThOwuVgE/2400x1349",
     background: "#252422",
     container: "#ccc5b9",
     cover: "#eb5e28",
