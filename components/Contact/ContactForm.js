@@ -11,7 +11,6 @@ import {
 import Ripples from "react-ripples";
 import { useRef } from "react";
 
-// initial State of the form
 const initialFormState = {
   to_name: "Jesús Medina",
   first_name: "",
@@ -23,16 +22,13 @@ const initialFormState = {
 
 export default function Form() {
   const [emailInfo, setEmailInfo] = useState(initialFormState);
+  const [loading, setLoading] = useState(false);
   const { isDarkMode } = useDarkMode();
-  const sendButtonRef = useRef();
 
+  /* Here we send an Email using emailjs you can get service_id, template_id, and user_id after sign up on their site  */
   function sendEmail(e) {
     e.preventDefault();
-    // Making submit button disable
-    sendButtonRef.current.setAttribute("disabled", true);
-
-    // Creating a toast
-    const toastId = toast.loading("Processing ⌛");
+    setLoading(true);
 
     emailjs
       .send(
@@ -42,26 +38,18 @@ export default function Form() {
         "BNSh2rdJs2u2nVr4C"
       )
       .then((res) => {
+        setLoading(false);
         setEmailInfo(initialFormState);
-        toast.update(toastId, {
-          render: "Thank you",
-          type: "success",
-          isLoading: false,
-          autoClose: true,
-        });
-        sendButtonRef.current.removeAttribute("disabled");
+        toast.success("Message Sent ✌");
       })
       .catch((err) => {
-        toast.update(toastId, {
-          render: "" + err.text,
-          type: "error",
-          isLoading: false,
-          autoClose: true,
-        });
-        sendButtonRef.current.removeAttribute("disabled");
+        console.log(err.text);
+        setLoading(false);
+        toast.error("😢 " + err.text);
       });
   }
 
+  /* For Form Validation I simply check each field should not be empty */
   function validateForm() {
     for (const key in emailInfo) {
       if (emailInfo[key] === "") return false;
@@ -69,6 +57,7 @@ export default function Form() {
     return true;
   }
 
+  /* When user is typing and  Press Ctrl+Enter then it will try to send the mail after validating */
   function submitFormOnEnter(event) {
     if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
       if (validateForm()) {
@@ -87,6 +76,7 @@ export default function Form() {
         viewport={{ once: true }}
         className="w-full flex flex-col items-center max-w-xl mx-auto my-10 dark:text-gray-300"
         onSubmit={sendEmail}
+        onKeyDown={submitFormOnEnter}
       >
         {/* First Name And Last Name */}
         <div className="w-full grid grid-cols-2 gap-6">
@@ -101,6 +91,13 @@ export default function Form() {
               className="block py-2 mt-2 px-0 w-full text-sm text-black-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-black dark:border-gray-400 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
               placeholder=" "
               required
+              value={emailInfo.first_name}
+              onChange={(e) =>
+                setEmailInfo({
+                  ...emailInfo,
+                  [e.target.name]: e.target.value,
+                })
+              }
             />
             <label
               htmlFor="floating_first_name"
@@ -120,6 +117,13 @@ export default function Form() {
               className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-black dark:border-gray-400 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
               placeholder=" "
               required
+              value={emailInfo.last_name}
+              onChange={(e) =>
+                setEmailInfo({
+                  ...emailInfo,
+                  [e.target.name]: e.target.value,
+                })
+              }
             />
             <label
               htmlFor="floating_last_name"
@@ -140,6 +144,13 @@ export default function Form() {
             className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-black dark:border-gray-400 focus:outline-none focus:ring-0 focus:dark:border-black focus:border-black peer"
             placeholder=" "
             required
+            value={emailInfo.email}
+            onChange={(e) =>
+              setEmailInfo({
+                ...emailInfo,
+                [e.target.name]: e.target.value,
+              })
+            }
           />
           <label
             htmlFor="floating_email"
@@ -159,6 +170,13 @@ export default function Form() {
             className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-black dark:border-gray-400 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
             placeholder=" "
             required
+            value={emailInfo.subject}
+            onChange={(e) =>
+              setEmailInfo({
+                ...emailInfo,
+                [e.target.name]: e.target.value,
+              })
+            }
           />
           <label
             htmlFor="floating_subject"
@@ -177,6 +195,13 @@ export default function Form() {
             className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-black dark:border-gray-400 dark:focus:border-black focus:outline-none focus:ring-0  peer min-h-[100px] resize-y focus:border-black"
             placeholder=" "
             required
+            value={emailInfo.message}
+            onChange={(e) =>
+              setEmailInfo({
+                ...emailInfo,
+                [e.target.name]: e.target.value,
+              })
+            }
           />
           <label
             htmlFor="floating_message"
@@ -195,11 +220,19 @@ export default function Form() {
             color="rgba(225, 225,225,0.2)"
           >
             <button
-              ref={sendButtonRef}
               type="submit"
               className="text-white bg-neutral-800  dark:bg-darkSecondary font-medium rounded-lg text-sm w-full px-4 py-3 text-center relative overflow-hidden transition duration-300 outline-none active:scale-95 disabled:opacity-50 disabled:active:scale-100"
             >
-              Send
+              <div className="relative w-full flex items-center justify-center">
+                <p
+                  className={
+                    loading ? "inline-flex animate-spin mr-3" : "hidden"
+                  }
+                >
+                  <AiOutlineLoading className="font-bold text-xl" />
+                </p>
+                <p>{loading ? "Sending..." : "Send"}</p>
+              </div>
             </button>
           </Ripples>
         </motion.div>

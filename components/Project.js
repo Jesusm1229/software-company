@@ -314,7 +314,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} text-4xl py-2 md:text-7xl  font-barlow-500 font-semibold text-neutral-900 dark:text-neutral-50 `}
+              className={`${styles.head} text-4xl py-2 md:text-7xl  font-barlow-500 font-bold text-neutral-900 dark:text-neutral-50 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -348,7 +348,7 @@ export default function Project({ project }) {
             })}
           </div>
 
-          <div className=" p-2 w-fit h-fit flex items-center gap-4">
+          <div className=" lg:px-4 w-fit h-fit flex items-center gap-4">
             <motion.div
               onMouseEnter={sequence}
               onMouseLeave={sequenceReverse}
