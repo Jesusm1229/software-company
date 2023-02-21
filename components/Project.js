@@ -303,7 +303,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  "
+                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  lg:brightness-75"
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
