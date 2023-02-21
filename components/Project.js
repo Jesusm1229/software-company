@@ -137,7 +137,13 @@ export default function Project({ project }) {
         ref={ref}
         style={{
           /*   rgb(117 190 218 / 0.5) */
-          backgroundColor: isInView ? project.background : "rgba(0,0,0,0)",
+          backgroundColor: isMobile
+            ? isInView
+              ? project.cover
+              : "rgba(0,0,0,0)"
+            : isInView
+            ? project.background
+            : "rgba(0,0,0,0)",
           transition: "all 1s cubic-bezier(.58,.04,.42,1.04) 1.6s",
           mixBlendMode: "",
         }}
@@ -195,7 +201,13 @@ export default function Project({ project }) {
           className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900 shadow-inner  `}
           style={{
             /*   rgb(117 190 218 / 0.5) */
-            backgroundColor: isInView ? project.container : "rgba(0,0,0,0)",
+            backgroundColor: isMobile
+              ? isInView
+                ? "rgba(0,0,0,0)"
+                : "rgba(0,0,0,0)"
+              : isInView
+              ? project.container
+              : "rgba(0,0,0,0)",
           }}
         >
           {/* w-5/6 h-5/6 */}
