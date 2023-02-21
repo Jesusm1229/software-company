@@ -291,7 +291,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo   object-none object-center lg:object-cover lg:object-center h-full lg:w-full  "
+                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  "
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
@@ -305,7 +305,7 @@ export default function Project({ project }) {
             )}
           </AnimatePresence>
         </motion.div>
-        <div className=" absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
+        <div className="bg-neutral-700/50 lg:bg-transparent rounded-md absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
           <span
             style={{
               overflow: "hidden",
@@ -322,7 +322,7 @@ export default function Project({ project }) {
           </span>
           <span>
             <AnimatedText
-              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-xl text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md`}
+              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-xl text-white tracking-wider `}
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",
