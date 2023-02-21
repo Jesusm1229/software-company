@@ -192,7 +192,7 @@ export default function Project({ project }) {
 
         {/** DIV que contiene al div Sólo se ve en la transición */}
         <motion.div
-          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900 shadow-inner rounded-2xl `}
+          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900 shadow-inner  `}
           style={{
             /*   rgb(117 190 218 / 0.5) */
             backgroundColor: isInView ? project.container : "rgba(0,0,0,0)",
@@ -200,10 +200,11 @@ export default function Project({ project }) {
         >
           {/* w-5/6 h-5/6 */}
           {/**Segundo DIV Este es el que se muestra  */}
+
           <AnimatePresence>
             {isInView && (
               <motion.div
-                className={`${styles.mask} rounded-2xl absolute inset-0 m-auto w-full h-full shadow-2xl max-h-[90vh]  `}
+                className={`${styles.mask} inline-block overflow-hidden absolute inset-0 m-auto w-full h-full shadow-2xl max-h-[90vh]  `}
                 initial="hidden"
                 whileInView="visible"
                 exit="hidden"
@@ -227,10 +228,40 @@ export default function Project({ project }) {
                   },
                 }}
               >
+                {/* /project ID */}
+                <span
+                  className="absolute h-screen w-screen"
+                  style={{
+                    overflow: "hidden",
+                    display: "inline-block",
+                  }}
+                >
+                  <AnimatedText
+                    className={`text-opacity-20 invisible md:visible absolute text-5xl lg:text-[calc(100vh+16rem)] font-inter font-bold h-screen tracking-tighter md:left-[calc(60%+8rem)] lg:left-[calc(65%+8rem)] xl:left-[calc(60%+8rem)] top-[-25%]`}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: {
+                        opacity: 0.2,
+                        transition: {
+                          type: "tween",
+                          ease: "easeInOut",
+                          duration: 0.7,
+                          delay: 1,
+                        },
+                      },
+                    }}
+                    style={{
+                      overflow: "hidden",
+                      display: "inline-block",
+                    }}
+                  >
+                    {`${project.id}`}
+                  </AnimatedText>
+                </span>
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask content-center relative rounded-2xl w-full h-full  max-h-[90vh] bg-slate-600 ${styles.mask} `}
+                      className={`mask content-center relative  w-full h-full  max-h-[90vh] bg-slate-600 ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
@@ -260,7 +291,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  rounded-2xl object-none object-center lg:object-cover lg:object-center h-full lg:w-full  "
+                        className="photo   object-none object-center lg:object-cover lg:object-center h-full lg:w-full  "
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
@@ -306,7 +337,7 @@ export default function Project({ project }) {
               return (
                 <motion.span
                   key={`${tool}-${index}`}
-                  className="dark:bg-gray-100 bg-darkPrimary text-gray-800 rounded px-2 py-1 text-xs"
+                  className="dark:bg-gray-100 bg-darkPrimary text-gray-800  px-2 py-1 text-xs"
                   variants={fromRightVariantSpan}
                   initial="hidden"
                   whileInView={"visible"}
@@ -367,35 +398,6 @@ export default function Project({ project }) {
         </div>
 
         {/* style={{ y }} */}
-        <span
-          style={{
-            overflow: "hidden",
-            display: "inline-block",
-          }}
-        >
-          <AnimatedText
-            className={`${styles.head} invisible md:visible absolute text-5xl lg:text-6xl font-inter font-bold h-32 tracking-tighter md:left-[calc(60%+8rem)] lg:left-[calc(65%+8rem)] xl:left-[calc(75%+8rem)] top-[calc(30%)]`}
-            variants={{
-              hidden: { y: "100%", opacity: 0 },
-              visible: {
-                y: 0,
-                opacity: 1,
-                transition: {
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.5,
-                  delay: 0.4,
-                },
-              },
-            }}
-            style={{
-              overflow: "hidden",
-              display: "inline-block",
-            }}
-          >
-            {`#00${project.id}`}
-          </AnimatedText>
-        </span>
       </motion.div>
     </>
 

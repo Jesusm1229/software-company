@@ -147,7 +147,7 @@ export default function Projects({ projects }) {
           <Image id={image} hueA={hueA} hueB={hueB} />
         ))} */}
         <motion.div
-          className={`bg-[color:var(--accent)] ${styles.progress}`}
+          className={`invisible md:visible bg-[color:var(--accent)] ${styles.progress}`}
           style={{ scaleX }}
         />
       </motion.div>
