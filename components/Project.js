@@ -273,7 +273,7 @@ export default function Project({ project }) {
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask content-center relative  w-full h-full  max-h-[90vh] bg-slate-600 ${styles.mask} `}
+                      className={`mask content-center relative  w-full h-full  max-h-[90vh] bg-transparent ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
