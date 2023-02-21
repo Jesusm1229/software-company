@@ -326,15 +326,20 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} text-4xl py-2 md:text-7xl  font-barlow-500 font-bold text-neutral-900 dark:text-neutral-50 `}
+              className={`${styles.head} text-4xl py-2 md:text-8xl  font-barlow-500 font-bold text-neutral-900 dark:text-slate-100 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
             </AnimatedHeading>
           </span>
-          <span>
+          <span
+            style={{
+              overflow: "hidden",
+              display: "inline-block",
+            }}
+          >
             <AnimatedText
-              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-xl text-white tracking-wider `}
+              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-2xl text-white tracking-wider `}
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",

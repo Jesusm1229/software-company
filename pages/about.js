@@ -176,10 +176,9 @@ export default function About({ about }) {
                     variants={opacityVariant}
                     className=" text-gray-300 font-medium text-sm md:text-base lg:w-8/12 lg:text-xl text-justify"
                   >
-                    Beginning with the conceptualization of the models involving
-                    the system and culminating in the final layer of the
-                    interface that meets the user, I'll help you transform your
-                    idea to a real business.
+                    I'll help you transform your idea to a real business from
+                    the conceptualization of the models involving the system to
+                    the final layer of the interface that meets the user.
                   </motion.p>
                   <motion.p
                     variants={opacityVariant}

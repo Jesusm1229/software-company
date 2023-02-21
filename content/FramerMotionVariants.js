@@ -69,7 +69,7 @@ export const fromRightVariantSpan = {
 };
 
 export const fromBottomVariant = {
-  hidden: { y: "100%", opacity: 0 },
+  hidden: { y: "100%", opacity: 0.8 },
   visible: {
     y: 0,
     opacity: 1,

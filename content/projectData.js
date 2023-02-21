@@ -4,11 +4,11 @@ module.exports = [
     name: "Enterprise employee tracker",
     coverURL: "http://source.unsplash.com/IFM29XVI2EI/2400x1600",
     background: "#053c5e",
-    container: "#fff8f0",
+    container: "#ff6978",
     cover: "#a31621",
     buttonColor: "before:bg-rose-600 hover:border-green-800",
     description:
-      "With defined work zones, you can track employee locations and get a monthly, weeekly and daily performance index based on their past time within that zone.",
+      "With defined work zones, you can track the employees locations and get a monthly, weeekly and daily performance index based on their past time within that zone.",
     githubURL:
       "https://github.com/Jesusm1229/MonitorSystem_React/tree/master/src",
     previewURL: "https://fifth-being-338704.web.app/",
