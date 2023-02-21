@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import Project from "../components/Project"; // ====> not created yet
+import Project from "../components/Project";
 import Metadata from "../components/MetaData";
 import PageTop from "../components/PageTop";
-import { getProjects } from "../lib/dataFetch"; // ====> not created yet
+import { getProjects } from "../lib/dataFetch";
 import AnimatedDiv from "../components/FramerMotion/AnimatedDiv";
 import {
   FadeContainer,

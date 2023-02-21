@@ -14,7 +14,7 @@ export default function Contact() {
   return (
     <div id="contact" className="!relative">
       {/* Get in touch top section */}
-      <section className="w-full-width text-center pt-6  ">
+      <section className="w-full-width text-center pt-2  ">
         <AnimatedHeading
           variants={popUpFromBottomForText}
           className="font-bold text-4xl"

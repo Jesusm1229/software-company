@@ -51,7 +51,7 @@ export default function QRCodeContainer({ showQR, setShowQR }) {
             style={{ zIndex: 10000 }}
           >
             <button
-              className="outline-none absolute right-5 top-5 text-black "
+              className="outline-none absolute right-5 top-5 text-black w-6/6"
               onClick={() => setShowQR(false)}
             >
               <CgClose className="w-8 h-8" />

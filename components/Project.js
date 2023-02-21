@@ -314,7 +314,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.demotext} text-4xl py-2 md:text-5xl  font-barlow-500 font-semibold text-neutral-900 dark:text-neutral-50 `}
+              className={`${styles.head} text-4xl py-2 md:text-7xl  font-barlow-500 font-semibold text-neutral-900 dark:text-neutral-50 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -322,7 +322,7 @@ export default function Project({ project }) {
           </span>
           <span>
             <AnimatedText
-              className={`${styles.demotext} font-medium text-lg text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md`}
+              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-xl text-white tracking-wider bg-neutral-700/50 lg:bg-transparent rounded-md`}
               variants={fromBottomVariant}
               style={{
                 overflow: "hidden",
@@ -332,7 +332,7 @@ export default function Project({ project }) {
               {project.description}
             </AnimatedText>
           </span>
-          <div className="flex items-center gap-1 flex-wrap">
+          <div className="flex items-center gap-1 lg:ml-8 flex-wrap">
             {project.tools.map((tool, index) => {
               return (
                 <motion.span
