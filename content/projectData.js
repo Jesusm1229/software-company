@@ -24,7 +24,7 @@ module.exports = [
     cover: "#01497c",
     buttonColor: "before:bg-fuchsia-800 hover:border-green-800",
     description:
-      "This project offers an intuitive web page where users can share their photographic content to the world.",
+      "This project offers an intuitive web page where users can share their photographic content with the world.",
     githubURL: "https://github.com/Jesusm1229/shareme_frontend",
     previewURL: "https://sharemejm.netlify.app/",
     tools: ["React", "Sanity"],
@@ -37,8 +37,7 @@ module.exports = [
     background: "#3c6e71",
     container: "#f7fff7",
     cover: "#353535",
-    description:
-      "This app let you know the weather condition of any city in the world.",
+    description: "This app lets you know the weather condition of any city.",
     githubURL: "https://github.com/Jesusm1229/weather-app",
     previewURL: "https://weather-app-b5ad2.web.app/",
     tools: ["Angular", "OpenWeather API", "Typescript", "Service Worker"],
@@ -52,7 +51,7 @@ module.exports = [
     container: "#ffccd5",
     cover: "#540d6e",
     description:
-      "Using the twitter API, this project scrapps those tweets that are considered as hate speech and returns a indexed percentage filtered by their common origin.",
+      "Using the Twitter API, this project scraps those tweets considered hate speech and returns an indexed percentage filtered by their common origin.",
     githubURL: "https://github.com/Jesusm1229/HateSpeech_Tracker",
     previewURL: "https://github.com/Jesusm1229/HateDashboard",
     tools: ["Python", "Hadoop", "Java"],
@@ -66,7 +65,7 @@ module.exports = [
     container: "#eacdc2",
     cover: "#ffa69e",
     description:
-      "Ecommerce for a grocery store that let the user make a remote shopping. The user can also have a favorite list and receive notifications when a product is renewed. The page includes a Paypal payment gateway.",
+      "E-commerce for a grocery store. The user can have a favorite list and receive notifications when a product is renewed. The page includes a PayPal payment gateway.",
     githubURL: "https://github.com/Jesusm1229/tiendafrontend",
     previewURL: "https://tienda-database-a1d33.firebaseapp.com/ ",
     tools: ["React", "Google Firebase", "Paypal API"],
@@ -80,7 +79,7 @@ module.exports = [
     container: "#ccc5b9",
     cover: "#eb5e28",
     description:
-      "Closed platform where IT recruiters can make job postulations in diverse areas (FrontEnd, Backend, DevOps, Q&A, Database). The postulation have a single-selection test attach to it, those job seeker who best answer will have a higher position in the ranking, and so the recruiter can make a beter decision.",
+      "A closed platform where IT recruiters can make job postulations in diverse areas (FrontEnd, Backend, DevOps, Q&A, Database) with a single-selection test attached to it; those job seekers who give the best answer will have a higher position in the dedicated ranking.",
     githubURL: "https://github.com/Jesusm1229/abc",
     previewURL: "https://github.com/Jesusm1229/abc",
     tools: ["Java"],
