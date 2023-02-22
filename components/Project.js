@@ -303,7 +303,7 @@ export default function Project({ project }) {
                       }}
                     >
                       <motion.img
-                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  lg:brightness-75"
+                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  brightness-75"
                         src={project.coverURL}
                         alt={project.name}
                         initial={{ scale: 1.5 }}
@@ -317,7 +317,7 @@ export default function Project({ project }) {
             )}
           </AnimatePresence>
         </motion.div>
-        <div className="bg-neutral-700/50 lg:bg-transparent rounded-md absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
+        <div className="lg:bg-transparent rounded-md absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
           <span
             style={{
               overflow: "hidden",
