@@ -303,14 +303,17 @@ export default function Project({ project }) {
                         clipPath: "polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%)",
                       }}
                     >
-                      <motion.img
-                        className="photo  object-center object-cover lg:object-center h-full lg:w-full  brightness-75"
-                        src={project.coverURL}
-                        alt={project.name}
-                        initial={{ scale: 1.5 }}
-                        animate={animationImg}
-                        quality={100}
-                      />
+                      <motion.div className="w-full h-full">
+                        <Image
+                          className="photo  object-center object-cover lg:object-center h-full lg:w-full  brightness-75"
+                          src={project.coverURL}
+                          alt={project.name}
+                          fill
+                          initial={{ scale: 1.5 }}
+                          animate={animationImg}
+                          quality={75}
+                        />
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>
