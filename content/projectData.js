@@ -8,7 +8,7 @@ module.exports = [
     cover: "#a31621",
     buttonColor: "before:bg-rose-600 hover:border-green-800",
     description:
-      "With defined work zones, you can track the employees locations and get a monthly, weeekly and daily performance index based on their past time within that zone.",
+      "With defined work zones, you can track the employees locations and get a monthly, weeekly and daily performance index based on their time within that zone.",
     githubURL:
       "https://github.com/Jesusm1229/MonitorSystem_React/tree/master/src",
     previewURL: "https://fifth-being-338704.web.app/",
