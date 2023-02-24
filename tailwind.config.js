@@ -51,6 +51,7 @@ module.exports = {
       require("@tailwindcss/line-clamp"),
       require("@tailwindcss/typography"),
       require("tailwind-scrollbar-hide"),
+      require("prettier-plugin-tailwindcss"),
     ],
   },
 };

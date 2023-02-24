@@ -136,7 +136,7 @@ export default function Project({ project }) {
   return (
     <>
       <motion.div
-        className={`snap-center w-auto h-screen shrink  flex justify-center items-center my-1 p-5 relative color-[color:var(--accent)]`}
+        className={`color-[color:var(--accent)] relative my-1 flex  h-screen w-auto shrink snap-center items-center justify-center p-5`}
         ref={ref}
         style={{
           /*   rgb(117 190 218 / 0.5) */
@@ -201,7 +201,7 @@ export default function Project({ project }) {
 
         {/** DIV que contiene al div Sólo se ve en la transición */}
         <motion.div
-          className={`mask relative  w-full h-full max-h-[90vh] bg-cyan-900 shadow-inner  `}
+          className={`mask relative  h-full max-h-[90vh] w-full bg-cyan-900 shadow-inner  `}
           style={{
             /*   rgb(117 190 218 / 0.5) */
             backgroundColor: isMobile
@@ -219,7 +219,7 @@ export default function Project({ project }) {
           <AnimatePresence>
             {isInView && (
               <motion.div
-                className={`${styles.mask} inline-block overflow-hidden absolute inset-0 m-auto w-full h-full shadow-2xl max-h-[90vh]  `}
+                className={`${styles.mask} absolute inset-0 m-auto inline-block h-full max-h-[90vh] w-full overflow-hidden shadow-2xl  `}
                 initial="hidden"
                 whileInView="visible"
                 exit="hidden"
@@ -252,7 +252,7 @@ export default function Project({ project }) {
                   }}
                 >
                   <AnimatedText
-                    className={`text-opacity-20 invisible md:visible absolute text-5xl lg:text-[calc(100vh+16rem)] font-inter font-bold h-screen tracking-tighter md:left-[calc(60%+8rem)] lg:left-[calc(65%+8rem)] xl:left-[calc(60%+8rem)] top-[-25%]`}
+                    className={`invisible absolute top-[-25%] h-screen font-inter text-5xl font-bold tracking-tighter text-opacity-20 md:visible md:left-[calc(60%+8rem)] lg:left-[calc(65%+8rem)] lg:text-[calc(100vh+16rem)] xl:left-[calc(60%+8rem)]`}
                     variants={{
                       hidden: { opacity: 0 },
                       visible: {
@@ -276,7 +276,7 @@ export default function Project({ project }) {
                 <AnimatePresence>
                   {isInView && (
                     <motion.div
-                      className={`mask content-center relative  w-full h-full  max-h-[90vh] bg-transparent ${styles.mask} `}
+                      className={`mask relative h-full  max-h-[90vh] w-full  content-center bg-transparent ${styles.mask} `}
                       initial="hidden"
                       whileInView="visible"
                       exit="hidden"
@@ -305,9 +305,9 @@ export default function Project({ project }) {
                         clipPath: "polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%)",
                       }}
                     >
-                      <motion.div className="w-full h-full">
+                      <motion.div className="h-full w-full">
                         <Image
-                          className="photo  object-center object-cover lg:object-center h-full lg:w-full  brightness-75"
+                          className="photo  h-full object-cover object-center brightness-75 lg:w-full  lg:object-center "
                           src={project.coverURL}
                           alt={project.name}
                           fill
@@ -323,7 +323,7 @@ export default function Project({ project }) {
             )}
           </AnimatePresence>
         </motion.div>
-        <div className="lg:bg-transparent rounded-md absolute inset-y-0 left-0 max-w-xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl w-full h-screen justify-center  flex flex-col gap-3 p-10 xl:pl-24 xl:py-20  mb-10">
+        <div className="absolute inset-y-0 left-0 mb-10 flex h-screen w-full max-w-xl flex-col justify-center gap-3 rounded-md  p-10 lg:max-w-xl lg:bg-transparent xl:max-w-4xl xl:py-20 xl:pl-24  2xl:max-w-6xl">
           <span
             style={{
               overflow: "hidden",
@@ -332,7 +332,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} tracking-tighter text-4xl py-2 md:text-7xl  font-barlow-500 font-semibold text-neutral-900 dark:text-slate-100 `}
+              className={`${styles.head} font-barlow-500 py-2 text-4xl font-semibold  tracking-tighter text-neutral-900 dark:text-slate-100 md:text-7xl `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -345,7 +345,7 @@ export default function Project({ project }) {
             }}
           >
             <AnimatedText
-              className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-2xl text-white tracking-wider `}
+              className={`${styles.demotext} text-lg font-medium tracking-wider text-white lg:ml-8 lg:w-4/6 lg:text-2xl `}
               variants={fromBottomVariantDescription}
               style={{
                 overflow: "hidden",
@@ -356,7 +356,7 @@ export default function Project({ project }) {
             </AnimatedText>
           </span>
 
-          <motion.div className="lg:px-4 w-fit h-fit flex items-center gap-4">
+          <motion.div className="flex h-fit w-fit items-center gap-4 lg:px-4">
             {project.star && (
               <>
                 <motion.div
@@ -364,10 +364,10 @@ export default function Project({ project }) {
                   initial="hidden"
                   whileInView={"visible"}
                 >
-                  <BsStar className="lg:ml-8 w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+                  <BsStar className="h-6 w-6 transition-all hover:scale-110 active:scale-90 lg:ml-8" />
                 </motion.div>
                 <AnimatedText
-                  className={`${styles.demotext} lg:ml-1 lg:w-fit font-normal text-base lg:font-medium lg:text-lg text-white tracking-wider `}
+                  className={`${styles.demotext} text-base font-normal tracking-wider text-white lg:ml-1 lg:w-fit lg:text-lg lg:font-medium `}
                   variants={fromRightVariantStar}
                   initial="hidden"
                   whileInView={"visible"}
@@ -379,7 +379,7 @@ export default function Project({ project }) {
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-1 lg:ml-8 flex-wrap"
+            className="flex flex-wrap items-center gap-1 lg:ml-8"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
@@ -393,7 +393,7 @@ export default function Project({ project }) {
               return (
                 <motion.span
                   key={`${tool}-${index}`}
-                  className="dark:bg-gray-100 bg-darkPrimary text-gray-800  px-2 py-1 text-xs"
+                  className="bg-darkPrimary px-2 py-1  text-xs text-gray-800 dark:bg-gray-100"
                   variants={fromRightVariantSpan}
                   initial="hidden"
                   whileInView={"visible"}
@@ -405,7 +405,7 @@ export default function Project({ project }) {
           </motion.div>
 
           <motion.div
-            className=" lg:px-4 w-fit h-fit flex items-center gap-4"
+            className=" flex h-fit w-fit items-center gap-4 lg:px-4"
             variants={FadeContainer}
           >
             <motion.div
@@ -456,7 +456,7 @@ export default function Project({ project }) {
                   },
                 }}
               >
-                <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+                <BsGithub className="h-6 w-6 transition-all hover:scale-110 active:scale-90" />
               </motion.div>
             </Link>
           </motion.div>
