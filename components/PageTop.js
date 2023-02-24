@@ -7,7 +7,7 @@ import AnimatedText from "./FramerMotion/AnimatedText";
 
 export default function PageTop({ pageTitle, headingClass, children }) {
   return (
-    <div className="mr-1 mb-10 flex h-screen w-full  max-w-xl select-none flex-col justify-center gap-3 py-5">
+    <div className="ml-1 mb-10 flex h-screen w-full  max-w-xl select-none flex-col justify-center gap-3 py-5">
       <AnimatedHeading
         variants={fromRightVariant}
         className={`text-5xl  font-bold text-neutral-900 dark:text-neutral-200 lg:text-7xl ${headingClass}`}
