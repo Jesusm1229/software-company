@@ -48,7 +48,7 @@ function Image({ id, hueA, hueB }) {
   return (
     <>
       <motion.div
-        className={`snap-center  h-screen shrink  flex justify-center items-center m-5 p-5 relative color-[color:var(--accent)]`}
+        className={`color-[color:var(--accent)]  relative m-5  flex h-screen shrink snap-center items-center justify-center p-5`}
         ref={ref}
         style={{
           backgroundColor: isInView ? background : "rgba(0,0,0,0)",
@@ -75,16 +75,16 @@ function Image({ id, hueA, hueB }) {
         }} */
       >
         <div
-          className={`relative object-none overflow-hidden w-80 h-96 max-h-[90vh] bg-slate-300 `}
+          className={`relative h-96 max-h-[90vh] w-80 overflow-hidden bg-slate-300 object-none `}
         >
           <img
-            className="absolute object-none overflow-hidden top-0 left-0 right-0 bottom-0 w-full h-full"
+            className="absolute top-0 left-0 right-0 bottom-0 h-full w-full overflow-hidden object-none"
             src={`/${id}.jpg`}
             alt="A London skyscraper"
           />
         </div>
         {/* style={{ y }} */}
-        <motion.h1 className="absolute text-5xl lg:text-6xl font-montserrat h-32 tracking-tighter left-[calc(50%+8rem)]">{`#00${id}`}</motion.h1>
+        <motion.h1 className="absolute left-[calc(50%+8rem)] h-32 font-montserrat text-5xl tracking-tighter lg:text-6xl">{`#00${id}`}</motion.h1>
       </motion.div>
     </>
   );
@@ -121,10 +121,10 @@ export default function Projects({ projects }) {
 
       {/* bg-[color:var(--background)] ${styles.body}*/}
       <motion.div
-        className={`snap-mandatory snap-y  h-screen min-h-screen overflow-y-scroll relative overflow-x-hidden text-[color:var(--accent)] `}
+        className={`relative h-screen  min-h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll text-[color:var(--accent)] `}
         ref={divRef}
       >
-        <section className="snap-center pageTop relative min-h-full w-full">
+        <section className="pageTop relative min-h-full w-full snap-center">
           <PageTop pageTitle="Projects" className="">
             Let me introduce you to some of the projects I have completed so
             far. They combine simple and complex concepts. Now, you'll see{" "}
@@ -147,7 +147,7 @@ export default function Projects({ projects }) {
           <Image id={image} hueA={hueA} hueB={hueB} />
         ))} */}
         <motion.div
-          className={`invisible md:visible bg-[color:var(--accent)] ${styles.progress}`}
+          className={`invisible bg-[color:var(--accent)] md:visible ${styles.progress}`}
           style={{ scaleX }}
         />
       </motion.div>
