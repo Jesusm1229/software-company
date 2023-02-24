@@ -12,6 +12,7 @@ module.exports = [
     githubURL:
       "https://github.com/Jesusm1229/MonitorSystem_React/tree/master/src",
     previewURL: "https://fifth-being-338704.web.app/",
+    star: "With this project I get my Computer Engineering Bachelor Degree",
     tools: ["ASP.NET CORE", "ReactJs", "SQL SERVER", "Google API"],
     pinned: false,
   },

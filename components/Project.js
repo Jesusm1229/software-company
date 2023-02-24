@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsStar } from "react-icons/bs";
 import { MdOutlineLink } from "react-icons/md";
 import Link from "next/link";
 import OgImage from "../components/OgImage"; // =========> not created yet
@@ -23,6 +23,7 @@ import {
 import {
   fromBottomVariant,
   fromRightVariantSpan,
+  fromRightVariantStar,
 } from "../content/FramerMotionVariants";
 
 import styles from "../styles/Project.module.css";
@@ -326,7 +327,7 @@ export default function Project({ project }) {
           >
             <AnimatedHeading
               variants={fromBottomVariant}
-              className={`${styles.head} tracking-tighter text-4xl py-2 md:text-8xl  font-barlow-500 font-bold text-neutral-900 dark:text-slate-100 `}
+              className={`${styles.head} tracking-tighter text-4xl py-2 md:text-8xl  font-barlow-500 font-semibold text-neutral-900 dark:text-slate-100 `}
               style={{ display: "inline-block", overflow: "hidden" }}
             >
               {project.name}
@@ -349,7 +350,40 @@ export default function Project({ project }) {
               {project.description}
             </AnimatedText>
           </span>
-          <div className="flex items-center gap-1 lg:ml-8 flex-wrap">
+
+          <motion.div className="lg:px-4 w-fit h-fit flex items-center gap-4">
+            {project.star && (
+              <>
+                <motion.div
+                  variants={fromRightVariantStar}
+                  initial="hidden"
+                  whileInView={"visible"}
+                >
+                  <BsStar className="lg:ml-8 w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+                </motion.div>
+                <AnimatedText
+                  className={`${styles.demotext} lg:ml-1 lg:w-fit font-normal text-base lg:font-medium lg:text-lg text-white tracking-wider `}
+                  variants={fromRightVariantStar}
+                  initial="hidden"
+                  whileInView={"visible"}
+                >
+                  {project.star}
+                </AnimatedText>
+              </>
+            )}
+          </motion.div>
+
+          <motion.div
+            className="flex items-center gap-1 lg:ml-8 flex-wrap"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "tween",
+              ease: "easeInOut",
+              duration: 0.5,
+              delay: 2.6,
+            }}
+          >
             {project.tools.map((tool, index) => {
               return (
                 <motion.span
@@ -363,7 +397,7 @@ export default function Project({ project }) {
                 </motion.span>
               );
             })}
-          </div>
+          </motion.div>
 
           <div className=" lg:px-4 w-fit h-fit flex items-center gap-4">
             <motion.div
