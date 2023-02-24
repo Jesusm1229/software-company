@@ -21,9 +21,11 @@ import {
   useAnimationControls,
 } from "framer-motion";
 import {
+  FadeContainer,
   fromBottomVariant,
   fromRightVariantSpan,
   fromRightVariantStar,
+  fromBottomVariantDescription,
 } from "../content/FramerMotionVariants";
 
 import styles from "../styles/Project.module.css";
@@ -344,7 +346,7 @@ export default function Project({ project }) {
           >
             <AnimatedText
               className={`${styles.demotext} lg:ml-8 lg:w-4/6 font-medium text-lg lg:text-2xl text-white tracking-wider `}
-              variants={fromBottomVariant}
+              variants={fromBottomVariantDescription}
               style={{
                 overflow: "hidden",
                 display: "inline-block",
@@ -384,7 +386,7 @@ export default function Project({ project }) {
               type: "tween",
               ease: "easeInOut",
               duration: 0.5,
-              delay: 2.6,
+              delay: 2.2,
             }}
           >
             {project.tools.map((tool, index) => {
@@ -402,17 +404,23 @@ export default function Project({ project }) {
             })}
           </motion.div>
 
-          <div className=" lg:px-4 w-fit h-fit flex items-center gap-4">
+          <motion.div
+            className=" lg:px-4 w-fit h-fit flex items-center gap-4"
+            variants={FadeContainer}
+          >
             <motion.div
               onMouseEnter={sequence}
               onMouseLeave={sequenceReverse}
               initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{
-                type: "tween",
-                ease: "easeInOut",
-                duration: 0.5,
-                delay: 2.3,
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  type: "tween",
+                  ease: "easeInOut",
+                  duration: 0.5,
+                  delay: 2.3,
+                },
               }}
               animate={isMobile ? setTimeout(sequence, 3600) : ""}
             >
@@ -437,18 +445,21 @@ export default function Project({ project }) {
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.5,
-                  delay: 2.6,
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: {
+                    type: "tween",
+                    ease: "easeInOut",
+                    duration: 0.5,
+                    delay: 2.6,
+                  },
                 }}
               >
                 <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
               </motion.div>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         {/* style={{ y }} */}
