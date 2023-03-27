@@ -38,6 +38,14 @@ module.exports = {
         protocol: "https",
         hostname: "images.pexels.com",
       },
+      {
+        protocol: "https",
+        hostname: "imagekit.io",
+      },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+      },
     ],
   },
   images: {
@@ -47,6 +55,8 @@ module.exports = {
       "res.cloudinary.com",
       "imgur.com",
       "i.imgur.com",
+      "imagekit.io",
+      "ik.imagekit.io",
       "images.pexels.com",
       "cutt.ly",
       "activity-graph.herokuapp.com",

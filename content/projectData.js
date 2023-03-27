@@ -1,6 +1,21 @@
 module.exports = [
   {
-    id: 1,
+    id: 7,
+    name: "Valentina Beauty Blog",
+    coverURL:
+      "https://ik.imagekit.io/xsa2z0ekq/screely-1679868434346__1_.webp?updatedAt=1679875328901",
+    background: "#2ec4b6",
+    container: "#fffcf9",
+    cover: "#ff3366",
+    buttonColor: "before:bg-rose-600 hover:border-green-800",
+    description: "MDX blog for photography and style.",
+    githubURL: "https://github.com/Jesusm1229/creative_landing",
+    previewURL: "https://valentinabeauty.vercel.app/",
+    tools: ["Next.js", "MDX"],
+    pinned: false,
+  },
+  {
+    id: 6,
     name: "Enterprise employee tracker",
     coverURL: "http://source.unsplash.com/IFM29XVI2EI/2400x1600",
     background: "#053c5e",
@@ -17,7 +32,7 @@ module.exports = [
     pinned: false,
   },
   {
-    id: 2,
+    id: 5,
     name: "ShareMe - Social Network ",
     coverURL: "http://source.unsplash.com/SYTO3xs06fU/2400x1600",
     background: "#06bcc1",
@@ -32,7 +47,7 @@ module.exports = [
     pinned: false,
   },
   {
-    id: 3,
+    id: 4,
     name: "Twitter hate speech tracker",
     coverURL: "http://source.unsplash.com/5otlbgWJlLs/2400x1600",
     background: "#ef476f",
@@ -46,7 +61,7 @@ module.exports = [
     pinned: false,
   },
   {
-    id: 4,
+    id: 3,
     name: "Ecommerce 'El Vecino Tarazona'",
     coverURL: "http://source.unsplash.com/D4ZtZX1UeAI/2400x1820",
     background: "#2ec4b6",
@@ -60,7 +75,7 @@ module.exports = [
     pinned: false,
   },
   {
-    id: 5,
+    id: 2,
     name: "Employment platform",
     coverURL: "http://source.unsplash.com/rxpThOwuVgE/2400x1349",
     background: "#252422",
@@ -74,7 +89,7 @@ module.exports = [
     pinned: false,
   },
   {
-    id: 6,
+    id: 1,
     name: "PWA Weather App",
     coverURL: "http://source.unsplash.com/ugnrXk1129g/2400x1594",
     background: "#3c6e71",

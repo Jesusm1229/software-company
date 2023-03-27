@@ -289,7 +289,7 @@ export default function Circle({ setShowQR, showQR }) {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className=" absolute  text-center inset-0 m-auto  w-screen h-screen justify-center flex flex-col space-y-40"
+            className=" absolute  inset-0 m-auto flex  h-screen w-screen flex-col justify-center space-y-40 text-center"
             exit={{ opacity: 0, scale: 0 }}
           >
             <span
@@ -300,7 +300,7 @@ export default function Circle({ setShowQR, showQR }) {
             >
               <AnimatedHeading
                 variants={fromBottomVariantHome}
-                className={`text-7xl text-center lg:text-9xl font-bold text-neutral-900 dark:text-neutral-200 py-6 `}
+                className={`py-6 text-center text-7xl font-bold text-neutral-900 dark:text-neutral-200 lg:text-9xl `}
                 style={{ display: "inline-block", overflow: "hidden" }}
               >
                 JESÚS MEDINA
@@ -314,7 +314,7 @@ export default function Circle({ setShowQR, showQR }) {
             >
               <AnimatedHeading
                 variants={fromTopVariant}
-                className={`text-6xl text-center lg:text-9xl font-bold text-neutral-900 dark:text-neutral-200 py-6 `}
+                className={`py-6 text-center text-6xl font-bold text-neutral-900 dark:text-neutral-200 lg:text-9xl `}
                 style={{ display: "inline-block", overflow: "hidden" }}
               >
                 SOFTWARE DEVELOPER
@@ -331,9 +331,9 @@ export default function Circle({ setShowQR, showQR }) {
         ref={app}
         className="App body loading demo-3 fixed"
       >
-        <div className="relative fixed w-full h-full inset-0 items-center justify-items-center">
+        <div className="fixed relative inset-0 h-full w-full items-center justify-items-center">
           <motion.svg
-            className="circles pointer-events-none fixed w-[var(--dim)] h-[var(--dim)] top-[calc(50%_-_var(--dim)_/_2_)] left-[calc(50%_-_var(--dim)_/_2_)]"
+            className="circles pointer-events-none fixed top-[calc(50%_-_var(--dim)_/_2_)] left-[calc(50%_-_var(--dim)_/_2_)] h-[var(--dim)] w-[var(--dim)]"
             width="100%"
             height="100%"
             viewBox="0 0 1400 1400"
@@ -357,7 +357,7 @@ export default function Circle({ setShowQR, showQR }) {
               />
             </def>
             <motion.text
-              className="uppercase origin-[700px_700px] will-change-[transform,opacity] text-[25vmin] text-[clamp(170px,25vmin,180px)] font-[number:var(--font-weight-circle-1)] fill-[var(--color-text-circle-1)] circles__text--1"
+              className="circles__text--1 origin-[700px_700px] fill-[var(--color-text-circle-1)] text-[25vmin] text-[clamp(170px,25vmin,180px)] font-[number:var(--font-weight-circle-1)] uppercase will-change-[transform,opacity]"
               style={{
                 origin: "50%",
               }}
@@ -535,7 +535,7 @@ export default function Circle({ setShowQR, showQR }) {
         </div> */}
 
           <motion.div
-            className="absolute fixed"
+            className="absolute"
             onMouseEnter={() => {
               /* onEnter; */
               setVisible(true);
@@ -576,11 +576,11 @@ export default function Circle({ setShowQR, showQR }) {
             }}
           >
             <button
-              className="enter block absolute font-medium cursor-pointer p-0 m-auto   w-[var(--dim-button)] h-[var(--dim-button)]  font-medium cursor-pointer text-[color:var(--color-text-button)] border-0;
+              className="enter border-0; absolute m-auto block h-[var(--dim-button)] w-[var(--dim-button)]   cursor-pointer cursor-pointer  p-0 font-medium font-medium text-[color:var(--color-text-button)]
           "
             >
               <div
-                className="enter__bg absolute w-full h-full rounded-[50%] left-0 top-0; "
+                className="enter__bg top-0; absolute left-0 h-full w-full rounded-[50%] "
                 onClick={() => setShowQR(!showQR)}
               ></div>
               <span
