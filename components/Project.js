@@ -307,7 +307,7 @@ export default function Project({ project }) {
                     >
                       <motion.div className="h-full w-full">
                         <Image
-                          className="photo  h-full object-cover object-center lg:w-full  lg:object-center "
+                          className="photo  h-full object-cover object-center brightness-90 lg:w-full  lg:object-center "
                           src={project.coverURL}
                           alt={project.name}
                           fill
